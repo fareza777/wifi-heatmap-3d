@@ -41,6 +41,6 @@ Product ID `remove_ads`, non-consumable one-time purchase; English title “Remo
 
 ## AdMob
 
-App ID `ca-app-pub-6279186647593327~1942300843`, banner ID `ca-app-pub-6279186647593327/5053523223`. Interstitial ID still pending creation. Banner placement home/results; interstitial only after closing results with minimum three completed scans and 180 seconds elapsed, also blocked during immediate rescan. No app-open ads, no ads during camera capture or tests, no delayed surprise ad after navigation, no extra ad purchases required for tools.
+App ID `ca-app-pub-6279186647593327~1942300843`, banner ID `ca-app-pub-6279186647593327/5053523223`. Interstitial ID `ca-app-pub-6279186647593327/3223592929` created with server-side cap of 1 impression per user per 3 minutes. Banner placement home/results; interstitial only after closing results with minimum three completed scans and 180 seconds elapsed, also blocked during immediate rescan. No app-open ads, no ads during camera capture or tests, no delayed surprise ad after navigation, no extra ad purchases required for tools.
 
 Create regional consent/privacy messages in the AdMob app using the public policy URL and available reject/manage options; app uses UMP. Keep live units out of debug runs. Configure a server-side interstitial frequency cap as an additional protection. App store association/review and app-ads.txt verification may await a discoverable Play listing.

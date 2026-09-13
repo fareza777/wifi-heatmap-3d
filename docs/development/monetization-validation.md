@@ -34,7 +34,12 @@ changes completed successfully in 1 minute 30 seconds with the source frozen.
 | APK signature | PASS | `apksigner verify --verbose`: valid APK Signature Scheme v2; one debug signer |
 | APK identity | PASS | Package/version match the report header; minimum API 26, target API 37 |
 | Missing release ad identifiers | PASS, negative test | Validation rejects explicitly blank identifiers |
-| Signed release bundle and live store/ad tests | NOT RUN | Real interstitial identifier and live service configuration remain outstanding |
+| Signed release bundle | PASS | `bundleRelease` completed in 7m 27s; production ad IDs validated, release lint and R8 completed; `jarsigner -verify` reports jar verified |
+| Live store/ad tests | NOT RUN | Requires configured closed testing and real-device service verification |
+
+Release AAB: `app/build/outputs/bundle/release/app-release.aab`, 27,499,842 bytes.
+SHA-256: `B3CEC09F3388D764759D5225A7DD0E6035EB08A3F33686251BF246AEBB24B3BE`.
+Built with the production banner and interstitial identifiers on 2026-09-13.
 
 Final APK: `app/build/outputs/apk/debug/app-debug.apk`, 61,961,761 bytes,
 modified 2026-09-13 07:09:51 Asia/Jakarta. This is a **debug/test-ads APK**, not a
