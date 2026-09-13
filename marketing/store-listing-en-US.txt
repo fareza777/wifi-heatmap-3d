@@ -1,0 +1,50 @@
+APP NAME
+WiFi Heatmap 3D : Signal Map
+
+SHORT DESCRIPTION
+Map Wi-Fi in 3D, find weak spots, analyze channels and test your network.
+
+FULL DESCRIPTION
+Your Wi-Fi has a shape. See where it works for you.
+
+WiFi Heatmap 3D : Signal Map turns a walk through your space into a visual Wi-Fi coverage survey. Measure signal strength, explore a 3D room plan or 2D heatmap, and find the corners where your connection needs attention.
+
+Whether you are choosing a desk for video calls, checking a gaming corner or comparing rooms at home, start with the signal you can actually measure.
+
+MAP YOUR WI-FI, ROOM BY ROOM
+• Walk through your space while the app samples Wi-Fi signal strength.
+• Choose a quick room-level survey or a more detailed continuous scan.
+• Use ARCore position tracking on compatible devices to place measurements in your room.
+• Explore your survey in 3D and view coverage as a color-coded 2D heatmap.
+• Spot stronger and weaker measured areas, follow your walking path and review router-placement suggestions.
+
+UNDERSTAND THE CONNECTION
+• Read live signal strength in dBm and follow changes on a signal graph.
+• Inspect nearby Wi-Fi networks, frequency bands, channels and access points.
+• Compare channel overlap and review connection and device capabilities.
+• Check Wi-Fi security indicators and discover responsive devices on your local network.
+
+TEST BEYOND SIGNAL BARS
+• Run download and upload speed tests.
+• Check latency with ping and investigate DNS connectivity.
+• Add optional throughput measurements to a walking survey.
+• Review access-point changes and roaming observations where your device provides the data.
+
+SAVE WHAT YOU DISCOVER
+• Keep a local survey history and revisit earlier measurements.
+• Add optional landmark photos and labels to remember useful spots.
+• Export a heatmap image or share a written survey report.
+• Choose light, dark or system appearance, accent colors, and English or Indonesian.
+
+FREE TO USE, OPTIONAL AD REMOVAL
+The app is supported by ads. Banners appear on selected browsing and result screens; occasional full-screen ads appear at a natural break after completed surveys. Ads do not interrupt an active room scan. An optional one-time Google Play purchase removes in-app ads. Restore your purchase using the same Google Play account. Your local price is shown before checkout.
+
+BEFORE YOU SCAN
+AR room scanning requires an ARCore-compatible device and Google Play Services for AR. Camera and location permissions are needed for relevant scanning features. Available Wi-Fi details, scan frequency and measurement precision depend on Android, your device and the environment. Walls and unsampled coverage may be estimated. Router suggestions are guidance, not a guarantee of better speed. This app measures and analyzes Wi-Fi; it does not boost radio power or reveal Wi-Fi passwords.
+
+Speed tests use internet data and Cloudflare endpoints. Inspect only networks you own or are authorized to test. Surveys and landmark photos are stored on your device; ads, purchases and network tests use the third-party services described in our privacy policy. Sharing sends the selected report or image to your chosen destination.
+
+Make your Wi-Fi visible. Find your better spot.
+
+Privacy: https://fareza777.github.io/wifi-heatmap-3d/privacy-policy.html
+Support: fajar.mreza@gmail.com

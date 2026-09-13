@@ -1,0 +1,48 @@
+APP NAME
+WiFi Heatmap 3D : Signal Map
+
+SHORT DESCRIPTION
+Petakan Wi-Fi dalam 3D, temukan titik lemah, analisis kanal dan tes jaringan.
+
+FULL DESCRIPTION
+Sinyal Wi-Fi tidak merata. Sekarang Anda bisa melihat petanya.
+
+WiFi Heatmap 3D : Signal Map membantu Anda memetakan jangkauan Wi-Fi sambil berjalan di rumah atau ruang kerja. Lihat pengukuran dalam denah 3D dan heatmap 2D, kenali area bersinyal lemah, lalu tentukan titik yang lebih sesuai untuk bekerja, bermain, atau melakukan panggilan video.
+
+PETAKAN SINYAL, RUANG DEMI RUANG
+• Pilih survei cepat per ruangan atau pemindaian kontinu yang lebih detail.
+• Ukur kekuatan sinyal Wi-Fi saat berjalan.
+• Gunakan pelacakan posisi ARCore pada perangkat yang kompatibel.
+• Jelajahi denah 3D dan peta warna jangkauan 2D.
+• Tinjau titik terkuat, area terlemah, jejak perjalanan, dan saran posisi router.
+
+PAHAMI JARINGAN ANDA
+• Lihat kekuatan sinyal dalam dBm dan perubahannya pada grafik.
+• Periksa jaringan sekitar, pita frekuensi, kanal, dan access point.
+• Bandingkan tumpang tindih kanal serta kemampuan perangkat dan koneksi.
+• Tinjau indikator keamanan Wi-Fi dan temukan perangkat yang merespons di jaringan lokal.
+
+UJI KONEKSI LEBIH JAUH
+• Jalankan tes kecepatan unduh dan unggah.
+• Periksa latensi melalui ping dan konektivitas DNS.
+• Tambahkan pengukuran throughput opsional pada survei berjalan.
+• Tinjau perpindahan access point dan roaming jika data tersedia dari perangkat.
+
+SIMPAN DAN BAGIKAN HASIL
+• Buka kembali pengukuran melalui riwayat survei lokal.
+• Tambahkan foto penanda dan label untuk mengingat lokasi.
+• Ekspor gambar heatmap atau bagikan laporan survei tertulis.
+• Pilih tema terang, gelap, atau sistem, warna aksen, serta bahasa Indonesia atau Inggris.
+
+GRATIS, DENGAN OPSI HAPUS IKLAN
+Aplikasi didukung iklan. Banner muncul di layar penelusuran dan hasil tertentu; iklan layar penuh sesekali muncul pada jeda yang wajar setelah survei selesai. Iklan tidak memotong pemindaian ruangan yang sedang berjalan. Pembelian sekali bayar melalui Google Play menghapus iklan dalam aplikasi. Pulihkan pembelian dengan akun Google Play yang sama. Harga lokal ditampilkan sebelum pembayaran.
+
+SEBELUM MEMULAI
+Pemindaian ruangan AR memerlukan perangkat yang mendukung ARCore dan Google Play Services for AR. Fitur pemindaian terkait memerlukan izin kamera dan lokasi. Informasi Wi-Fi, frekuensi pemindaian, dan ketelitian hasil bergantung pada Android, perangkat, serta kondisi sekitar. Dinding dan jangkauan area yang belum diukur dapat berupa perkiraan. Saran posisi router merupakan panduan, bukan jaminan peningkatan kecepatan. Aplikasi ini mengukur dan menganalisis Wi-Fi; tidak meningkatkan daya radio atau membuka kata sandi Wi-Fi.
+
+Tes kecepatan memakai data internet dan endpoint Cloudflare. Gunakan alat pemeriksaan hanya pada jaringan milik Anda atau yang boleh Anda periksa. Survei dan foto penanda disimpan di perangkat. Iklan, pembelian, dan tes jaringan memakai layanan pihak ketiga sesuai kebijakan privasi. Membagikan hasil mengirimkan laporan atau gambar ke tujuan pilihan Anda.
+
+Lihat jangkauannya. Temukan tempat yang lebih tepat.
+
+Privasi: https://fareza777.github.io/wifi-heatmap-3d/privacy-policy.html
+Dukungan: fajar.mreza@gmail.com

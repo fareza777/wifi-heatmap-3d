@@ -1,0 +1,30 @@
+1
+00:00:00,500 --> 00:00:05,800
+WiFi Anda. Dalam 3D.
+Lihat jangkauan sinyal di sekitar Anda.
+
+2
+00:00:06,300 --> 00:00:12,800
+Setiap langkah. Satu titik sinyal.
+Jelajahi ruangan dan petakan WiFi Anda.
+
+3
+00:00:13,300 --> 00:00:19,800
+Temukan area dengan sinyal lemah.
+Jelajahi hasil pemindaian dalam 2D dan 3D.
+
+4
+00:00:20,300 --> 00:00:27,800
+Kenali koneksi Anda.
+Sinyal langsung dan detail jaringan dalam genggaman.
+
+5
+00:00:28,300 --> 00:00:34,800
+Ukur. Periksa. Simpan.
+Uji ping dan kecepatan, periksa LAN, simpan laporan.
+
+6
+00:00:35,300 --> 00:00:41,500
+WiFi Heatmap 3D : Signal Map
+Petakan sinyal Anda. Temukan tempat yang lebih baik.
+

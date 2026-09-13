@@ -1,0 +1,43 @@
+{
+  "verifiedAt": "2026-09-12T23:56:30.006Z",
+  "video": "wifi-heatmap-3d-promo.mp4",
+  "metadata": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1920,
+        "height": 1080,
+        "pix_fmt": "yuvj420p",
+        "r_frame_rate": "30/1",
+        "duration": "42.000000",
+        "nb_frames": "1260",
+        "side_data_list": [
+          {}
+        ]
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "sample_rate": "48000",
+        "channels": 2,
+        "r_frame_rate": "0/0",
+        "duration": "42.048000",
+        "nb_frames": "1971"
+      }
+    ],
+    "format": {
+      "duration": "42.048000",
+      "size": "9409569"
+    }
+  },
+  "fullDecode": "passed",
+  "featureGraphic": {
+    "width": 1024,
+    "height": 500
+  },
+  "sha256": "0fdd5d8f04f9b8fc0dd6b6fc9f16855b4dc34d5127d9fde9a1b8f651af5b8bef",
+  "visualReview": "All six scenes, the original user-supplied 3D capture, and both sample-data phone views inspected in rendered PNG frames."
+}

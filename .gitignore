@@ -1,0 +1,27 @@
+*.iml
+.gradle/
+.kotlin/
+local.properties
+.idea/
+.DS_Store
+build/
+captures/
+.externalNativeBuild
+.cxx
+
+# Local credentials and generated build/render caches
+*.jks
+*.keystore
+keystore.properties
+release-signing.properties
+*.local.md
+*.local.json
+.env
+.env.*
+!.env.example
+node_modules/
+.remotion/
+build-log.txt
+*.log
+marketing/video/out/
+marketing/screenshots/.cache/

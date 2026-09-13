@@ -1,0 +1,30 @@
+1
+00:00:00,500 --> 00:00:05,800
+Your WiFi. In 3D.
+See the coverage around you.
+
+2
+00:00:06,300 --> 00:00:12,800
+Every step. A signal point.
+Walk through your room. Build a spatial WiFi scan.
+
+3
+00:00:13,300 --> 00:00:19,800
+Find the weak spots.
+Explore your scan in 2D and 3D.
+
+4
+00:00:20,300 --> 00:00:27,800
+Know your connection.
+Live signal. Network details. Clarity in your hand.
+
+5
+00:00:28,300 --> 00:00:34,800
+Measure. Inspect. Keep.
+Ping and speed tests. LAN checks. History and reports.
+
+6
+00:00:35,300 --> 00:00:41,500
+WiFi Heatmap 3D : Signal Map
+Map your signal. Find your better spot.
+

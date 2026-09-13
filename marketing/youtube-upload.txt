@@ -1,0 +1,31 @@
+TITLE
+WiFi Heatmap 3D : Signal Map | See Your Wi-Fi Coverage
+
+DESCRIPTION
+Make your Wi-Fi visible. Walk through your space, map signal measurements in 3D and 2D, and discover where your connection needs attention.
+
+WiFi Heatmap 3D : Signal Map brings room surveys and network tools together: live signal trends, channel analysis, ping and speed tests, local network checks, saved surveys and exportable reports.
+
+The opening shows a real in-app 3D result. Other survey examples use illustrative sample data or clearly labeled concept graphics. AR walking scans require an ARCore-compatible Android device. Results depend on the device and environment; the app does not boost radio power.
+
+English and Indonesian interface. Free with ads and an optional one-time purchase to remove in-app ads.
+
+Learn more: https://fareza777.github.io/wifi-heatmap-3d/
+Privacy: https://fareza777.github.io/wifi-heatmap-3d/privacy-policy.html
+Support: fajar.mreza@gmail.com
+
+F7 Developer
+
+#WiFiHeatmap #WiFiAnalyzer #SignalMap
+
+UPLOAD SETTINGS REFERENCE
+Visibility: Unlisted; allow embedding for the Google Play preview.
+Audience: Not made for kids.
+Video language: English.
+Category: Science & Technology.
+Thumbnail: marketing/youtube-thumbnail.png.
+Captions: marketing/video/captions/captions.en.srt and captions.id.srt.
+No paid promotion or third-party sponsorship is included in the supplied film.
+No realistic altered person, event or place is portrayed: concept graphics are labeled.
+No public availability claim or Play download URL until the listing is available.
+Do not claim this reference means the upload has been completed.

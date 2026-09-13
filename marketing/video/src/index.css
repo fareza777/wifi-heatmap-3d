@@ -1,0 +1,25 @@
+@font-face {
+  font-family: Jakarta;
+  src: url("../public/fonts/jakarta_regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: Jakarta;
+  src: url("../public/fonts/jakarta_bold.ttf");
+  font-weight: 700;
+}
+@font-face {
+  font-family: Jakarta;
+  src: url("../public/fonts/jakarta_extra_bold.ttf");
+  font-weight: 800;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Jakarta, Arial, sans-serif;
+}
+svg {
+  overflow: visible;
+}

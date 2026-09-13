@@ -1,0 +1,85 @@
+{
+  "language": "en",
+  "screenshots": [
+    {
+      "order": 1,
+      "file": "01-3d-coverage.png",
+      "width": 1080,
+      "height": 1920,
+      "format": "24-bit RGB PNG",
+      "provenance": "Actual user-supplied phone capture",
+      "sha256": "bcb9092036350f02ae7a5da543ff05071cb60a103c9f5b83bbcfb56ff7c6fa6d",
+      "bytes": 496777
+    },
+    {
+      "order": 2,
+      "file": "02-map-export.png",
+      "width": 1080,
+      "height": 1920,
+      "format": "24-bit RGB PNG",
+      "provenance": "Actual app renderer with disclosed illustrative fixtures",
+      "sha256": "11fdce19fb1681dff8a813b8f288aa7839950270dcb89b5aa307248ca395cb6f",
+      "bytes": 170346
+    },
+    {
+      "order": 3,
+      "file": "03-signal-trends.png",
+      "width": 1080,
+      "height": 1920,
+      "format": "24-bit RGB PNG",
+      "provenance": "Actual app renderer with disclosed illustrative fixtures",
+      "sha256": "dee2a9b94b3828d297123ae187908f45465e80f5fef1b22b252d4ab6e6d56ba1",
+      "bytes": 224478
+    },
+    {
+      "order": 4,
+      "file": "04-channel-analysis.png",
+      "width": 1080,
+      "height": 1920,
+      "format": "24-bit RGB PNG",
+      "provenance": "Actual app renderer with disclosed illustrative fixtures",
+      "sha256": "df6915fcb006750f0a2ce669f4e2fcbc5c527e16fce00d748cf3c58ac1fb121a",
+      "bytes": 233770
+    },
+    {
+      "order": 5,
+      "file": "05-security-check.png",
+      "width": 1080,
+      "height": 1920,
+      "format": "24-bit RGB PNG",
+      "provenance": "Actual app renderer with disclosed illustrative fixtures",
+      "sha256": "ceba67f4aa35a314b712045f99ec08100971bfb5cb7202a16f0ef192043f410d",
+      "bytes": 242795
+    },
+    {
+      "order": 6,
+      "file": "06-ping-test.png",
+      "width": 1080,
+      "height": 1920,
+      "format": "24-bit RGB PNG",
+      "provenance": "Actual app renderer with disclosed illustrative fixtures",
+      "sha256": "177c7d81d93b2b0205e689a5df3e4223de4deb7c16b6ccd31729cb4606c414f2",
+      "bytes": 180476
+    },
+    {
+      "order": 7,
+      "file": "07-survey-history.png",
+      "width": 1080,
+      "height": 1920,
+      "format": "24-bit RGB PNG",
+      "provenance": "Actual app renderer with disclosed illustrative fixtures",
+      "sha256": "d9922f20506cde60087aeb5b4cf1c5c62c2b5d9bf09b60f42233c1986decc461",
+      "bytes": 175958
+    },
+    {
+      "order": 8,
+      "file": "08-appearance.png",
+      "width": 1080,
+      "height": 1920,
+      "format": "24-bit RGB PNG",
+      "provenance": "Actual app settings",
+      "sha256": "3e32bc24385cb56c6c758966e55e97628bbd6eb0a00b1e25ec817787306b1988",
+      "bytes": 172673
+    }
+  ]
+}

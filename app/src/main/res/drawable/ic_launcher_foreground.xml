@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  The Wi-Fi glyph, coloured by the app's own signal ramp.
+
+  Strong signal sits closest to the source and weak furthest away, so the arcs
+  run green at the centre out to red at the edge. It reads as Wi-Fi instantly
+  because the silhouette is the universal one, while the colouring says heat map
+  — which is what separates this icon from every other Wi-Fi tool in a search
+  results list, and it survives being shrunk to 48dp.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Outer arc: weakest signal. -->
+    <path
+        android:pathData="M25.9,44.9 A40,40 0 0 1 82.1,44.9"
+        android:strokeColor="#FFEC3D5C"
+        android:strokeWidth="11"
+        android:strokeLineCap="round" />
+
+    <!-- Middle arc. -->
+    <path
+        android:pathData="M37.2,56.2 A24,24 0 0 1 70.8,56.2"
+        android:strokeColor="#FFF0A81E"
+        android:strokeWidth="11"
+        android:strokeLineCap="round" />
+
+    <!-- Inner arc: strongest. -->
+    <path
+        android:pathData="M46.4,65.4 A11,11 0 0 1 61.6,65.4"
+        android:strokeColor="#FF10C98E"
+        android:strokeWidth="11"
+        android:strokeLineCap="round" />
+
+    <!-- The source itself. -->
+    <path
+        android:pathData="M54,75 m-6,0 a6,6 0 1,0 12,0 a6,6 0 1,0 -12,0"
+        android:fillColor="#FFFFFFFF" />
+</vector>

@@ -1,0 +1,852 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  English is the default locale. Indonesian lives in values-in/strings.xml.
+
+  Android resolves the legacy code "in" for Indonesian, not "id", so the folder
+  name is not a typo — values-id would silently never load.
+-->
+<resources>
+    <!-- Play title, keyword-first: the phrase people search leads, and "3D" is
+     what separates this from every other Wi-Fi tool in the results list. -->
+    <string name="app_name">WiFi Heatmap 3D : Signal Map</string>
+    <string name="app_name_short">WiFi Heatmap 3D</string>
+
+    <!-- Signal quality buckets -->
+    <string name="quality_excellent">Excellent</string>
+    <string name="quality_good">Strong</string>
+    <string name="quality_fair">Fair</string>
+    <string name="quality_weak">Weak</string>
+    <string name="quality_dead">Almost none</string>
+
+    <!-- Security types. The acronyms are the same in every language; they are
+         resources only because the field holding them became a resource id. -->
+    <string name="security_open">Open</string>
+    <string name="security_owe">Open, encrypted</string>
+    <string name="security_wep">WEP</string>
+    <string name="security_wpa">WPA</string>
+    <string name="security_wpa2">WPA2</string>
+    <string name="security_wpa3">WPA3</string>
+    <string name="security_enterprise">Enterprise</string>
+    <string name="security_unknown">—</string>
+
+    <!-- Connection verdict -->
+    <string name="internet_needs_signin">Connected, but you have to sign in on a web page first</string>
+    <string name="internet_validated">Connected, and the internet works</string>
+    <string name="internet_unconfirmed">Connected, but the internet is not confirmed yet</string>
+    <string name="internet_no_access">Connected with no internet access</string>
+
+    <!-- Speed test phases -->
+    <string name="speed_idle">Ready</string>
+    <string name="speed_latency">Measuring latency…</string>
+    <string name="speed_download">Measuring download…</string>
+    <string name="speed_upload">Measuring upload…</string>
+    <string name="speed_done">Done</string>
+    <string name="speed_failed">Failed</string>
+    <string name="speed_error_generic">The connection dropped during the test.</string>
+
+    <!-- ARCore availability -->
+    <string name="ar_supported">Supported</string>
+    <string name="ar_needs_install">ARCore needs installing</string>
+    <string name="ar_needs_update">ARCore needs updating</string>
+    <string name="ar_unsupported">Not supported</string>
+    <string name="ar_checking">Checking…</string>
+    <string name="ar_unknown">Unknown</string>
+    <string name="ar_camera_permission_needed">Camera permission is required to check the Depth API</string>
+
+    <!-- Security audit risk levels -->
+    <string name="risk_high">High risk</string>
+    <string name="risk_medium">Worth attention</string>
+    <string name="risk_info">Information</string>
+
+    <!-- Devices on the local network -->
+    <string name="device_this_phone">This phone</string>
+    <string name="device_router">Router</string>
+
+    <!-- Networks -->
+    <string name="ssid_hidden">(name hidden)</string>
+
+    <!-- DNS check -->
+    <string name="dns_untested">Not tested yet.</string>
+    <string name="dns_partial_failure">Some names failed to resolve. This is what makes pages fail to open even when Wi-Fi shows full bars.</string>
+    <string name="dns_slow">DNS works but is slow. Every new site will feel like it hesitates before it starts loading.</string>
+    <string name="dns_ok">DNS is working normally.</string>
+
+    <!-- Purchases -->
+    <string name="billing_unavailable">Google Play purchases are unavailable right now. Check your connection and try again.</string>
+    <string name="billing_not_registered">Remove ads is temporarily unavailable. Please try again later.</string>
+
+    <!-- Sharing the app itself -->
+    <string name="share_app_text">WiFi Heatmap 3D — map your home Wi-Fi signal in 3D.\n%1$s</string>
+    <string name="share_app_chooser">Share the app</string>
+
+    <!-- Shared actions and states -->
+    <string name="action_cancel">Cancel</string>
+    <string name="action_grant_permission">Grant permission</string>
+    <string name="action_back">Back</string>
+    <string name="state_not_connected">Not connected</string>
+    <string name="value_none">—</string>
+    <string name="unit_dbm">%1$d dBm</string>
+    <string name="unit_mbps">%1$d Mbps</string>
+    <string name="unit_ms">%1$d ms</string>
+
+    <!-- Speed test screen -->
+    <string name="speed_title">Speed Test</string>
+    <string name="speed_start">Start Test</string>
+    <string name="speed_download_label">Download</string>
+    <string name="speed_upload_label">Upload</string>
+    <string name="speed_latency_label">Latency</string>
+    <string name="speed_jitter_label">Jitter</string>
+    <string name="speed_unit">Mbps</string>
+    <string name="speed_explainer_title">WHAT THIS MEASURES</string>
+    <string name="speed_explainer_body">This measures the internet speed carried over Wi-Fi, not the speed of the Wi-Fi link itself.\n\nYour Wi-Fi link is running at %1$d Mbps right now. If the download result lands far below that, the cause is your internet plan or your provider\'s network — moving the router will not help.</string>
+    <string name="speed_explainer_server">The test uses the nearest Cloudflare edge, so the number is not distorted by the distance to one far-away server.</string>
+
+    <!-- Network devices screen -->
+    <string name="devices_title">Network Devices</string>
+    <string name="devices_scan">Scan Network</string>
+    <string name="devices_found">%1$d DEVICES FOUND</string>
+    <string name="devices_connection_title">YOUR CONNECTION</string>
+    <string name="devices_ip">IP address</string>
+    <string name="devices_gateway">Gateway (router)</string>
+    <string name="devices_subnet">Subnet</string>
+    <string name="devices_subnet_value">/%1$d · %2$d addresses</string>
+    <string name="devices_dns">DNS</string>
+    <string name="devices_interface">Interface</string>
+    <string name="devices_note">The scan sweeps 254 addresses on this network. Devices set to ignore unknown traffic can stay invisible.</string>
+
+    <!-- Security screen -->
+    <string name="security_title">Security</string>
+    <string name="security_summary_title">SUMMARY</string>
+    <string name="security_checking">Checking…</string>
+    <string name="security_no_scan">No scan results yet</string>
+    <string name="security_high_count">%1$d high-risk findings</string>
+    <string name="security_all_clear">Nothing suspicious</string>
+    <string name="security_attention_count">%1$d things worth attention</string>
+    <string name="security_examined">%1$d networks examined</string>
+    <string name="security_findings_title">FINDINGS AROUND YOU</string>
+    <string name="security_recheck">Check again</string>
+    <string name="security_and_more">and %1$d more</string>
+    <string name="security_note">This check only reads broadcasts already open in the air, plus name lookups this phone makes for itself. No other network is contacted or tested.</string>
+    <string name="security_dns_title">Name resolution (DNS)</string>
+    <string name="security_dns_servers">Servers: %1$s</string>
+    <string name="security_router_title">Router settings</string>
+    <string name="security_router_body">Every suggestion on this page — switching to WPA, turning WPS off, moving channel — is changed in the router\'s own panel, at %1$s.</string>
+    <string name="security_router_open">Open %1$s</string>
+
+    <!-- Signal graph screen -->
+    <string name="graph_title">Signal graph</string>
+    <string name="graph_waiting">Waiting for a scan…</string>
+    <string name="graph_axis_unit">dBm</string>
+    <string name="graph_window">last %1$ds</string>
+    <string name="graph_tracked_title">NETWORKS TRACKED</string>
+    <string name="graph_restart">Restart the graph</string>
+    <string name="graph_connected_suffix">%1$s · connected</string>
+    <string name="graph_line_detail">%1$s · channel %2$d · average %3$d dBm</string>
+    <string name="graph_spread">swings %1$d dB</string>
+    <string name="graph_note">Readings are taken every two seconds from Android\'s scan cache, and a fresh sweep is requested every half minute — the limit the system sets for a foreground app.</string>
+
+    <!-- Networks screen -->
+    <string name="networks_title">Available networks</string>
+    <string name="networks_filter_all">All</string>
+    <string name="networks_filter_open">No password</string>
+    <string name="networks_filter_24">2.4 GHz</string>
+    <string name="networks_filter_5">5 GHz</string>
+    <string name="networks_filter_secured">Secured</string>
+    <string name="networks_search">Search network name</string>
+    <string name="networks_connected_title">CONNECTED TO</string>
+    <string name="networks_stat_signal">Signal</string>
+    <string name="networks_stat_link">Link</string>
+    <string name="networks_stat_estimate">Estimated</string>
+    <string name="networks_empty_no_scan">No scan results yet. Press the button below, and make sure location permission has been granted.</string>
+    <string name="networks_empty_filtered">No network matches this filter.</string>
+    <string name="networks_count">%1$d NETWORKS</string>
+    <string name="networks_rescan">Scan again</string>
+    <string name="networks_scanning">Scanning…</string>
+    <string name="networks_export">Export full report</string>
+    <string name="networks_vendor_line">%1$s · %2$s</string>
+    <string name="networks_band_channel">%1$s · ch%2$d</string>
+    <string name="networks_width">%1$d MHz</string>
+    <string name="networks_distance">About %1$.1f m away · signal %2$d%%</string>
+    <string name="networks_open_unencrypted">Can be joined without a password. The traffic is not encrypted, and many networks like this ask you to sign in on a web page once connected.</string>
+    <string name="networks_open_encrypted">Can be joined without a password, and is still encrypted (OWE).</string>
+    <string name="networks_ranging">Supports 802.11mc distance measurement</string>
+    <string name="networks_report_caption">Wi-Fi network report</string>
+    <string name="networks_report_filename">wifi-network-report.txt</string>
+
+    <!-- Home screen -->
+    <string name="home_tagline">Wi-Fi has a shape</string>
+    <string name="home_settings">Settings</string>
+    <string name="home_wifi_off_title">Wi-Fi is off</string>
+    <string name="home_wifi_off_body">Turn Wi-Fi on to start measuring signal.</string>
+    <string name="home_location_title">Location permission needed</string>
+    <string name="home_location_body">Android requires it to read network names. Your location is not sent anywhere.</string>
+    <string name="home_start_scan">Start 3D Scan</string>
+    <string name="home_stat_band">Band</string>
+    <string name="home_stat_channel">Channel</string>
+    <string name="home_stat_link_speed">Link speed</string>
+    <string name="home_stat_standard">Standard</string>
+    <string name="home_tile_networks">Networks</string>
+    <string name="home_tile_networks_sub">Every Wi-Fi nearby</string>
+    <string name="home_tile_spectrum">Spectrum</string>
+    <string name="home_tile_spectrum_sub">Channels &amp; waves</string>
+    <string name="home_tile_speed">Speed</string>
+    <string name="home_tile_speed_sub">Down, up, ping</string>
+    <string name="home_tile_devices">Devices</string>
+    <string name="home_tile_devices_sub">Who is on this network</string>
+    <string name="home_tile_security">Security</string>
+    <string name="home_tile_security_sub">Audit &amp; DNS</string>
+    <string name="home_tile_graph">Graph</string>
+    <string name="home_tile_graph_sub">Signal over time</string>
+    <string name="home_tile_history">History</string>
+    <string name="home_tile_history_sub">Saved scans</string>
+    <string name="home_tile_compare">Compare</string>
+    <string name="home_tile_compare_sub">Before &amp; after</string>
+
+    <!-- Spectrum / analysis screen -->
+    <string name="analysis_title">Wi-Fi Analysis</string>
+    <string name="analysis_heading">Airwave conditions</string>
+    <string name="analysis_intro">A weak signal is not always about distance. If a neighbour is on the same channel, moving the router will not help.</string>
+    <string name="analysis_band_24_title">2.4 GHZ BAND</string>
+    <string name="analysis_band_24_sub">Longer reach, but the most crowded. Channels overlap — only 1, 6 and 11 are truly separate.</string>
+    <string name="analysis_band_5_title">5 GHZ BAND</string>
+    <string name="analysis_band_5_sub">Faster and far emptier, but blocked by walls more easily.</string>
+    <string name="analysis_band_5_empty">No 5 GHz network detected around here.</string>
+    <string name="analysis_all_networks">ALL NETWORKS (%1$d)</string>
+    <string name="analysis_rescan">Scan networks again</string>
+    <string name="analysis_throttle_note">Android limits scanning to 4 times per 2 minutes, so results can lag behind for a moment.</string>
+    <string name="analysis_survey_title">AREA SURVEY</string>
+    <string name="analysis_survey_networks">Networks</string>
+    <string name="analysis_survey_open">Open</string>
+    <string name="analysis_open_title">JOINABLE WITHOUT A PASSWORD</string>
+    <string name="analysis_open_note">Networks marked \"Open\" send data unencrypted — anyone in range can read it. \"Open, encrypted\" (OWE) stays encrypted even without a password.</string>
+    <string name="analysis_tag_connected">connected</string>
+    <string name="analysis_tag_ranging">supports distance measurement</string>
+    <string name="analysis_channel_crowded">Channel %1$d is shared with other networks. Moving channel in the router settings could help.</string>
+    <string name="analysis_channel_clear">Channel %1$d is relatively clear right now.</string>
+    <string name="analysis_channel_already_best">Channel %1$d is already the clearest on this band.</string>
+    <string name="analysis_channel_suggest">Clearest channel: %1$d.</string>
+    <string name="analysis_legend_yours">your channel</string>
+    <string name="analysis_legend_clearest">clearest</string>
+
+    <!-- Diagnostics screen -->
+    <string name="diag_title">Diagnostics</string>
+    <string name="diag_heading">Device readiness</string>
+    <string name="diag_intro">Everything below is measured on this phone directly, not guessed from the model name.</string>
+    <string name="diag_section_device">DEVICE</string>
+    <string name="diag_model">Model</string>
+    <string name="diag_android">Android</string>
+    <string name="diag_android_value">%1$s (API %2$d)</string>
+    <string name="diag_chipset">Chipset</string>
+    <string name="diag_ram">RAM</string>
+    <string name="diag_ram_value">%1$d MB</string>
+    <string name="diag_section_tracking">3D TRACKING</string>
+    <string name="diag_arcore_support">ARCore support</string>
+    <string name="diag_arcore_version">ARCore version</string>
+    <string name="diag_not_installed">not installed</string>
+    <string name="diag_depth_api">Depth API</string>
+    <string name="diag_supported">Supported</string>
+    <string name="diag_unsupported">Not supported</string>
+    <string name="diag_untested">Not tested yet</string>
+    <string name="diag_gyro">Gyroscope</string>
+    <string name="diag_gyro_present">Present · %1$d Hz</string>
+    <string name="diag_gyro_absent">Absent</string>
+    <string name="diag_camera_level">Camera level</string>
+    <string name="diag_section_radio">WI-FI RADIO</string>
+    <string name="diag_band_5">5 GHz band</string>
+    <string name="diag_band_6">6 GHz band</string>
+    <string name="diag_rtt">Wi-Fi RTT (802.11mc)</string>
+    <string name="diag_no">No</string>
+    <string name="diag_rtt_note">Without Wi-Fi RTT, distance to the router is estimated from signal strength rather than measured directly. The heatmap still works.</string>
+    <string name="diag_grant_camera">Allow camera &amp; retest</string>
+    <string name="diag_rerun">Run again</string>
+    <string name="diag_running">Checking the device…</string>
+    <string name="diag_no_result">No result yet.</string>
+
+    <!-- Security audit findings -->
+    <string name="audit_own_unencrypted_title">Your network is not encrypted</string>
+    <string name="audit_own_unencrypted_body">Anyone in range can read any traffic that is not using HTTPS. Turn on WPA2 or WPA3 in the router settings.</string>
+    <string name="audit_own_wpa_title">Your network uses the old WPA</string>
+    <string name="audit_own_wpa_body">First-generation WPA can be broken. Switch to WPA2 or WPA3 in the router settings — every modern device supports it.</string>
+    <string name="audit_own_wps_title">WPS is on for your network</string>
+    <string name="audit_own_wps_body">The WPS button uses an eight-digit PIN that can be guessed within hours. Turn WPS off in the router settings; the ordinary Wi-Fi password keeps working exactly as before.</string>
+    <string name="audit_own_wpa3_title">Your network uses WPA3</string>
+    <string name="audit_own_wpa3_body">This is the strongest standard available today. Nothing needs changing.</string>
+    <string name="audit_own_secured_title">Your network is encrypted (%1$s)</string>
+    <string name="audit_own_secured_body">The Wi-Fi password keeps traffic away from anyone outside the network. If the router supports WPA3, using it is better still.</string>
+    <string name="audit_open_title">%1$d open networks with no encryption</string>
+    <string name="audit_open_body">Anyone can join a network like this, and the traffic inside it is readable by every other device that joins. Avoid banking or entering passwords there.</string>
+    <string name="audit_wep_title">%1$d networks still use WEP</string>
+    <string name="audit_wep_body">WEP has been broken since 2001 and can now be opened in minutes with free tools. In practice it is equivalent to an open network.</string>
+    <string name="audit_wps_title">%1$d networks have WPS enabled</string>
+    <string name="audit_wps_body">A WPS PIN is only eight digits and is checked in two separate halves, so it can be guessed far faster than an ordinary Wi-Fi password.</string>
+    <string name="audit_twin_title">Duplicate network names with different protection</string>
+    <string name="audit_twin_body">Two transmitters share a name but differ in how they are protected. This happens when an old router was never switched off, but it is also the pattern a rogue access point uses to lure devices into connecting. Make sure you recognise both.</string>
+    <string name="audit_hidden_title">%1$d networks hide their name</string>
+    <string name="audit_hidden_body">Hiding the name adds no security — the transmitter is still visible, and devices that remember it end up broadcasting that name everywhere they go looking for it.</string>
+    <string name="audit_legacy_title">%1$d networks use first-generation WPA</string>
+    <string name="audit_legacy_body">Old WPA uses TKIP, which has practical attacks against it. WPA2 and above are its replacement.</string>
+
+    <!-- Scan report and narrative -->
+    <string name="report_title">WI-FI NETWORK REPORT</string>
+    <string name="report_connection_title">CURRENT CONNECTION</string>
+    <string name="report_not_connected">"  Not connected to any Wi-Fi network."</string>
+    <string name="report_row_ssid">"  Network name : %1$s"</string>
+    <string name="report_row_bssid">"  BSSID        : %1$s"</string>
+    <string name="report_row_signal">"  Signal       : %1$d dBm (%2$s)"</string>
+    <string name="report_row_band">"  Band/channel : %1$s · channel %2$d"</string>
+    <string name="report_row_speed">"  Link speed   : %1$d Mbps"</string>
+    <string name="report_row_standard">"  Standard     : %1$s"</string>
+    <string name="report_row_internet">"  Internet     : %1$s"</string>
+    <string name="report_unknown">unknown</string>
+    <string name="report_audit_title">SECURITY CHECK</string>
+    <string name="report_audit_empty">"  No scan results to check yet."</string>
+    <string name="report_audit_clean">"  No findings across %1$d nearby networks."</string>
+    <string name="report_finding">"  [%1$s] %2$s"</string>
+    <string name="report_finding_detail">"      %1$s"</string>
+    <string name="report_finding_networks">"      Networks: %1$s"</string>
+    <string name="report_survey_title">NETWORKS DETECTED (%1$d)</string>
+    <string name="report_survey_empty">"  None. Make sure Wi-Fi is on and location permission is granted."</string>
+    <string name="report_ap_name">"  %1$d. %2$s"</string>
+    <string name="report_ap_connected">"  ← connected"</string>
+    <string name="report_ap_bssid">"      BSSID    : %1$s"</string>
+    <string name="report_ap_vendor">"      Made by  : %1$s"</string>
+    <string name="report_ap_signal">"      Signal   : %1$d dBm (%2$d%%, ~%3$.1f m)"</string>
+    <string name="report_ap_band">"      Band     : %1$s · channel %2$d · %3$d MHz"</string>
+    <string name="report_ap_security">"      Security : %1$s%2$s"</string>
+    <string name="report_ap_standard">"      Standard : %1$s"</string>
+    <string name="report_flag_open">no password, no encryption</string>
+    <string name="report_flag_owe">no password, encrypted</string>
+    <string name="report_flag_wps">WPS enabled</string>
+    <string name="report_flag_hidden">name hidden</string>
+    <string name="report_flags">" (%1$s)"</string>
+    <string name="report_footer">Produced by WiFi Heatmap 3D. Every number here is read from Wi-Fi broadcasts already open in the air at the time above.</string>
+    <string name="narrative_title">WI-FI SCAN REPORT</string>
+    <string name="narrative_unknown_network">Unknown network</string>
+    <string name="narrative_summary_title">SUMMARY</string>
+    <string name="narrative_area">Measured %1$.1f m² across %2$d sample points, over %3$s.</string>
+    <string name="narrative_range">Signal strength ranged from %1$d to %2$d dBm.</string>
+    <string name="narrative_verdict_nodata">Not enough data to judge yet.</string>
+    <string name="narrative_verdict_good">The whole measured area has usable signal.</string>
+    <string name="narrative_verdict_mixed">Parts of the area are weak — video calls and streaming can stutter there.</string>
+    <string name="narrative_verdict_bad">There are near-dead areas; the connection is likely to drop there.</string>
+    <string name="narrative_points_title">KEY POINTS</string>
+    <string name="narrative_strongest">• Strongest %1$d dBm%2$s</string>
+    <string name="narrative_weakest">• Weakest %1$d dBm%2$s</string>
+    <string name="narrative_place">, %1$.1f m %2$s of the starting point</string>
+    <string name="narrative_photos_title">LANDMARKS</string>
+    <string name="narrative_photo">• %1$s%2$s</string>
+    <string name="narrative_router_title">ROUTER PLACEMENT</string>
+    <string name="narrative_router_nodata">Not enough data to suggest a router position.</string>
+    <string name="narrative_router_unreliable">The signal spread is too noisy to give an advice worth trusting (model error ±%1$.1f dB). Scan again, walking more slowly and through more rooms.</string>
+    <string name="narrative_router_move">Move the router about %1$.1f m. The weakest area is predicted to gain %2$d dB, from %3$d to %4$d dBm. The calculation uses a path-loss model with n=%5$.1f and error ±%6$.1f dB, and ignores where the walls are — treat it as a starting point, not a certainty.</string>
+    <string name="narrative_router_optimal">The router\'s current position is already close to optimal for the area scanned.</string>
+    <string name="narrative_room_title">THE ROOM</string>
+    <string name="narrative_room_estimated">The room shape is an estimate from the area walked — no wall was detected by the camera during the scan.</string>
+    <string name="narrative_room_measured">%1$d walls detected directly by the camera.</string>
+    <string name="narrative_location_title">LOCATION</string>
+    <string name="narrative_location_body">GPS anchor %1$.6f, %2$.6f (±%3$.0f m). Distances between points inside this report are far more precise than that figure; what is uncertain is where the whole house sits on a world map.</string>
+    <string name="narrative_footer">Measured with WiFi Heatmap 3D.</string>
+    <string name="narrative_duration_ms">%1$d min %2$d s</string>
+    <string name="narrative_duration_s">%1$d s</string>
+    <string name="map_default_title">Wi-Fi scan</string>
+    <string name="map_subtitle">%1$.1f m² · %2$d sample points</string>
+    <string name="map_share_caption">Wi-Fi map %1$s</string>
+
+    <!-- Exported map image -->
+    <string name="map_scale_bar">1 m</string>
+    <string name="map_legend">"S start   +  strongest   -  weakest   R  router suggestion   1..n  photos"</string>
+    <string name="map_path_note">White line = the route walked</string>
+    <string name="map_stats">%1$.1f m² · %2$d sample points · %3$d to %4$d dBm</string>
+    <string name="map_footer">Measured with WiFi Heatmap 3D</string>
+
+    <!-- Settings screen -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_section_appearance">APPEARANCE</string>
+    <string name="settings_mode">Mode</string>
+    <string name="settings_accent">Accent colour</string>
+    <string name="settings_section_device">DEVICE &amp; HELP</string>
+    <string name="settings_diagnostics">Device Diagnostics</string>
+    <string name="settings_diagnostics_sub">ARCore, sensors and radios on this phone</string>
+    <string name="settings_guide">Scanning Guide</string>
+    <string name="settings_guide_sub">How to walk for an accurate result</string>
+    <string name="settings_about">About &amp; Rating</string>
+    <string name="settings_about_sub">Version, privacy, and leave a rating</string>
+    <string name="settings_remove_ads">Remove Ads</string>
+    <string name="settings_remove_ads_priced">One payment of %1$s, forever</string>
+    <string name="settings_remove_ads_sub">One payment, forever</string>
+    <string name="settings_version">%1$s %2$s</string>
+
+    <!-- History screen -->
+    <string name="history_title">History</string>
+    <string name="history_empty">No scan in this period.</string>
+    <string name="history_this_month">THIS MONTH</string>
+    <string name="history_prev_month">Previous month</string>
+    <string name="history_next_month">Next month</string>
+    <string name="history_day_mon">Mon</string>
+    <string name="history_day_tue">Tue</string>
+    <string name="history_day_wed">Wed</string>
+    <string name="history_day_thu">Thu</string>
+    <string name="history_day_fri">Fri</string>
+    <string name="history_day_sat">Sat</string>
+    <string name="history_day_sun">Sun</string>
+    <string name="history_unknown_network">Unknown network</string>
+    <string name="history_scan_detail">%1$s · %2$.1f m² · %3$d points</string>
+    <string name="history_delete">Delete</string>
+
+    <!-- Share sheet -->
+    <string name="share_map_title">Share the map</string>
+    <string name="share_report_title">Share the report</string>
+    <string name="share_map_filename">wifi-heatmap.png</string>
+
+    <!-- Network row -->
+    <string name="row_connected">Connected</string>
+    <string name="row_band_channel">%1$s · channel %2$s</string>
+
+    <!-- Scan mode screen -->
+    <string name="scanmode_title">Scan</string>
+    <string name="scanmode_kicker">YOUR WI-FI CHECK-UP</string>
+    <string name="scanmode_heading">Choose how to scan.</string>
+    <string name="scanmode_intro">We measure signal strength as you walk, then paint it onto a 3D plan of your home.</string>
+    <string name="scanmode_quick">Quick</string>
+    <string name="scanmode_quick_desc">One sample per room. You just stand still and press the button.</string>
+    <string name="scanmode_quick_badge">± 4 minutes</string>
+    <string name="scanmode_precise">Precise</string>
+    <string name="scanmode_precise_desc">Walk slowly around the house holding the phone up. Finds the weak corners inside a room, not just which room is weak.</string>
+    <string name="scanmode_precise_badge">± 8 minutes</string>
+    <string name="scanmode_footnote">This mode uses the camera. Permission is asked when you start.</string>
+    <string name="scanmode_start">Start</string>
+    <string name="scanmode_later">Later</string>
+
+    <!-- Capture -->
+    <string name="capture_photo_label">Point %1$d</string>
+
+    <!-- About screen -->
+    <string name="about_title">About</string>
+    <string name="about_version">Version %1$s</string>
+    <string name="about_pitch">Wi-Fi has a shape — strong in some corners of a home, dead in others, and invisible everywhere.
+
+This app measures its strength as you walk, tracks your position with ARCore, then paints it as a 3D plan complete with the weakest spot and a suggestion for where the router should move.</string>
+    <string name="about_privacy_title">PRIVACY</string>
+    <string name="about_privacy_body">Your surveys, room plans, Wi-Fi readings and landmark photos are saved in app storage. Location permission enables Wi-Fi scanning and can attach a location to your survey; the camera supports AR tracking and optional photos. Google AdMob processes advertising and diagnostic data according to your privacy choices. Google Play processes purchases. Speed tests contact Cloudflare, and network tests contact the selected hosts. Sharing a report or image sends its contents to the destination you choose. Read the privacy policy for details.</string>
+    <string name="about_rate">Leave a Rating</string>
+    <string name="about_rate_sub">Help other people find this app</string>
+    <string name="about_share">Share the App</string>
+    <string name="about_share_sub">Send the Play Store link to a friend</string>
+    <string name="about_credits_title">BUILT WITH</string>
+    <string name="about_credit_arcore">6DoF position tracking and plane detection</string>
+    <string name="about_credit_filament">3D rendering engine</string>
+    <string name="about_credit_compose">the interface</string>
+    <string name="about_credit_font">typography, by Tokotype</string>
+
+    <!-- Compare screen -->
+    <string name="compare_title">Compare</string>
+    <string name="compare_heading">Before &amp; after</string>
+    <string name="compare_intro">Pick two scans to see whether moving the router actually helped the weak areas.</string>
+    <string name="compare_need_two">At least two saved scans are needed. Scan once now, move the router, then scan again.</string>
+    <string name="compare_before">Before</string>
+    <string name="compare_after">After</string>
+    <string name="compare_pick_for">PICK FOR THE %1$s SLOT</string>
+    <string name="compare_before_upper">BEFORE</string>
+    <string name="compare_after_upper">AFTER</string>
+    <string name="compare_row_label">%1$s · %2$s</string>
+    <string name="compare_unpicked">not picked yet</string>
+    <string name="compare_weakest_value">weakest %1$d dBm</string>
+    <string name="compare_result_title">THE RESULT</string>
+    <string name="compare_result_better">The weakest area gained %1$d dB. The move worked.</string>
+    <string name="compare_result_worse">The weakest area actually lost %1$d dB. The previous position was better.</string>
+    <string name="compare_result_same">The weakest area barely changed (%1$s dB). This move made no meaningful difference.</string>
+    <string name="compare_row_weakest">Weakest point</string>
+    <string name="compare_row_mean">Average</string>
+    <string name="compare_row_strongest">Strongest point</string>
+    <string name="compare_mean_note">The average shifted %1$s dB. The number that decides things is still the weakest — an average can rise while a dead corner stays dead.</string>
+    <string name="compare_delta_pair">%1$d → %2$d dBm</string>
+    <string name="compare_spread_title">SIGNAL SPREAD</string>
+    <string name="compare_weak">weak</string>
+    <string name="compare_strong">strong</string>
+    <string name="compare_spread_legend">grey = before · coloured = after</string>
+
+    <!-- Capture screen -->
+    <string name="capture_mode_quick">Quick Mode</string>
+    <string name="capture_mode_precise">Precise Mode</string>
+    <string name="capture_tracking_active">Tracking active</string>
+    <string name="capture_searching">Looking for surfaces…</string>
+    <string name="capture_stat_signal">Signal</string>
+    <string name="capture_stat_points">Sample points</string>
+    <string name="capture_stat_walls">Walls</string>
+    <string name="capture_stat_duration">Duration</string>
+    <string name="capture_hint_jumpy">Walk more slowly and point the camera at textured surfaces — a rug, a shelf, a door frame. Glossy or blank surfaces make tracking slip.</string>
+    <string name="capture_hint_start">Point the camera at the floor and start walking slowly. A point appears every 20 cm you move.</string>
+    <string name="capture_hint_walls">No wall detected yet. Hold the camera on a wall for 2–3 seconds — pick one with a pattern, like a cupboard or a door frame.</string>
+    <string name="capture_range">Weakest %1$d dBm · Strongest %2$d dBm</string>
+    <string name="capture_finish">Finish</string>
+    <string name="capture_take_photo">Take a landmark photo</string>
+    <string name="capture_photo_count">%1$d photos</string>
+    <string name="capture_fail_bad_state">Tracking is confused, try restarting</string>
+    <string name="capture_fail_dark">The room is too dark</string>
+    <string name="capture_fail_motion">Move the phone more slowly</string>
+    <string name="capture_fail_features">Point at a textured surface</string>
+    <string name="capture_fail_camera">Another app is using the camera</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_start">Start</string>
+    <string name="onboarding_next">Next</string>
+    <string name="onboarding_skip">Skip</string>
+    <string name="onboarding_1_title">Wi-Fi has a shape.</string>
+    <string name="onboarding_1_body">Strong in some corners of the house, dead in others, and you cannot see any of it.
+
+This app measures its strength as you walk, then paints it as a 3D plan — complete with the strongest point, the dead spots, and a suggestion for where the router should move.</string>
+    <string name="onboarding_2_title">Two permissions, two reasons.</string>
+    <string name="onboarding_2_body">Location — Android requires it to read Wi-Fi network names and to scan for nearby networks. Not our choice; without it the system refuses to hand over the data.
+
+Camera — used to track your position in the room so every measurement has a coordinate, and to photograph landmarks.
+
+All of it is processed on this phone. Nothing is sent anywhere.</string>
+    <string name="onboarding_perm_location">Location</string>
+    <string name="onboarding_perm_camera">Camera</string>
+    <string name="onboarding_grant_now">Grant permission now</string>
+    <string name="onboarding_perm_granted">%1$s — granted</string>
+    <string name="onboarding_perm_missing">%1$s — not granted yet</string>
+    <string name="onboarding_3_title">What you get.</string>
+    <string name="onboarding_3_body">A 3D plan of the home with a signal heatmap — both the colour and the height of each tile mean signal strength.
+
+A green pillar marks the strongest point, red the weakest, purple the suggested router position. The white ribbon is the route you walked.
+
+Press the camera button while scanning to mark a place — a desk, the kitchen, a bedroom — then name it afterwards.
+
+The result can be exported as an image or a written report.</string>
+    <string name="onboarding_4_title">How to scan well.</string>
+    <string name="onboarding_4_body">**Walk slowly**, at the pace of an unhurried stroll. Fast movement makes tracking lose its place.
+
+**Hold the phone at chest height**, camera facing forward and slightly down.
+
+**Point at a wall now and then** for 2–3 seconds, especially one with a pattern — a cupboard, a poster, a door frame. That is what makes the room shape real rather than an estimated box.
+
+**Cover every room**, including the corners with bad signal. Those are exactly what this is looking for.</string>
+
+    <!-- Scan result (3D room) screen -->
+    <string name="room_title">Scan result</string>
+    <string name="room_recenter">Re-centre</string>
+    <string name="room_building">Building the 3D model…</string>
+    <string name="room_no_scan">No scan yet. Run a session first.</string>
+    <string name="room_photo_subtitle">%1$.1f m %2$s</string>
+    <string name="room_unknown_network">Unknown network</string>
+    <string name="room_summary_line">%1$.1f m² · %2$d points · %3$s to %4$s</string>
+    <string name="room_dbm_suffix">%1$d dBm</string>
+    <string name="room_collapse">Close</string>
+    <string name="room_expand">Detail</string>
+    <string name="room_stat_area">Measured area</string>
+    <string name="room_stat_area_value">%1$.1f m²</string>
+    <string name="room_stat_points">Sample points</string>
+    <string name="room_stat_walls">Walls</string>
+    <string name="room_stat_walls_estimated">Walls (est.)</string>
+    <string name="room_place_strongest">Strongest point</string>
+    <string name="room_place_weakest">Weakest point</string>
+    <string name="room_walls_estimated_note">ARCore found no real wall — this boundary is drawn from the area you walked. Point the camera at walls while scanning to get the true shape.</string>
+    <string name="room_height_note">Tile height = signal strength. The white ribbon is the route you walked, and the purple needle points north.</string>
+    <string name="room_export_image">Export image</string>
+    <string name="room_export_report">Share report</string>
+    <string name="room_rescan">Scan again</string>
+    <string name="room_save">Save</string>
+    <string name="room_landmark_title">Landmark</string>
+    <string name="room_landmark_name">Place name</string>
+    <string name="room_landmark_hint">e.g. desk, kitchen, front bedroom</string>
+    <string name="room_bearing">%1$.1f m %2$s of the starting point</string>
+    <string name="room_legend_title">WHAT THE SYMBOLS MEAN</string>
+    <string name="room_legend_green">Green pillar</string>
+    <string name="room_legend_green_meaning">the strongest signal point</string>
+    <string name="room_legend_red">Red pillar</string>
+    <string name="room_legend_red_meaning">the weakest signal point</string>
+    <string name="room_legend_lilac">Pale purple pillar</string>
+    <string name="room_legend_lilac_meaning">the router\'s estimated position now</string>
+    <string name="room_legend_violet">Tall purple pillar</string>
+    <string name="room_legend_violet_meaning">a better suggested router position</string>
+    <string name="room_legend_blue">Blue pillar</string>
+    <string name="room_legend_blue_meaning">a landmark photo you took</string>
+    <string name="room_legend_ribbon">White ribbon</string>
+    <string name="room_legend_ribbon_meaning">the route you walked</string>
+    <string name="room_legend_pin">Short white pin</string>
+    <string name="room_legend_pin_meaning">where the scan started</string>
+    <string name="room_legend_needle">Long needle</string>
+    <string name="room_legend_needle_meaning">which way is north</string>
+    <string name="room_legend_slab">Grey slab</string>
+    <string name="room_legend_slab_meaning">a detected wall</string>
+    <string name="room_legend_colour_note">Tile colour means signal strength, and so does its height. Red is weak, green is strong.</string>
+    <string name="room_legend_entry">%1$s — %2$s</string>
+    <string name="room_chip_strongest">strongest</string>
+    <string name="room_chip_weakest">weakest</string>
+    <string name="room_chip_router_now">router now</string>
+    <string name="room_chip_router_move">suggested move</string>
+    <string name="room_chip_photo">photo</string>
+    <string name="room_gesture_hint_photo">Drag to rotate, pinch to zoom. Tap a blue pillar for the photo.</string>
+    <string name="room_gesture_hint">Drag to rotate, pinch to zoom.</string>
+    <string name="room_place_no_bearing">%1$s: direction unavailable (no compass reading)</string>
+    <string name="room_place_with_bearing">%1$s: %2$.1f m %3$s of the starting point</string>
+    <string name="room_no_gps">GPS coordinates unavailable — there was no satellite signal during the scan. The distances and directions above are still accurate.</string>
+    <string name="room_coords_title">COORDINATES</string>
+    <string name="room_coords_strongest">Strongest point: %1$s</string>
+    <string name="room_coords_router">Suggested router: %1$s</string>
+    <string name="room_gps_accuracy">The GPS anchor is off by ±%1$.0f m. Shapes and distances between points stay precise; what can shift is the position of the whole house on a map, as one piece.</string>
+    <string name="room_router_nodata">Not enough data to suggest a router position.</string>
+    <string name="room_router_unreliable">The signal spread is too noisy to suggest a router position with any confidence. Scan more rooms, walking more slowly.</string>
+    <string name="room_router_move">Move the router %1$.1f m to the purple pillar — the weakest area is predicted to gain %2$d dB.</string>
+    <string name="room_router_optimal">Your router position is already close to optimal.</string>
+    <string name="room_router_title">ROUTER PLACEMENT</string>
+    <string name="room_router_prediction">Weakest area estimate: %1$d dBm now, %2$d dBm after the move.</string>
+    <string name="room_router_model">Path-loss model n=%1$.1f, error ±%2$.1f dB. This calculation ignores where the walls are — treat it as a starting point, not a certainty.</string>
+
+    <!-- Spectrum chart legend -->
+    <string name="spectrum_legend_row">ch%1$d · %2$d MHz · %3$d dBm</string>
+
+    <!-- Language picker -->
+    <string name="language_title">Language</string>
+    <string name="language_system">Phone</string>
+    <string name="language_english">English</string>
+    <string name="language_indonesian">Indonesian</string>
+
+    <!-- Theme and accent names -->
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="theme_system">Follow phone</string>
+    <string name="accent_violet">Violet</string>
+    <string name="accent_ocean">Ocean</string>
+    <string name="accent_teal">Teal</string>
+    <string name="accent_ember">Ember</string>
+    <string name="accent_rose">Rose</string>
+
+    <!-- Connection details screen -->
+    <string name="details_title">Connection details</string>
+    <string name="details_refresh">Read again</string>
+    <string name="details_reading">Reading…</string>
+    <string name="details_network_title">NETWORK</string>
+    <string name="details_addressing_title">ADDRESSING</string>
+    <string name="details_adapter_title">THIS PHONE\'S WI-FI RADIO</string>
+    <string name="details_adapter_note">Each answer comes from the radio driver itself, not from the model name.</string>
+    <string name="details_ssid">Network name</string>
+    <string name="details_bssid">BSSID</string>
+    <string name="details_vendor">Router made by</string>
+    <string name="details_signal">Signal strength</string>
+    <string name="details_quality">Quality</string>
+    <string name="details_frequency">Frequency</string>
+    <string name="details_band">Band</string>
+    <string name="details_channel">Channel</string>
+    <string name="details_width">Channel width</string>
+    <string name="details_security">Security</string>
+    <string name="details_standard">Standard</string>
+    <string name="details_tx">Transmit rate</string>
+    <string name="details_rx">Receive rate</string>
+    <string name="details_max_tx">Max transmit rate</string>
+    <string name="details_max_rx">Max receive rate</string>
+    <string name="details_internet">Internet</string>
+    <string name="details_subnet_mask">Subnet mask</string>
+    <string name="details_prefix">Prefix</string>
+    <string name="details_dns1">DNS 1</string>
+    <string name="details_dns2">DNS 2</string>
+    <string name="details_dhcp_server">DHCP server</string>
+    <string name="details_lease">DHCP lease</string>
+    <string name="details_lease_value">%1$d h %2$d min</string>
+    <string name="details_interface">Interface</string>
+    <string name="details_domain">Domain</string>
+    <string name="details_yes">Yes</string>
+    <string name="details_no">No</string>
+    <string name="details_cannot_ask">Cannot ask</string>
+
+    <!-- Ping screen -->
+    <string name="ping_title">Ping</string>
+    <string name="ping_host_label">Host or IP address</string>
+    <string name="ping_host_hint">e.g. 192.168.1.1</string>
+    <string name="ping_count_label">HOW MANY</string>
+    <string name="ping_count_value">%1$d×</string>
+    <string name="ping_start">Start</string>
+    <string name="ping_suggest_router">Router</string>
+    <string name="ping_suggest_dns">1.1.1.1</string>
+    <string name="ping_suggest_site">google.com</string>
+    <string name="ping_resolved">%1$s → %2$s</string>
+    <string name="ping_stat_best">Best</string>
+    <string name="ping_stat_average">Average</string>
+    <string name="ping_stat_worst">Worst</string>
+    <string name="ping_stat_deviation">Deviation</string>
+    <string name="ping_stat_sent">Replied</string>
+    <string name="ping_sent_value">%1$d / %2$d</string>
+    <string name="ping_stat_loss">Loss</string>
+    <string name="ping_loss_value">%1$d%%</string>
+    <string name="ping_error_unresolved">Could not resolve %1$s. Check the spelling, or use an IP address.</string>
+    <string name="ping_error_empty">Enter a host or an IP address first.</string>
+    <string name="ping_note">ICMP echo is tried first, which is the round trip a network engineer means. Some hosts and mobile networks drop it, and a TCP connection stands in — that figure includes the handshake, so it reads a little higher.</string>
+
+    <!-- Entry points -->
+    <string name="networks_open_details">Full connection details</string>
+    <string name="devices_open_ping">Ping a host</string>
+
+    <!-- Radio capabilities -->
+    <string name="cap_24">2.4 GHz</string>
+    <string name="cap_5">5 GHz</string>
+    <string name="cap_6">6 GHz (Wi-Fi 6E)</string>
+    <string name="cap_60">60 GHz (802.11ad)</string>
+    <string name="cap_wifi4">Wi-Fi 4 (802.11n)</string>
+    <string name="cap_wifi5">Wi-Fi 5 (802.11ac)</string>
+    <string name="cap_wifi6">Wi-Fi 6 (802.11ax)</string>
+    <string name="cap_wifi7">Wi-Fi 7 (802.11be)</string>
+    <string name="cap_wpa3_sae">WPA3 Personal (SAE)</string>
+    <string name="cap_wpa3_suiteb">WPA3 Enterprise (Suite-B)</string>
+    <string name="cap_owe">Enhanced Open (OWE)</string>
+    <string name="cap_dpp">Easy Connect (DPP)</string>
+    <string name="cap_rtt">Wi-Fi RTT distance ranging</string>
+    <string name="cap_aware">Wi-Fi Aware</string>
+    <string name="cap_direct">Wi-Fi Direct</string>
+    <string name="cap_passpoint">Passpoint (Hotspot 2.0)</string>
+    <string name="cap_tdls">TDLS (device to device)</string>
+    <string name="cap_sta_ap">Wi-Fi and hotspot at once</string>
+    <string name="cap_dual_sta">Two networks at once</string>
+    <string name="cap_scan_throttle">Scan throttling on</string>
+
+    <!-- Compass points -->
+    <string name="compass_n">north</string>
+    <string name="compass_ne">north-east</string>
+    <string name="compass_e">east</string>
+    <string name="compass_se">south-east</string>
+    <string name="compass_s">south</string>
+    <string name="compass_sw">south-west</string>
+    <string name="compass_w">west</string>
+    <string name="compass_nw">north-west</string>
+
+    <!-- Result panel states -->
+    <string name="room_minimize">Hide</string>
+    <string name="room_show_panel">Show details</string>
+
+    <!-- Network detail sheet -->
+    <string name="sheet_section_radio">RADIO</string>
+    <string name="sheet_section_signal">SIGNAL</string>
+    <string name="sheet_section_security">SECURITY</string>
+    <string name="sheet_frequency">%1$d MHz</string>
+    <string name="sheet_span">Occupies</string>
+    <string name="sheet_span_value">%1$d – %2$d MHz</string>
+    <string name="sheet_standard_unknown">not advertised</string>
+    <string name="sheet_strength_percent">Strength</string>
+    <string name="sheet_percent">%1$d%%</string>
+    <string name="sheet_distance">Rough distance</string>
+    <string name="sheet_distance_value">%1$.1f m</string>
+    <string name="sheet_distance_note">Distance is inferred from signal strength with generic constants, not measured. A wall alone can double it.</string>
+    <string name="sheet_password_needed">Password needed</string>
+    <string name="sheet_encrypted">Traffic encrypted</string>
+    <string name="sheet_wps">WPS enabled</string>
+    <string name="sheet_hidden">Name hidden</string>
+    <string name="sheet_ranging">802.11mc ranging</string>
+    <string name="sheet_join">Join this network</string>
+    <string name="sheet_open_picker">Open Wi-Fi settings</string>
+    <string name="sheet_join_note">Android asks you to confirm before saving it. The phone then connects for real, not just inside this app.</string>
+    <string name="sheet_picker_note">This one needs a password, so it is joined in the system Wi-Fi picker. An app is not allowed to connect a phone on its own.</string>
+    <string name="sheet_connected">You are connected to this network</string>
+    <string name="sheet_close">Close</string>
+    <string name="networks_tap_hint">Tap a network for full detail</string>
+
+    <!-- Spectrum depth -->
+    <string name="analysis_verdict_title">YOUR CHANNEL</string>
+    <string name="analysis_verdict_channel">Channel %1$d · %2$s</string>
+    <string name="analysis_co_channel">Sharing your channel</string>
+    <string name="analysis_adjacent">Bleeding into it</string>
+    <string name="analysis_strongest_rival">Loudest neighbour</string>
+    <string name="analysis_co_note">Networks on your exact channel take turns with you — the link stays clean but shares the airtime, so everything slows down together.</string>
+    <string name="analysis_adjacent_note">Networks that only overlap never coordinate with you. That shows up as retries and jitter rather than lower speed, and it is the worse of the two even when the number is smaller.</string>
+    <string name="analysis_clear_note">Nothing else is on or near your channel right now.</string>
+    <string name="analysis_occupancy_title">CHANNEL OCCUPANCY</string>
+    <string name="analysis_occupancy_row">Ch %1$d</string>
+    <string name="analysis_occupancy_counts">%1$d on · %2$d overlapping</string>
+    <string name="analysis_quietest_title">QUIETEST CHANNELS HERE</string>
+    <string name="analysis_quietest_row">Channel %1$d</string>
+    <string name="analysis_quietest_empty">Nothing on this band to rank.</string>
+    <string name="analysis_bands_title">BAND COMPARISON</string>
+    <string name="analysis_band_count">%1$d networks</string>
+    <string name="analysis_band_advice_5">5 GHz is the emptier band here. It carries less far and is stopped by walls more easily, but where it reaches it will be the faster of the two.</string>
+    <string name="analysis_band_advice_24">2.4 GHz is the emptier band here, which is unusual. It also reaches further, so on this spot it is the better choice.</string>
+    <string name="analysis_band_advice_none">Only one band is in use around here.</string>
+
+    <!-- Per-network security grading -->
+    <string name="grade_a_label">Strong</string>
+    <string name="grade_b_label">Adequate</string>
+    <string name="grade_c_label">Dated</string>
+    <string name="grade_f_label">Exposed</string>
+    <string name="grade_a_why">WPA3, the current standard</string>
+    <string name="grade_b_why">WPA2, still sound today</string>
+    <string name="grade_b_wps_why">WPA2, but WPS is on</string>
+    <string name="grade_c_why">First-generation WPA</string>
+    <string name="grade_f_wep_why">WEP, broken since 2001</string>
+    <string name="grade_f_open_why">No encryption at all</string>
+    <string name="grade_owe_why">Open but encrypted (OWE)</string>
+    <string name="grade_enterprise_why">Enterprise (802.1X)</string>
+    <string name="grade_unknown_why">Could not be read</string>
+
+    <!-- Security screen depth -->
+    <string name="security_mix_title">ENCRYPTION AROUND YOU</string>
+    <string name="security_mix_count">%1$d</string>
+    <string name="security_graded_title">EVERY NETWORK, GRADED</string>
+    <string name="security_graded_note">Graded on what each beacon advertises. That says nothing about how strong the password is, how old the firmware is, or who already has the key.</string>
+
+    <!-- Capture wall coaching -->
+    <string name="capture_hint_walls_v2">No wall found yet. Stop about 1.5 m from one, keep the camera on it, and step slowly left and right for a few seconds — that sideways movement is what lets a wall be measured.</string>
+
+    <!-- Capture coverage tile -->
+    <string name="capture_stat_area">Area</string>
+    <string name="capture_area_value">%1$.1f m²</string>
+
+    <!-- Result panel, trimmed -->
+    <string name="room_summary_signal">%1$d sample points · %2$d to %3$d dBm</string>
+    <string name="room_summary_signal_empty">%1$d sample points</string>
+
+    <!-- History rows, trimmed -->
+    <string name="history_scan_detail_v2">%1$s · %2$d points</string>
+
+    <!-- Capability audit -->
+    <string name="audit_section_title">WHAT YOU ARE NOT USING</string>
+    <string name="audit_all_good">This connection is using everything both sides support.</string>
+    <string name="audit_band_title">You are on the slower band</string>
+    <string name="audit_band_detail">The same network is also broadcasting on 5 GHz at %1$d dBm, while you are on 2.4 GHz at %2$d dBm. Phones often join the slower band once from far away and never move back. Forgetting and rejoining the network usually fixes it.</string>
+    <string name="audit_width_title">Narrow channel width</string>
+    <string name="audit_width_detail">The link is using %1$d MHz. On 5 GHz a router will normally offer 80 MHz, which carries roughly four times as much. The setting is in the router\'s own panel, usually called channel width or bandwidth.</string>
+    <string name="audit_standard_title">Your phone is newer than your router</string>
+    <string name="audit_standard_detail">This phone speaks %1$s; the router is offering %2$s. Nothing is broken — it simply means a newer router would be faster for you, and an older one would not.</string>
+    <string name="audit_wpa3_title">WPA3 available but unused</string>
+    <string name="audit_wpa3_detail">This phone supports WPA3, the current standard. Switching the router to WPA2/WPA3 mixed mode costs nothing and protects this connection better.</string>
+    <string name="audit_rate_title">Link running well below its ceiling</string>
+    <string name="audit_rate_detail">Negotiated at %1$d Mbps against a ceiling of %2$d Mbps. Distance, a busy channel and interference all cause this — the 3D map is what tells them apart.</string>
+
+    <!-- Coverage and roaming screen -->
+    <string name="coverage_title">Transmitters</string>
+    <string name="coverage_empty">No scan has recorded neighbouring transmitters yet. Run a 3D scan and this fills in from the same walk.</string>
+    <string name="coverage_transmitters_title">SEEN DURING THE WALK</string>
+    <string name="coverage_samples">%1$d readings</string>
+    <string name="coverage_roaming_title">HANDOVERS</string>
+    <string name="coverage_roam_line">Left at %1$d dBm, joined at %2$d dBm</string>
+    <string name="coverage_roam_late">Held on too long. A stronger radio was already available well before the phone moved — this is what makes a room feel dead even with a node in it.</string>
+    <string name="coverage_roam_fine">Moved at a sensible point.</string>
+    <string name="coverage_no_roam">Several transmitters were in range but the phone never switched between them during this walk. That is normal on a short scan.</string>
+    <string name="coverage_sampling_note">Android lets an app ask for a fresh scan four times per two minutes, so each transmitter is caught at a handful of places along the walk rather than continuously.</string>
+    <string name="home_tile_coverage">Transmitters</string>
+    <string name="home_tile_coverage_sub">Mesh &amp; handover</string>
+
+    <!-- Speed survey during scan -->
+    <string name="scanmode_measure_speed">Also measure real speed</string>
+    <string name="scanmode_measure_speed_note">Runs a short download every few seconds while you walk, so the map can show what each room can actually carry — not just how loud the radio is there. Costs a few megabytes of data.</string>
+    <string name="capture_stat_speed">Speed</string>
+    <string name="capture_speed_value">%1$.0f Mbps</string>
+    <string name="room_speed_title">REAL SPEED MEASURED</string>
+    <string name="room_speed_summary">%1$.0f Mbps slowest · %2$.0f average · %3$.0f fastest</string>
+    <string name="room_speed_note">Signal strength and speed are not the same thing. A strong reading on a channel three neighbours are sharing can carry less than a weaker one on an empty channel — which is why moving a router on the strength of a dBm map alone so often disappoints.</string>
+    <string name="room_speed_count">%1$d measurements</string>
+    <string name="privacy_policy_subtitle">How scans, permissions, ads and purchases use data</string>
+    <string name="billing_restoring">Checking purchases with Google Play…</string>
+    <string name="privacy_options_failed">Privacy choices could not be loaded. Please try again.</string>
+    <string name="billing_pending">Payment pending. Ads will be removed when Google Play confirms payment.</string>
+    <string name="billing_restore_subtitle">Check your Google Play account for an earlier purchase</string>
+    <string name="privacy_options">Ad privacy choices</string>
+    <string name="billing_removed">Ads removed</string>
+    <string name="billing_restore">Restore purchase</string>
+    <string name="privacy_policy">Privacy policy</string>
+    <string name="billing_purchase_failed">Purchase could not be started. Check Google Play and try again.</string>
+    <string name="billing_cancelled">Purchase cancelled. You have not been charged.</string>
+    <string name="billing_acknowledgment_retry">Ads are removed. We are retrying purchase confirmation with Google Play.</string>
+    <string name="billing_restored">Purchase restored. Ads are removed.</string>
+    <string name="privacy_options_subtitle">Review or change your advertising privacy choices</string>
+    <string name="billing_nothing_to_restore">No completed remove-ads purchase was found for this Google Play account.</string>
+    <string name="billing_check_price">Check price and availability on Google Play</string>
+    <string name="arcore_privacy_notice">AR scanning uses Google Play Services for AR (ARCore), provided by Google. Google processes service data under its Privacy Policy. Tap to read.</string>
+</resources>

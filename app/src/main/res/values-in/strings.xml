@@ -1,0 +1,848 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Indonesian. Android resolves the legacy locale code "in", not "id".
+
+  Brand names, protocol names, symbols, and units retain their standard spelling.
+-->
+<resources>
+    <!-- Signal quality buckets -->
+    <string name="quality_excellent">Sangat kuat</string>
+    <string name="quality_good">Kuat</string>
+    <string name="quality_fair">Cukup</string>
+    <string name="quality_weak">Lemah</string>
+    <string name="quality_dead">Nyaris mati</string>
+
+    <!-- Security types -->
+    <string name="security_open">Terbuka</string>
+    <string name="security_owe">Terbuka terenkripsi</string>
+    <string name="security_wep">WEP</string>
+    <string name="security_wpa">WPA</string>
+    <string name="security_wpa2">WPA2</string>
+    <string name="security_wpa3">WPA3</string>
+    <string name="security_enterprise">Enterprise</string>
+    <string name="security_unknown">—</string>
+
+    <!-- Connection verdict -->
+    <string name="internet_needs_signin">Terhubung, tapi perlu login di halaman web dulu</string>
+    <string name="internet_validated">Terhubung dan internet berfungsi</string>
+    <string name="internet_unconfirmed">Terhubung, tapi internet belum terkonfirmasi</string>
+    <string name="internet_no_access">Terhubung tanpa akses internet</string>
+
+    <!-- Speed test phases -->
+    <string name="speed_idle">Siap</string>
+    <string name="speed_latency">Mengukur latensi…</string>
+    <string name="speed_download">Mengukur unduh…</string>
+    <string name="speed_upload">Mengukur unggah…</string>
+    <string name="speed_done">Selesai</string>
+    <string name="speed_failed">Gagal</string>
+    <string name="speed_error_generic">Koneksi terputus saat pengujian.</string>
+
+    <!-- ARCore availability -->
+    <string name="ar_supported">Didukung</string>
+    <string name="ar_needs_install">Perlu instal ARCore</string>
+    <string name="ar_needs_update">Perlu update ARCore</string>
+    <string name="ar_unsupported">Tidak didukung</string>
+    <string name="ar_checking">Memeriksa…</string>
+    <string name="ar_unknown">Tidak diketahui</string>
+    <string name="ar_camera_permission_needed">Izin kamera diperlukan untuk memeriksa Depth API</string>
+
+    <!-- Security audit risk levels -->
+    <string name="risk_high">Risiko tinggi</string>
+    <string name="risk_medium">Perlu perhatian</string>
+    <string name="risk_info">Informasi</string>
+
+    <!-- Devices on the local network -->
+    <string name="device_this_phone">Ponsel ini</string>
+    <string name="device_router">Router</string>
+
+    <!-- Networks -->
+    <string name="ssid_hidden">(nama disembunyikan)</string>
+
+    <!-- DNS check -->
+    <string name="dns_untested">Belum diuji.</string>
+    <string name="dns_partial_failure">Sebagian nama gagal diterjemahkan. Ini yang membuat halaman gagal dibuka meski sinyal Wi-Fi penuh.</string>
+    <string name="dns_slow">DNS berfungsi tapi lambat. Setiap situs baru akan terasa tertahan sesaat sebelum mulai memuat.</string>
+    <string name="dns_ok">DNS berfungsi normal.</string>
+
+    <!-- Purchases -->
+    <string name="billing_unavailable">Pembelian Google Play belum tersedia. Periksa koneksi lalu coba lagi.</string>
+    <string name="billing_not_registered">Pembelian bebas iklan sementara belum tersedia. Silakan coba lagi nanti.</string>
+
+    <!-- Sharing the app itself -->
+    <string name="share_app_text">WiFi Heatmap 3D — memetakan kekuatan Wi-Fi rumah dalam 3D.\n%1$s</string>
+    <string name="share_app_chooser">Bagikan aplikasi</string>
+
+    <!-- Shared actions and states -->
+    <string name="action_cancel">Batalkan</string>
+    <string name="action_grant_permission">Berikan izin</string>
+    <string name="action_back">Kembali</string>
+    <string name="state_not_connected">Tidak terhubung</string>
+
+    <!-- Speed test screen -->
+    <string name="speed_title">Tes Kecepatan</string>
+    <string name="speed_start">Mulai Tes</string>
+    <string name="speed_download_label">Unduh</string>
+    <string name="speed_upload_label">Unggah</string>
+    <string name="speed_latency_label">Latensi</string>
+    <string name="speed_explainer_title">APA YANG DIUKUR</string>
+    <string name="speed_explainer_body">Ini mengukur kecepatan internet yang dilewatkan Wi-Fi, bukan kecepatan Wi-Fi itu sendiri.\n\nKecepatan tautan Wi-Fi Anda saat ini %1$d Mbps. Kalau hasil unduh jauh di bawah itu, penyebabnya ada di langganan internet atau jaringan penyedia — memindahkan router tidak akan menolong.</string>
+    <string name="speed_explainer_server">Pengujian memakai server Cloudflare terdekat, jadi angkanya tidak terdistorsi jarak ke satu server jauh.</string>
+
+    <!-- Network devices screen -->
+    <string name="devices_title">Perangkat Jaringan</string>
+    <string name="devices_scan">Pindai Jaringan</string>
+    <string name="devices_found">%1$d PERANGKAT DITEMUKAN</string>
+    <string name="devices_connection_title">KONEKSI ANDA</string>
+    <string name="devices_ip">Alamat IP</string>
+    <string name="devices_subnet_value">/%1$d · %2$d alamat</string>
+    <string name="devices_interface">Antarmuka</string>
+    <string name="devices_note">Pemindaian menyapu 254 alamat di jaringan ini. Perangkat yang diatur mengabaikan lalu lintas tak dikenal bisa tidak terdeteksi.</string>
+
+    <!-- Security screen -->
+    <string name="security_title">Keamanan</string>
+    <string name="security_summary_title">RINGKASAN</string>
+    <string name="security_checking">Memeriksa…</string>
+    <string name="security_no_scan">Belum ada hasil pemindaian</string>
+    <string name="security_high_count">%1$d hal berisiko tinggi</string>
+    <string name="security_all_clear">Tidak ada yang mencurigakan</string>
+    <string name="security_attention_count">%1$d hal perlu diperhatikan</string>
+    <string name="security_examined">%1$d jaringan diperiksa</string>
+    <string name="security_findings_title">TEMUAN DI SEKITAR ANDA</string>
+    <string name="security_recheck">Periksa ulang</string>
+    <string name="security_and_more">dan %1$d lainnya</string>
+    <string name="security_note">Pemeriksaan ini hanya membaca siaran yang sudah terbuka di udara dan pencarian nama yang dilakukan ponsel ini sendiri. Tidak ada jaringan lain yang dihubungi atau diuji.</string>
+    <string name="security_dns_title">Penerjemah nama (DNS)</string>
+    <string name="security_dns_servers">Server: %1$s</string>
+    <string name="security_router_title">Pengaturan router</string>
+    <string name="security_router_body">Semua saran di halaman ini — mengganti WPA, mematikan WPS, memindah kanal — diubah di panel router itu sendiri, di %1$s.</string>
+    <string name="security_router_open">Buka %1$s</string>
+
+    <!-- Signal graph screen -->
+    <string name="graph_title">Grafik sinyal</string>
+    <string name="graph_waiting">Menunggu pemindaian…</string>
+    <string name="graph_window">%1$ds terakhir</string>
+    <string name="graph_tracked_title">JARINGAN TERPANTAU</string>
+    <string name="graph_restart">Mulai ulang grafik</string>
+    <string name="graph_connected_suffix">%1$s · tersambung</string>
+    <string name="graph_line_detail">%1$s · kanal %2$d · rata-rata %3$d dBm</string>
+    <string name="graph_spread">naik-turun %1$d dB</string>
+    <string name="graph_note">Pembacaan diambil tiap dua detik dari cache pemindaian Android, dan sapuan baru diminta tiap setengah menit — batas yang ditetapkan sistem untuk aplikasi di latar depan.</string>
+
+    <!-- Networks screen -->
+    <string name="networks_title">Jaringan tersedia</string>
+    <string name="networks_filter_all">Semua</string>
+    <string name="networks_filter_open">Tanpa password</string>
+    <string name="networks_filter_secured">Terkunci</string>
+    <string name="networks_search">Cari nama jaringan</string>
+    <string name="networks_connected_title">TERHUBUNG KE</string>
+    <string name="networks_stat_signal">Sinyal</string>
+    <string name="networks_stat_link">Tautan</string>
+    <string name="networks_stat_estimate">Perkiraan</string>
+    <string name="networks_empty_no_scan">Belum ada hasil pemindaian. Tekan tombol di bawah, dan pastikan izin lokasi sudah diberikan.</string>
+    <string name="networks_empty_filtered">Tidak ada jaringan yang cocok dengan filter ini.</string>
+    <string name="networks_count">%1$d JARINGAN</string>
+    <string name="networks_rescan">Pindai ulang</string>
+    <string name="networks_scanning">Memindai…</string>
+    <string name="networks_export">Ekspor laporan lengkap</string>
+    <string name="networks_band_channel">%1$s · k%2$d</string>
+    <string name="networks_distance">Kira-kira %1$.1f m dari sini · sinyal %2$d%%</string>
+    <string name="networks_open_unencrypted">Bisa langsung dipakai tanpa password. Datanya tidak dienkripsi, dan banyak jaringan seperti ini meminta login di halaman web setelah tersambung.</string>
+    <string name="networks_open_encrypted">Bisa langsung dipakai tanpa password, dan tetap terenkripsi (OWE).</string>
+    <string name="networks_ranging">Mendukung pengukuran jarak 802.11mc</string>
+    <string name="networks_report_caption">Laporan jaringan Wi-Fi</string>
+
+    <!-- Home screen -->
+    <string name="home_tagline">Wi-Fi punya bentuk</string>
+    <string name="home_settings">Pengaturan</string>
+    <string name="home_wifi_off_title">Wi-Fi mati</string>
+    <string name="home_wifi_off_body">Nyalakan Wi-Fi untuk mulai mengukur sinyal.</string>
+    <string name="home_location_title">Izin lokasi diperlukan</string>
+    <string name="home_location_body">Android mewajibkannya untuk membaca nama jaringan. Lokasi Anda tidak dikirim ke mana pun.</string>
+    <string name="home_start_scan">Mulai Pemindaian 3D</string>
+    <string name="home_stat_band">Pita</string>
+    <string name="home_stat_channel">Kanal</string>
+    <string name="home_stat_link_speed">Kecepatan tautan</string>
+    <string name="home_stat_standard">Standar</string>
+    <string name="home_tile_networks">Jaringan</string>
+    <string name="home_tile_networks_sub">Semua Wi-Fi sekitar</string>
+    <string name="home_tile_spectrum">Spektrum</string>
+    <string name="home_tile_spectrum_sub">Kanal &amp; gelombang</string>
+    <string name="home_tile_speed">Kecepatan</string>
+    <string name="home_tile_speed_sub">Unduh, unggah, ping</string>
+    <string name="home_tile_devices">Perangkat</string>
+    <string name="home_tile_devices_sub">Siapa di jaringan ini</string>
+    <string name="home_tile_security">Keamanan</string>
+    <string name="home_tile_graph">Grafik</string>
+    <string name="home_tile_graph_sub">Sinyal per waktu</string>
+    <string name="home_tile_history">Riwayat</string>
+    <string name="home_tile_history_sub">Scan tersimpan</string>
+    <string name="home_tile_compare">Bandingkan</string>
+    <string name="home_tile_compare_sub">Sebelum &amp; sesudah</string>
+
+    <!-- Spectrum / analysis screen -->
+    <string name="analysis_title">Analisa Wi-Fi</string>
+    <string name="analysis_heading">Kondisi gelombang</string>
+    <string name="analysis_intro">Sinyal lemah belum tentu soal jarak. Kalau tetangga memakai kanal yang sama, memindahkan router tidak akan menolong.</string>
+    <string name="analysis_band_24_title">PITA 2,4 GHZ</string>
+    <string name="analysis_band_24_sub">Jangkauan jauh, tapi paling padat. Kanal saling bertumpuk — hanya 1, 6, dan 11 yang benar-benar terpisah.</string>
+    <string name="analysis_band_5_title">PITA 5 GHZ</string>
+    <string name="analysis_band_5_sub">Lebih cepat dan jauh lebih lengang, tapi lebih mudah terhalang tembok.</string>
+    <string name="analysis_band_5_empty">Tidak ada jaringan 5 GHz terdeteksi di sekitar sini.</string>
+    <string name="analysis_all_networks">SEMUA JARINGAN (%1$d)</string>
+    <string name="analysis_rescan">Pindai ulang jaringan</string>
+    <string name="analysis_throttle_note">Android membatasi pemindaian 4 kali per 2 menit, jadi hasil bisa tertahan beberapa saat.</string>
+    <string name="analysis_survey_title">SURVEI WILAYAH</string>
+    <string name="analysis_survey_networks">Jaringan</string>
+    <string name="analysis_survey_open">Terbuka</string>
+    <string name="analysis_open_title">BISA DIPAKAI TANPA PASSWORD</string>
+    <string name="analysis_open_note">Jaringan bertanda \"Terbuka\" mengirim data tanpa enkripsi — siapa pun dalam jangkauan bisa membacanya. \"Terbuka terenkripsi\" (OWE) tetap terenkripsi meski tanpa password.</string>
+    <string name="analysis_tag_connected">terhubung</string>
+    <string name="analysis_tag_ranging">mendukung pengukuran jarak</string>
+    <string name="analysis_channel_crowded">Kanal %1$d dipakai bersama jaringan lain. Pindah kanal lewat pengaturan router bisa membantu.</string>
+    <string name="analysis_channel_clear">Kanal %1$d relatif lengang untuk saat ini.</string>
+    <string name="analysis_channel_already_best">Kanal %1$d sudah yang paling lengang di pita ini.</string>
+    <string name="analysis_channel_suggest">Kanal paling lengang: %1$d.</string>
+    <string name="analysis_legend_yours">kanal Anda</string>
+    <string name="analysis_legend_clearest">paling lengang</string>
+
+    <!-- Diagnostics screen -->
+    <string name="diag_title">Diagnostik</string>
+    <string name="diag_heading">Kesiapan perangkat</string>
+    <string name="diag_intro">Semua nilai di bawah diukur langsung di ponsel ini, bukan ditebak dari nama model.</string>
+    <string name="diag_section_device">PERANGKAT</string>
+    <string name="diag_section_tracking">PELACAKAN 3D</string>
+    <string name="diag_arcore_support">Dukungan ARCore</string>
+    <string name="diag_arcore_version">Versi ARCore</string>
+    <string name="diag_not_installed">tidak terpasang</string>
+    <string name="diag_supported">Didukung</string>
+    <string name="diag_unsupported">Tidak didukung</string>
+    <string name="diag_untested">Belum diuji</string>
+    <string name="diag_gyro">Giroskop</string>
+    <string name="diag_gyro_present">Ada · %1$d Hz</string>
+    <string name="diag_gyro_absent">Tidak ada</string>
+    <string name="diag_camera_level">Level kamera</string>
+    <string name="diag_section_radio">RADIO WI-FI</string>
+    <string name="diag_band_5">Pita 5 GHz</string>
+    <string name="diag_band_6">Pita 6 GHz</string>
+    <string name="diag_no">Tidak</string>
+    <string name="diag_rtt_note">Tanpa Wi-Fi RTT, jarak ke router diperkirakan dari kekuatan sinyal, bukan diukur langsung. Heatmap tetap berjalan.</string>
+    <string name="diag_grant_camera">Izinkan kamera &amp; uji ulang</string>
+    <string name="diag_rerun">Jalankan ulang</string>
+    <string name="diag_running">Memeriksa perangkat…</string>
+    <string name="diag_no_result">Belum ada hasil.</string>
+
+    <!-- Security audit findings -->
+    <string name="audit_own_unencrypted_title">Jaringan Anda tidak terenkripsi</string>
+    <string name="audit_own_unencrypted_body">Siapa pun dalam jangkauan bisa membaca lalu lintas yang tidak memakai HTTPS. Aktifkan WPA2 atau WPA3 di pengaturan router.</string>
+    <string name="audit_own_wpa_title">Jaringan Anda memakai WPA lama</string>
+    <string name="audit_own_wpa_body">WPA generasi pertama sudah bisa ditembus. Ubah ke WPA2 atau WPA3 di pengaturan router — semua perangkat modern mendukungnya.</string>
+    <string name="audit_own_wps_title">WPS aktif di jaringan Anda</string>
+    <string name="audit_own_wps_body">Tombol WPS memakai PIN delapan angka yang bisa ditebak dalam hitungan jam. Matikan WPS di pengaturan router; password Wi-Fi biasa tetap berfungsi seperti sebelumnya.</string>
+    <string name="audit_own_wpa3_title">Jaringan Anda memakai WPA3</string>
+    <string name="audit_own_wpa3_body">Ini standar terkuat yang tersedia sekarang. Tidak ada yang perlu diubah.</string>
+    <string name="audit_own_secured_title">Jaringan Anda terenkripsi (%1$s)</string>
+    <string name="audit_own_secured_body">Password Wi-Fi melindungi lalu lintas dari orang di luar jaringan. Kalau router mendukung WPA3, memakainya lebih baik lagi.</string>
+    <string name="audit_open_title">%1$d jaringan terbuka tanpa enkripsi</string>
+    <string name="audit_open_body">Jaringan seperti ini bisa dimasuki siapa saja, dan lalu lintas di dalamnya terbaca oleh perangkat lain yang ikut tersambung. Hindari membuka rekening atau memasukkan password di sana.</string>
+    <string name="audit_wep_title">%1$d jaringan masih memakai WEP</string>
+    <string name="audit_wep_body">WEP dipecahkan sejak 2001 dan sekarang bisa dibuka dalam beberapa menit dengan perkakas gratis. Praktisnya setara dengan jaringan terbuka.</string>
+    <string name="audit_wps_title">%1$d jaringan mengaktifkan WPS</string>
+    <string name="audit_wps_body">PIN WPS hanya delapan angka dan diperiksa dalam dua bagian terpisah, sehingga bisa ditebak jauh lebih cepat daripada password Wi-Fi biasa.</string>
+    <string name="audit_twin_title">Nama jaringan ganda dengan pengamanan berbeda</string>
+    <string name="audit_twin_body">Dua pemancar memakai nama yang sama tapi tingkat pengamanan berbeda. Ini bisa terjadi karena router lama belum dimatikan, tapi juga pola yang dipakai pemancar palsu untuk memancing perangkat tersambung. Pastikan Anda mengenali keduanya.</string>
+    <string name="audit_hidden_title">%1$d jaringan menyembunyikan namanya</string>
+    <string name="audit_hidden_body">Menyembunyikan nama tidak menambah keamanan — pemancarnya tetap terlihat, dan perangkat yang mengingatnya justru menyiarkan nama itu ke sekitar setiap kali mencari.</string>
+    <string name="audit_legacy_title">%1$d jaringan memakai WPA generasi pertama</string>
+    <string name="audit_legacy_body">WPA lama memakai TKIP, yang sudah punya serangan praktis. WPA2 ke atas adalah penggantinya.</string>
+
+    <!-- Scan report and narrative -->
+    <string name="report_title">LAPORAN JARINGAN WI-FI</string>
+    <string name="report_connection_title">KONEKSI SAAT INI</string>
+    <string name="report_not_connected">"  Tidak tersambung ke jaringan Wi-Fi mana pun."</string>
+    <string name="report_row_ssid">"  Nama jaringan : %1$s"</string>
+    <string name="report_row_bssid">"  BSSID         : %1$s"</string>
+    <string name="report_row_signal">"  Sinyal        : %1$d dBm (%2$s)"</string>
+    <string name="report_row_band">"  Pita / kanal  : %1$s · kanal %2$d"</string>
+    <string name="report_row_speed">"  Kecepatan     : %1$d Mbps"</string>
+    <string name="report_row_standard">"  Standar       : %1$s"</string>
+    <string name="report_row_internet">"  Internet      : %1$s"</string>
+    <string name="report_unknown">tidak diketahui</string>
+    <string name="report_audit_title">PEMERIKSAAN KEAMANAN</string>
+    <string name="report_audit_empty">"  Belum ada hasil pemindaian untuk diperiksa."</string>
+    <string name="report_audit_clean">"  Tidak ada temuan pada %1$d jaringan sekitar."</string>
+    <string name="report_finding_networks">"      Jaringan: %1$s"</string>
+    <string name="report_survey_title">JARINGAN TERDETEKSI (%1$d)</string>
+    <string name="report_survey_empty">"  Tidak ada. Pastikan Wi-Fi menyala dan izin lokasi diberikan."</string>
+    <string name="report_ap_connected">"  ← tersambung"</string>
+    <string name="report_ap_bssid">"      BSSID     : %1$s"</string>
+    <string name="report_ap_vendor">"      Perangkat : %1$s"</string>
+    <string name="report_ap_signal">"      Sinyal    : %1$d dBm (%2$d%%, ~%3$.1f m)"</string>
+    <string name="report_ap_band">"      Pita      : %1$s · kanal %2$d · %3$d MHz"</string>
+    <string name="report_ap_security">"      Pengaman  : %1$s%2$s"</string>
+    <string name="report_ap_standard">"      Standar   : %1$s"</string>
+    <string name="report_flag_open">tanpa password, tanpa enkripsi</string>
+    <string name="report_flag_owe">tanpa password, terenkripsi</string>
+    <string name="report_flag_wps">WPS aktif</string>
+    <string name="report_flag_hidden">nama disembunyikan</string>
+    <string name="report_footer">Dibuat oleh WiFi Heatmap 3D. Semua angka dibaca dari siaran Wi-Fi yang sudah terbuka di udara pada waktu di atas.</string>
+    <string name="narrative_title">LAPORAN PEMINDAIAN WI-FI</string>
+    <string name="narrative_unknown_network">Jaringan tidak diketahui</string>
+    <string name="narrative_summary_title">RINGKASAN</string>
+    <string name="narrative_area">Area terukur %1$.1f m² dari %2$d titik pengukuran, selama %3$s.</string>
+    <string name="narrative_range">Kekuatan sinyal berkisar %1$d sampai %2$d dBm.</string>
+    <string name="narrative_verdict_nodata">Belum cukup data untuk menilai.</string>
+    <string name="narrative_verdict_good">Seluruh area terukur punya sinyal yang layak pakai.</string>
+    <string name="narrative_verdict_mixed">Sebagian area lemah — video call dan streaming bisa tersendat di sana.</string>
+    <string name="narrative_verdict_bad">Ada area yang nyaris mati; koneksi kemungkinan besar putus-putus di sana.</string>
+    <string name="narrative_points_title">TITIK PENTING</string>
+    <string name="narrative_strongest">• Terkuat %1$d dBm%2$s</string>
+    <string name="narrative_weakest">• Terlemah %1$d dBm%2$s</string>
+    <string name="narrative_place">, %1$.1f m ke arah %2$s dari titik mulai</string>
+    <string name="narrative_photos_title">PENANDA LOKASI</string>
+    <string name="narrative_router_title">SARAN POSISI ROUTER</string>
+    <string name="narrative_router_nodata">Data belum cukup untuk menyarankan posisi router.</string>
+    <string name="narrative_router_unreliable">Sebaran sinyal terlalu berisik untuk memberi saran yang bisa dipertanggungjawabkan (galat model ±%1$.1f dB). Pindai ulang dengan berjalan lebih pelan dan melewati lebih banyak ruangan.</string>
+    <string name="narrative_router_move">Pindahkan router sekitar %1$.1f m. Area terlemah diperkirakan menguat %2$d dB, dari %3$d ke %4$d dBm. Perhitungan memakai model peluruhan n=%5$.1f dengan galat ±%6$.1f dB, dan mengabaikan posisi dinding — anggap sebagai titik awal, bukan angka pasti.</string>
+    <string name="narrative_router_optimal">Posisi router saat ini sudah mendekati optimal untuk area yang dipindai.</string>
+    <string name="narrative_room_title">RUANGAN</string>
+    <string name="narrative_room_estimated">Bentuk ruangan adalah perkiraan dari area yang dilewati — tidak ada dinding yang terdeteksi kamera selama pemindaian.</string>
+    <string name="narrative_room_measured">%1$d dinding terdeteksi langsung oleh kamera.</string>
+    <string name="narrative_location_title">LOKASI</string>
+    <string name="narrative_location_body">Jangkar GPS %1$.6f, %2$.6f (meleset ±%3$.0f m). Jarak antar titik di dalam laporan ini jauh lebih presisi daripada angka itu; yang tidak pasti adalah posisi seluruh rumah di peta dunia.</string>
+    <string name="narrative_footer">Diukur dengan WiFi Heatmap 3D.</string>
+    <string name="narrative_duration_ms">%1$d menit %2$d detik</string>
+    <string name="narrative_duration_s">%1$d detik</string>
+    <string name="map_default_title">Pemindaian Wi-Fi</string>
+    <string name="map_subtitle">%1$.1f m² · %2$d titik ukur</string>
+    <string name="map_share_caption">Peta Wi-Fi %1$s</string>
+
+    <!-- Exported map image -->
+    <string name="map_legend">"S titik mulai   +  terkuat   -  terlemah   R  saran router   1..n  foto"</string>
+    <string name="map_path_note">Garis putih = rute yang dijalani</string>
+    <string name="map_stats">%1$.1f m² · %2$d titik ukur · %3$d s/d %4$d dBm</string>
+    <string name="map_footer">Diukur dengan WiFi Heatmap 3D</string>
+
+    <!-- Settings screen -->
+    <string name="settings_title">Pengaturan</string>
+    <string name="settings_section_appearance">TAMPILAN</string>
+    <string name="settings_accent">Warna aksen</string>
+    <string name="settings_section_device">PERANGKAT &amp; BANTUAN</string>
+    <string name="settings_diagnostics">Diagnostik Perangkat</string>
+    <string name="settings_diagnostics_sub">Kesiapan ARCore, sensor, dan radio ponsel ini</string>
+    <string name="settings_guide">Panduan Memindai</string>
+    <string name="settings_guide_sub">Cara berjalan agar hasilnya akurat</string>
+    <string name="settings_about">Tentang &amp; Rating</string>
+    <string name="settings_about_sub">Versi, privasi, dan beri rating</string>
+    <string name="settings_remove_ads">Hapus Iklan</string>
+    <string name="settings_remove_ads_priced">Sekali bayar %1$s, selamanya</string>
+    <string name="settings_remove_ads_sub">Sekali bayar, selamanya</string>
+
+    <!-- History screen -->
+    <string name="history_title">Riwayat</string>
+    <string name="history_empty">Tidak ada pemindaian pada periode ini.</string>
+    <string name="history_this_month">SEBULAN INI</string>
+    <string name="history_prev_month">Bulan sebelumnya</string>
+    <string name="history_next_month">Bulan berikutnya</string>
+    <string name="history_day_mon">Sen</string>
+    <string name="history_day_tue">Sel</string>
+    <string name="history_day_wed">Rab</string>
+    <string name="history_day_thu">Kam</string>
+    <string name="history_day_fri">Jum</string>
+    <string name="history_day_sat">Sab</string>
+    <string name="history_day_sun">Min</string>
+    <string name="history_unknown_network">Jaringan tidak diketahui</string>
+    <string name="history_scan_detail">%1$s · %2$.1f m² · %3$d titik</string>
+    <string name="history_delete">Hapus</string>
+
+    <!-- Share sheet -->
+    <string name="share_map_title">Bagikan peta</string>
+    <string name="share_report_title">Bagikan laporan</string>
+
+    <!-- Network row -->
+    <string name="row_connected">Terhubung</string>
+    <string name="row_band_channel">%1$s · kanal %2$s</string>
+
+    <!-- Scan mode screen -->
+    <string name="scanmode_title">Pemindaian</string>
+    <string name="scanmode_kicker">PEMERIKSAAN WI-FI ANDA</string>
+    <string name="scanmode_heading">Pilih cara memindai.</string>
+    <string name="scanmode_intro">Kami akan mengukur kekuatan sinyal sambil Anda berjalan, lalu melukisnya di denah 3D rumah Anda.</string>
+    <string name="scanmode_quick">Cepat</string>
+    <string name="scanmode_quick_desc">Satu titik ukur di tiap ruangan. Anda cukup berdiri diam dan menekan tombol.</string>
+    <string name="scanmode_quick_badge">± 4 menit</string>
+    <string name="scanmode_precise">Presisi</string>
+    <string name="scanmode_precise_desc">Berjalan pelan keliling rumah sambil mengangkat ponsel. Menemukan sudut lemah di dalam ruangan, bukan cuma ruangan mana yang lemah.</string>
+    <string name="scanmode_precise_badge">± 8 menit</string>
+    <string name="scanmode_footnote">Mode ini memakai kamera. Izin akan diminta saat mulai.</string>
+    <string name="scanmode_start">Mulai</string>
+    <string name="scanmode_later">Nanti saja</string>
+
+    <!-- Capture -->
+    <string name="capture_photo_label">Titik %1$d</string>
+
+    <!-- About screen -->
+    <string name="about_title">Tentang</string>
+    <string name="about_version">Versi %1$s</string>
+    <string name="about_pitch">Wi-Fi punya bentuk — kuat di sebagian sudut rumah, mati di sudut lain, dan tidak terlihat sama sekali.
+
+Aplikasi ini mengukur kekuatannya sambil Anda berjalan, melacak posisi dengan ARCore, lalu melukisnya sebagai denah 3D lengkap dengan titik terlemah dan saran ke mana router sebaiknya pindah.</string>
+    <string name="about_privacy_title">PRIVASI</string>
+    <string name="about_privacy_body">Survei, denah, pengukuran Wi-Fi, dan foto penanda tersimpan di penyimpanan aplikasi. Izin lokasi memungkinkan pemindaian Wi-Fi dan dapat menyertakan lokasi survei; kamera mendukung pelacakan AR dan foto opsional. Google AdMob memproses data periklanan dan diagnostik sesuai pilihan privasi Anda. Google Play memproses pembelian. Tes kecepatan menghubungi Cloudflare, dan tes jaringan menghubungi host yang dipilih. Saat membagikan laporan atau gambar, isinya dikirim ke tujuan pilihan Anda. Baca kebijakan privasi untuk penjelasan lengkap.</string>
+    <string name="about_rate">Beri Rating</string>
+    <string name="about_rate_sub">Bantu orang lain menemukan aplikasi ini</string>
+    <string name="about_share">Bagikan Aplikasi</string>
+    <string name="about_share_sub">Kirim tautan Play Store ke teman</string>
+    <string name="about_credits_title">DIBANGUN DENGAN</string>
+    <string name="about_credit_arcore">pelacakan posisi 6DoF dan deteksi bidang</string>
+    <string name="about_credit_filament">mesin render 3D</string>
+    <string name="about_credit_compose">antarmuka</string>
+    <string name="about_credit_font">tipografi, oleh Tokotype</string>
+
+    <!-- Compare screen -->
+    <string name="compare_title">Bandingkan</string>
+    <string name="compare_heading">Sebelum &amp; sesudah</string>
+    <string name="compare_intro">Pilih dua pemindaian untuk melihat apakah memindahkan router benar-benar menolong area yang lemah.</string>
+    <string name="compare_need_two">Perlu setidaknya dua pemindaian tersimpan. Pindai sekali sekarang, pindahkan router, lalu pindai lagi.</string>
+    <string name="compare_before">Sebelum</string>
+    <string name="compare_after">Sesudah</string>
+    <string name="compare_pick_for">PILIH UNTUK SLOT %1$s</string>
+    <string name="compare_before_upper">SEBELUM</string>
+    <string name="compare_after_upper">SESUDAH</string>
+    <string name="compare_unpicked">belum dipilih</string>
+    <string name="compare_weakest_value">terlemah %1$d dBm</string>
+    <string name="compare_result_title">HASILNYA</string>
+    <string name="compare_result_better">Area terlemah menguat %1$d dB. Perpindahan ini berhasil.</string>
+    <string name="compare_result_worse">Area terlemah justru melemah %1$d dB. Posisi sebelumnya lebih baik.</string>
+    <string name="compare_result_same">Area terlemah nyaris tidak berubah (%1$s dB). Perpindahan ini tidak berpengaruh berarti.</string>
+    <string name="compare_row_weakest">Titik terlemah</string>
+    <string name="compare_row_mean">Rata-rata</string>
+    <string name="compare_row_strongest">Titik terkuat</string>
+    <string name="compare_mean_note">Rata-rata bergeser %1$s dB. Angka yang paling menentukan tetap yang terlemah — rata-rata bisa naik sementara sudut mati tetap mati.</string>
+    <string name="compare_spread_title">SEBARAN SINYAL</string>
+    <string name="compare_weak">lemah</string>
+    <string name="compare_strong">kuat</string>
+    <string name="compare_spread_legend">abu-abu = sebelum · berwarna = sesudah</string>
+
+    <!-- Capture screen -->
+    <string name="capture_mode_quick">Mode Cepat</string>
+    <string name="capture_mode_precise">Mode Presisi</string>
+    <string name="capture_tracking_active">Pelacakan aktif</string>
+    <string name="capture_searching">Mencari permukaan…</string>
+    <string name="capture_stat_signal">Sinyal</string>
+    <string name="capture_stat_points">Titik ukur</string>
+    <string name="capture_stat_walls">Dinding</string>
+    <string name="capture_stat_duration">Durasi</string>
+    <string name="capture_hint_jumpy">Jalan lebih pelan dan arahkan kamera ke permukaan bertekstur — karpet, rak, kusen pintu. Permukaan mengkilap atau polos membuat pelacakan meleset.</string>
+    <string name="capture_hint_start">Arahkan kamera ke lantai lalu berjalan pelan. Titik akan muncul setiap Anda bergerak 20 cm.</string>
+    <string name="capture_hint_walls">Belum ada dinding terdeteksi. Arahkan kamera ke dinding 2–3 detik — pilih yang ada polanya seperti lemari atau kusen pintu.</string>
+    <string name="capture_range">Terlemah %1$d dBm · Terkuat %2$d dBm</string>
+    <string name="capture_finish">Selesai</string>
+    <string name="capture_take_photo">Ambil foto penanda</string>
+    <string name="capture_photo_count">%1$d foto</string>
+    <string name="capture_fail_bad_state">Pelacakan bermasalah, coba mulai ulang</string>
+    <string name="capture_fail_dark">Ruangan terlalu gelap</string>
+    <string name="capture_fail_motion">Gerakkan ponsel lebih pelan</string>
+    <string name="capture_fail_features">Arahkan ke permukaan bertekstur</string>
+    <string name="capture_fail_camera">Kamera dipakai aplikasi lain</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_start">Mulai</string>
+    <string name="onboarding_next">Lanjut</string>
+    <string name="onboarding_skip">Lewati</string>
+    <string name="onboarding_1_title">Wi-Fi punya bentuk.</string>
+    <string name="onboarding_1_body">Kuat di sebagian sudut rumah, mati di sudut lain, dan Anda tidak bisa melihatnya sama sekali.
+
+Aplikasi ini mengukur kekuatannya sambil Anda berjalan, lalu melukisnya sebagai denah 3D — lengkap dengan titik terkuat, titik mati, dan saran ke mana router sebaiknya pindah.</string>
+    <string name="onboarding_2_title">Dua izin, dua alasan.</string>
+    <string name="onboarding_2_body">Lokasi — Android mewajibkannya untuk membaca nama jaringan Wi-Fi dan memindai jaringan di sekitar. Bukan pilihan kami; tanpa itu sistem menolak memberi datanya.
+
+Kamera — dipakai melacak posisi Anda di ruangan supaya tiap pengukuran punya koordinat, dan untuk memotret penanda tempat.
+
+Semuanya diproses di ponsel ini. Tidak ada yang dikirim ke mana pun.</string>
+    <string name="onboarding_perm_location">Lokasi</string>
+    <string name="onboarding_perm_camera">Kamera</string>
+    <string name="onboarding_grant_now">Berikan izin sekarang</string>
+    <string name="onboarding_perm_granted">%1$s — sudah diizinkan</string>
+    <string name="onboarding_perm_missing">%1$s — belum diizinkan</string>
+    <string name="onboarding_3_title">Yang Anda dapat.</string>
+    <string name="onboarding_3_body">Denah 3D rumah dengan heatmap sinyal — warna dan tinggi petak sama-sama berarti kekuatan sinyal.
+
+Tiang hijau menandai titik terkuat, merah titik terlemah, ungu saran posisi router. Pita putih adalah rute yang Anda jalani.
+
+Tekan tombol kamera saat memindai untuk menandai tempat — meja, dapur, kamar — lalu beri nama setelah selesai.
+
+Hasilnya bisa diekspor jadi gambar atau laporan teks.</string>
+    <string name="onboarding_4_title">Cara memindai dengan baik.</string>
+    <string name="onboarding_4_body">**Jalan pelan**, secepat orang berjalan santai. Gerakan cepat membuat pelacakan kehilangan jejak.
+
+**Angkat ponsel setinggi dada**, kamera menghadap ke depan-bawah.
+
+**Sesekali arahkan ke dinding** 2–3 detik, terutama yang ada polanya — lemari, poster, kusen. Itu yang membuat bentuk ruangan jadi asli, bukan kotak perkiraan.
+
+**Lewati semua ruangan**, termasuk sudut yang sinyalnya buruk. Justru itu yang ingin ditemukan.</string>
+
+    <!-- Scan result (3D room) screen -->
+    <string name="room_title">Hasil pemindaian</string>
+    <string name="room_recenter">Pusatkan</string>
+    <string name="room_building">Menyusun model 3D…</string>
+    <string name="room_no_scan">Belum ada hasil pemindaian. Jalankan sesi terlebih dulu.</string>
+    <string name="room_unknown_network">Jaringan tidak diketahui</string>
+    <string name="room_summary_line">%1$.1f m² · %2$d titik · %3$s s/d %4$s</string>
+    <string name="room_collapse">Tutup</string>
+    <string name="room_stat_area">Luas terukur</string>
+    <string name="room_stat_points">Titik ukur</string>
+    <string name="room_stat_walls">Dinding</string>
+    <string name="room_stat_walls_estimated">Dinding (kira)</string>
+    <string name="room_place_strongest">Titik terkuat</string>
+    <string name="room_place_weakest">Titik terlemah</string>
+    <string name="room_walls_estimated_note">ARCore tidak menemukan dinding sungguhan — batas ini ditarik dari area yang Anda lewati. Arahkan kamera ke dinding saat memindai untuk mendapatkan bentuk asli.</string>
+    <string name="room_height_note">Tinggi petak = kekuatan sinyal. Pita putih adalah rute yang Anda jalani, jarum ungu menunjuk utara.</string>
+    <string name="room_export_image">Ekspor gambar</string>
+    <string name="room_export_report">Bagikan laporan</string>
+    <string name="room_rescan">Pindai ulang</string>
+    <string name="room_save">Simpan</string>
+    <string name="room_landmark_title">Penanda lokasi</string>
+    <string name="room_landmark_name">Nama tempat</string>
+    <string name="room_landmark_hint">mis. meja PC, dapur, kamar depan</string>
+    <string name="room_bearing">%1$.1f m ke arah %2$s dari titik mulai</string>
+    <string name="room_legend_title">ARTI SIMBOL</string>
+    <string name="room_legend_green">Tiang hijau</string>
+    <string name="room_legend_green_meaning">titik sinyal terkuat</string>
+    <string name="room_legend_red">Tiang merah</string>
+    <string name="room_legend_red_meaning">titik sinyal terlemah</string>
+    <string name="room_legend_lilac">Tiang ungu muda</string>
+    <string name="room_legend_lilac_meaning">perkiraan posisi router saat ini</string>
+    <string name="room_legend_violet">Tiang ungu tinggi</string>
+    <string name="room_legend_violet_meaning">saran posisi router yang lebih baik</string>
+    <string name="room_legend_blue">Tiang biru</string>
+    <string name="room_legend_blue_meaning">foto penanda yang Anda ambil</string>
+    <string name="room_legend_ribbon">Pita putih</string>
+    <string name="room_legend_ribbon_meaning">rute yang Anda jalani</string>
+    <string name="room_legend_pin">Pin putih pendek</string>
+    <string name="room_legend_pin_meaning">titik mulai pemindaian</string>
+    <string name="room_legend_needle">Jarum panjang</string>
+    <string name="room_legend_needle_meaning">arah utara</string>
+    <string name="room_legend_slab">Balok abu-abu</string>
+    <string name="room_legend_slab_meaning">dinding terdeteksi</string>
+    <string name="room_legend_colour_note">Warna petak = kekuatan sinyal, tingginya juga. Merah lemah, hijau kuat.</string>
+    <string name="room_chip_strongest">terkuat</string>
+    <string name="room_chip_weakest">terlemah</string>
+    <string name="room_chip_router_now">router kini</string>
+    <string name="room_chip_router_move">saran pindah</string>
+    <string name="room_chip_photo">foto</string>
+    <string name="room_gesture_hint_photo">Seret memutar, cubit memperbesar. Ketuk tiang biru untuk foto.</string>
+    <string name="room_gesture_hint">Seret untuk memutar, cubit untuk memperbesar.</string>
+    <string name="room_place_no_bearing">%1$s: arah tidak tersedia (kompas tidak terbaca)</string>
+    <string name="room_place_with_bearing">%1$s: %2$.1f m ke arah %3$s dari titik mulai</string>
+    <string name="room_no_gps">Koordinat GPS tidak tersedia — tidak ada sinyal satelit saat memindai. Jarak dan arah di atas tetap akurat.</string>
+    <string name="room_coords_title">KOORDINAT</string>
+    <string name="room_coords_strongest">Titik terkuat: %1$s</string>
+    <string name="room_coords_router">Saran router: %1$s</string>
+    <string name="room_gps_accuracy">Jangkar GPS meleset ±%1$.0f m. Bentuk dan jarak antar titik tetap presisi; yang bisa bergeser adalah posisi seluruh rumah di peta, sebagai satu kesatuan.</string>
+    <string name="room_router_nodata">Data belum cukup untuk menyarankan posisi router.</string>
+    <string name="room_router_unreliable">Sebaran sinyal terlalu berisik untuk menyarankan posisi router dengan yakin. Pindai lebih banyak ruangan, berjalan lebih pelan.</string>
+    <string name="room_router_move">Pindahkan router %1$.1f m ke tiang ungu — area terlemah diperkirakan menguat %2$d dB.</string>
+    <string name="room_router_optimal">Posisi router Anda sudah mendekati optimal.</string>
+    <string name="room_router_title">SARAN POSISI ROUTER</string>
+    <string name="room_router_prediction">Perkiraan area terlemah: %1$d dBm sekarang, %2$d dBm setelah dipindahkan.</string>
+    <string name="room_router_model">Model peluruhan n=%1$.1f, galat ±%2$.1f dB. Perhitungan ini mengabaikan posisi dinding — anggap sebagai titik awal, bukan angka pasti.</string>
+
+    <!-- Spectrum chart legend -->
+    <string name="spectrum_legend_row">k%1$d · %2$d MHz · %3$d dBm</string>
+
+    <!-- Language picker -->
+    <string name="language_title">Bahasa</string>
+    <string name="language_system">Ponsel</string>
+    <string name="language_indonesian">Indonesia</string>
+
+    <!-- Theme and accent names -->
+    <string name="theme_light">Terang</string>
+    <string name="theme_dark">Gelap</string>
+    <string name="theme_system">Ikut sistem</string>
+    <string name="accent_violet">Ungu</string>
+    <string name="accent_ocean">Biru</string>
+    <string name="accent_teal">Toska</string>
+    <string name="accent_ember">Jingga</string>
+    <string name="accent_rose">Merah muda</string>
+
+    <!-- Connection details screen -->
+    <string name="details_title">Detail koneksi</string>
+    <string name="details_refresh">Baca ulang</string>
+    <string name="details_reading">Membaca…</string>
+    <string name="details_network_title">JARINGAN</string>
+    <string name="details_addressing_title">PENGALAMATAN</string>
+    <string name="details_adapter_title">RADIO WI-FI PONSEL INI</string>
+    <string name="details_adapter_note">Tiap jawaban dibaca dari driver radionya sendiri, bukan dari nama model.</string>
+    <string name="details_ssid">Nama jaringan</string>
+    <string name="details_vendor">Merek router</string>
+    <string name="details_signal">Kekuatan sinyal</string>
+    <string name="details_quality">Kualitas</string>
+    <string name="details_frequency">Frekuensi</string>
+    <string name="details_band">Pita</string>
+    <string name="details_channel">Kanal</string>
+    <string name="details_width">Lebar kanal</string>
+    <string name="details_security">Pengamanan</string>
+    <string name="details_standard">Standar</string>
+    <string name="details_tx">Kecepatan kirim</string>
+    <string name="details_rx">Kecepatan terima</string>
+    <string name="details_max_tx">Kirim maksimum</string>
+    <string name="details_max_rx">Terima maksimum</string>
+    <string name="details_prefix">Prefiks</string>
+    <string name="details_lease">Masa sewa DHCP</string>
+    <string name="details_lease_value">%1$d jam %2$d mnt</string>
+    <string name="details_interface">Antarmuka</string>
+    <string name="details_yes">Ya</string>
+    <string name="details_no">Tidak</string>
+    <string name="details_cannot_ask">Tak bisa ditanya</string>
+
+    <!-- Ping screen -->
+    <string name="ping_host_label">Host atau alamat IP</string>
+    <string name="ping_host_hint">mis. 192.168.1.1</string>
+    <string name="ping_count_label">BERAPA KALI</string>
+    <string name="ping_start">Mulai</string>
+    <string name="ping_stat_best">Tercepat</string>
+    <string name="ping_stat_average">Rata-rata</string>
+    <string name="ping_stat_worst">Terlambat</string>
+    <string name="ping_stat_deviation">Simpangan</string>
+    <string name="ping_stat_sent">Terjawab</string>
+    <string name="ping_stat_loss">Hilang</string>
+    <string name="ping_error_unresolved">Tidak bisa menemukan %1$s. Periksa ejaannya, atau pakai alamat IP.</string>
+    <string name="ping_error_empty">Isi dulu host atau alamat IP-nya.</string>
+    <string name="ping_note">Yang dicoba lebih dulu adalah ICMP echo, yaitu waktu bolak-balik yang dimaksud teknisi jaringan. Sebagian host dan jaringan seluler membuangnya, lalu koneksi TCP dipakai sebagai gantinya — angka itu termasuk jabat tangan, jadi terbaca sedikit lebih tinggi.</string>
+
+    <!-- Entry points -->
+    <string name="networks_open_details">Detail koneksi lengkap</string>
+    <string name="devices_open_ping">Ping sebuah host</string>
+
+    <!-- Radio capabilities -->
+    <string name="cap_rtt">Pengukuran jarak Wi-Fi RTT</string>
+    <string name="cap_tdls">TDLS (antar perangkat)</string>
+    <string name="cap_sta_ap">Wi-Fi dan hotspot bersamaan</string>
+    <string name="cap_dual_sta">Dua jaringan bersamaan</string>
+    <string name="cap_scan_throttle">Pembatasan pemindaian aktif</string>
+
+    <!-- Compass points -->
+    <string name="compass_n">utara</string>
+    <string name="compass_ne">timur laut</string>
+    <string name="compass_e">timur</string>
+    <string name="compass_se">tenggara</string>
+    <string name="compass_s">selatan</string>
+    <string name="compass_sw">barat daya</string>
+    <string name="compass_w">barat</string>
+    <string name="compass_nw">barat laut</string>
+
+    <!-- Result panel states -->
+    <string name="room_minimize">Sembunyikan</string>
+    <string name="room_show_panel">Tampilkan detail</string>
+
+    <!-- Network detail sheet -->
+    <string name="sheet_section_radio">RADIO</string>
+    <string name="sheet_section_signal">SINYAL</string>
+    <string name="sheet_section_security">PENGAMANAN</string>
+    <string name="sheet_span">Menempati</string>
+    <string name="sheet_standard_unknown">tidak disiarkan</string>
+    <string name="sheet_strength_percent">Kekuatan</string>
+    <string name="sheet_distance">Perkiraan jarak</string>
+    <string name="sheet_distance_note">Jarak disimpulkan dari kekuatan sinyal memakai konstanta umum, bukan diukur. Satu tembok saja bisa melipatgandakannya.</string>
+    <string name="sheet_password_needed">Perlu password</string>
+    <string name="sheet_encrypted">Lalu lintas terenkripsi</string>
+    <string name="sheet_wps">WPS aktif</string>
+    <string name="sheet_hidden">Nama disembunyikan</string>
+    <string name="sheet_ranging">Pengukuran 802.11mc</string>
+    <string name="sheet_join">Sambungkan ke jaringan ini</string>
+    <string name="sheet_open_picker">Buka pengaturan Wi-Fi</string>
+    <string name="sheet_join_note">Android akan meminta konfirmasi sebelum menyimpannya. Setelah itu ponsel benar-benar tersambung, bukan hanya di dalam aplikasi ini.</string>
+    <string name="sheet_picker_note">Yang ini perlu password, jadi disambungkan lewat pemilih Wi-Fi sistem. Aplikasi tidak diizinkan menyambungkan ponsel sendiri.</string>
+    <string name="sheet_connected">Anda sedang tersambung ke jaringan ini</string>
+    <string name="sheet_close">Tutup</string>
+    <string name="networks_tap_hint">Ketuk jaringan untuk detail lengkap</string>
+
+    <!-- Spectrum depth -->
+    <string name="analysis_verdict_title">KANAL ANDA</string>
+    <string name="analysis_verdict_channel">Kanal %1$d · %2$s</string>
+    <string name="analysis_co_channel">Berbagi kanal Anda</string>
+    <string name="analysis_adjacent">Merembes ke kanal Anda</string>
+    <string name="analysis_strongest_rival">Tetangga terkuat</string>
+    <string name="analysis_co_note">Jaringan di kanal yang sama persis bergantian dengan Anda — sambungan tetap bersih tapi waktu siarnya dibagi, jadi semuanya melambat bersama.</string>
+    <string name="analysis_adjacent_note">Jaringan yang hanya bertumpuk tidak pernah berkoordinasi dengan Anda. Efeknya muncul sebagai pengiriman ulang dan jitter, bukan kecepatan yang turun — dan justru itu yang lebih buruk meski angkanya lebih kecil.</string>
+    <string name="analysis_clear_note">Tidak ada yang lain di kanal Anda atau di sekitarnya saat ini.</string>
+    <string name="analysis_occupancy_title">HUNIAN KANAL</string>
+    <string name="analysis_occupancy_row">K %1$d</string>
+    <string name="analysis_occupancy_counts">%1$d di · %2$d tumpang tindih</string>
+    <string name="analysis_quietest_title">KANAL PALING LENGANG DI SINI</string>
+    <string name="analysis_quietest_row">Kanal %1$d</string>
+    <string name="analysis_quietest_empty">Tidak ada apa pun di pita ini untuk diperingkat.</string>
+    <string name="analysis_bands_title">PERBANDINGAN PITA</string>
+    <string name="analysis_band_count">%1$d jaringan</string>
+    <string name="analysis_band_advice_5">5 GHz lebih lengang di sini. Jangkauannya lebih pendek dan lebih mudah terhalang tembok, tapi di tempat yang terjangkau ia yang lebih cepat.</string>
+    <string name="analysis_band_advice_24">2,4 GHz justru lebih lengang di sini, dan itu tidak biasa. Jangkauannya juga lebih jauh, jadi di titik ini ia pilihan yang lebih baik.</string>
+    <string name="analysis_band_advice_none">Hanya satu pita yang dipakai di sekitar sini.</string>
+
+    <!-- Per-network security grading -->
+    <string name="grade_a_label">Kuat</string>
+    <string name="grade_b_label">Memadai</string>
+    <string name="grade_c_label">Usang</string>
+    <string name="grade_f_label">Terbuka lebar</string>
+    <string name="grade_a_why">WPA3, standar saat ini</string>
+    <string name="grade_b_why">WPA2, masih layak hari ini</string>
+    <string name="grade_b_wps_why">WPA2, tapi WPS aktif</string>
+    <string name="grade_c_why">WPA generasi pertama</string>
+    <string name="grade_f_wep_why">WEP, sudah dipecahkan sejak 2001</string>
+    <string name="grade_f_open_why">Sama sekali tanpa enkripsi</string>
+    <string name="grade_owe_why">Terbuka tapi terenkripsi (OWE)</string>
+    <string name="grade_enterprise_why">Enterprise (802.1X)</string>
+    <string name="grade_unknown_why">Tidak terbaca</string>
+
+    <!-- Security screen depth -->
+    <string name="security_mix_title">ENKRIPSI DI SEKITAR ANDA</string>
+    <string name="security_graded_title">SEMUA JARINGAN, DINILAI</string>
+    <string name="security_graded_note">Dinilai dari yang disiarkan tiap beacon. Itu tidak mengatakan apa pun tentang sekuat apa passwordnya, seberapa lama firmware-nya, atau siapa saja yang sudah punya kuncinya.</string>
+
+    <!-- Capture wall coaching -->
+    <string name="capture_hint_walls_v2">Belum ada dinding terdeteksi. Berhentilah sekitar 1,5 m dari sebuah dinding, arahkan kamera ke sana, lalu geser badan pelan ke kiri dan kanan beberapa detik — gerakan menyamping itu yang membuat dinding bisa diukur.</string>
+
+    <!-- Capture coverage tile -->
+    <string name="capture_stat_area">Luas</string>
+
+    <!-- Result panel, trimmed -->
+    <string name="room_summary_signal">%1$d titik ukur · %2$d s/d %3$d dBm</string>
+    <string name="room_summary_signal_empty">%1$d titik ukur</string>
+
+    <!-- History rows, trimmed -->
+    <string name="history_scan_detail_v2">%1$s · %2$d titik</string>
+
+    <!-- Capability audit -->
+    <string name="audit_section_title">YANG BELUM ANDA PAKAI</string>
+    <string name="audit_all_good">Sambungan ini sudah memakai semua yang didukung kedua sisi.</string>
+    <string name="audit_band_title">Anda di pita yang lebih lambat</string>
+    <string name="audit_band_detail">Jaringan yang sama juga disiarkan di 5 GHz pada %1$d dBm, sementara Anda di 2,4 GHz pada %2$d dBm. Ponsel sering tersambung ke pita lambat sekali dari jauh lalu tidak pernah kembali. Melupakan lalu menyambung ulang jaringan biasanya membereskannya.</string>
+    <string name="audit_width_title">Lebar kanal sempit</string>
+    <string name="audit_width_detail">Sambungan memakai %1$d MHz. Di 5 GHz router biasanya menawarkan 80 MHz, yang membawa sekitar empat kali lebih banyak. Setelannya ada di panel router, biasanya bernama channel width atau bandwidth.</string>
+    <string name="audit_standard_title">Ponsel Anda lebih baru daripada router</string>
+    <string name="audit_standard_detail">Ponsel ini mendukung %1$s; router menawarkan %2$s. Tidak ada yang rusak — artinya router yang lebih baru akan terasa lebih cepat untuk Anda, dan yang lebih lama tidak.</string>
+    <string name="audit_wpa3_title">WPA3 tersedia tapi tidak dipakai</string>
+    <string name="audit_wpa3_detail">Ponsel ini mendukung WPA3, standar saat ini. Mengubah router ke mode campuran WPA2/WPA3 tidak memakan biaya dan melindungi sambungan ini lebih baik.</string>
+    <string name="audit_rate_title">Tautan jauh di bawah kemampuannya</string>
+    <string name="audit_rate_detail">Dinegosiasikan di %1$d Mbps padahal batasnya %2$d Mbps. Jarak, kanal yang padat, dan interferensi sama-sama menyebabkannya — peta 3D yang membedakannya.</string>
+
+    <!-- Coverage and roaming screen -->
+    <string name="coverage_title">Pemancar</string>
+    <string name="coverage_empty">Belum ada pemindaian yang merekam pemancar sekitar. Jalankan pemindaian 3D dan halaman ini terisi dari perjalanan yang sama.</string>
+    <string name="coverage_transmitters_title">TERLIHAT SELAMA BERJALAN</string>
+    <string name="coverage_samples">%1$d bacaan</string>
+    <string name="coverage_roaming_title">PERPINDAHAN</string>
+    <string name="coverage_roam_line">Ditinggalkan di %1$d dBm, disambung di %2$d dBm</string>
+    <string name="coverage_roam_late">Bertahan terlalu lama. Radio yang lebih kuat sudah tersedia jauh sebelum ponsel berpindah — inilah yang membuat sebuah ruangan terasa mati padahal ada node di dalamnya.</string>
+    <string name="coverage_roam_fine">Berpindah pada titik yang wajar.</string>
+    <string name="coverage_no_roam">Beberapa pemancar terjangkau tapi ponsel tidak pernah berpindah di antara mereka selama berjalan ini. Itu wajar pada pemindaian singkat.</string>
+    <string name="coverage_sampling_note">Android hanya mengizinkan aplikasi meminta pemindaian baru empat kali per dua menit, jadi tiap pemancar tertangkap di beberapa titik sepanjang perjalanan, bukan terus-menerus.</string>
+    <string name="home_tile_coverage">Pemancar</string>
+    <string name="home_tile_coverage_sub">Mesh &amp; perpindahan</string>
+
+    <!-- Speed survey during scan -->
+    <string name="scanmode_measure_speed">Ukur kecepatan sungguhan juga</string>
+    <string name="scanmode_measure_speed_note">Menjalankan unduhan singkat tiap beberapa detik selama Anda berjalan, supaya peta bisa menunjukkan kemampuan nyata tiap ruangan — bukan sekadar sekuat apa radionya di sana. Memakan beberapa megabita kuota.</string>
+    <string name="capture_stat_speed">Kecepatan</string>
+    <string name="room_speed_title">KECEPATAN NYATA TERUKUR</string>
+    <string name="room_speed_summary">%1$.0f Mbps terlambat · %2$.0f rata-rata · %3$.0f tercepat</string>
+    <string name="room_speed_note">Kekuatan sinyal dan kecepatan bukan hal yang sama. Bacaan kuat di kanal yang dipakai bersama tiga tetangga bisa membawa lebih sedikit daripada bacaan lemah di kanal kosong — itu sebabnya memindahkan router hanya berbekal peta dBm sering mengecewakan.</string>
+    <string name="room_speed_count">%1$d pengukuran</string>
+    <string name="privacy_policy_subtitle">Penggunaan data survei, izin, iklan, dan pembelian</string>
+    <string name="billing_restoring">Memeriksa pembelian melalui Google Play…</string>
+    <string name="privacy_options_failed">Pilihan privasi belum dapat dimuat. Silakan coba lagi.</string>
+    <string name="billing_pending">Pembayaran tertunda. Iklan akan dihapus setelah Google Play mengonfirmasi pembayaran.</string>
+    <string name="billing_restore_subtitle">Periksa pembelian sebelumnya pada akun Google Play Anda</string>
+    <string name="privacy_options">Pilihan privasi iklan</string>
+    <string name="billing_removed">Iklan dihapus</string>
+    <string name="billing_restore">Pulihkan pembelian</string>
+    <string name="privacy_policy">Kebijakan privasi</string>
+    <string name="billing_purchase_failed">Pembelian belum dapat dimulai. Periksa Google Play lalu coba lagi.</string>
+    <string name="billing_cancelled">Pembelian dibatalkan. Anda tidak dikenai biaya.</string>
+    <string name="billing_acknowledgment_retry">Iklan telah dihapus. Konfirmasi pembelian melalui Google Play sedang dicoba kembali.</string>
+    <string name="billing_restored">Pembelian dipulihkan. Iklan telah dihapus.</string>
+    <string name="privacy_options_subtitle">Tinjau atau ubah pilihan privasi periklanan Anda</string>
+    <string name="billing_nothing_to_restore">Tidak ditemukan pembelian hapus iklan yang selesai pada akun Google Play ini.</string>
+    <string name="billing_check_price">Periksa harga dan ketersediaan di Google Play</string>
+    <string name="arcore_privacy_notice">Pemindaian AR memakai Google Play Services for AR (ARCore) dari Google. Google memproses data layanan sesuai Kebijakan Privasinya. Ketuk untuk membaca.</string>
+    <!-- Standard technical labels retain their familiar Indonesian usage. -->
+    <string name="app_name">WiFi Heatmap 3D : Signal Map</string>
+    <string name="app_name_short">WiFi Heatmap 3D</string>
+    <string name="value_none">—</string>
+    <string name="unit_dbm">%1$d dBm</string>
+    <string name="unit_mbps">%1$d Mbps</string>
+    <string name="unit_ms">%1$d ms</string>
+    <string name="speed_jitter_label">Jitter</string>
+    <string name="speed_unit">Mbps</string>
+    <string name="devices_gateway">Gateway (router)</string>
+    <string name="devices_subnet">Subnet</string>
+    <string name="devices_dns">DNS</string>
+    <string name="graph_axis_unit">dBm</string>
+    <string name="networks_filter_24">2,4 GHz</string>
+    <string name="networks_filter_5">5 GHz</string>
+    <string name="networks_vendor_line">%1$s · %2$s</string>
+    <string name="networks_width">%1$d MHz</string>
+    <string name="networks_report_filename">laporan-jaringan-wifi.txt</string>
+    <string name="home_tile_security_sub">Audit &amp; DNS</string>
+    <string name="diag_model">Model</string>
+    <string name="diag_android">Android</string>
+    <string name="diag_android_value">%1$s (API %2$d)</string>
+    <string name="diag_chipset">Chipset</string>
+    <string name="diag_ram">RAM</string>
+    <string name="diag_ram_value">%1$d MB</string>
+    <string name="diag_depth_api">Depth API</string>
+    <string name="diag_rtt">Wi-Fi RTT (802.11mc)</string>
+    <string name="report_finding">"  [%1$s] %2$s"</string>
+    <string name="report_finding_detail">"      %1$s"</string>
+    <string name="report_ap_name">"  %1$d. %2$s"</string>
+    <string name="report_flags">" (%1$s)"</string>
+    <string name="narrative_photo">• %1$s%2$s</string>
+    <string name="map_scale_bar">1 m</string>
+    <string name="settings_mode">Mode</string>
+    <string name="settings_version">%1$s %2$s</string>
+    <string name="share_map_filename">peta-wifi.png</string>
+    <string name="compare_row_label">%1$s · %2$s</string>
+    <string name="compare_delta_pair">%1$d → %2$d dBm</string>
+    <string name="room_photo_subtitle">%1$.1f m %2$s</string>
+    <string name="room_dbm_suffix">%1$d dBm</string>
+    <string name="room_expand">Detail</string>
+    <string name="room_stat_area_value">%1$.1f m²</string>
+    <string name="room_legend_entry">%1$s — %2$s</string>
+    <string name="language_english">English</string>
+    <string name="details_bssid">BSSID</string>
+    <string name="details_internet">Internet</string>
+    <string name="details_subnet_mask">Mask subnet</string>
+    <string name="details_dns1">DNS 1</string>
+    <string name="details_dns2">DNS 2</string>
+    <string name="details_dhcp_server">Server DHCP</string>
+    <string name="details_domain">Domain</string>
+    <string name="ping_title">Ping</string>
+    <string name="ping_count_value">%1$d×</string>
+    <string name="ping_suggest_router">Router</string>
+    <string name="ping_suggest_dns">1.1.1.1</string>
+    <string name="ping_suggest_site">google.com</string>
+    <string name="ping_resolved">%1$s → %2$s</string>
+    <string name="ping_sent_value">%1$d / %2$d</string>
+    <string name="ping_loss_value">%1$d%%</string>
+    <string name="cap_24">2,4 GHz</string>
+    <string name="cap_5">5 GHz</string>
+    <string name="cap_6">6 GHz (Wi-Fi 6E)</string>
+    <string name="cap_60">60 GHz (802.11ad)</string>
+    <string name="cap_wifi4">Wi-Fi 4 (802.11n)</string>
+    <string name="cap_wifi5">Wi-Fi 5 (802.11ac)</string>
+    <string name="cap_wifi6">Wi-Fi 6 (802.11ax)</string>
+    <string name="cap_wifi7">Wi-Fi 7 (802.11be)</string>
+    <string name="cap_wpa3_sae">WPA3 Personal (SAE)</string>
+    <string name="cap_wpa3_suiteb">WPA3 Enterprise (Suite-B)</string>
+    <string name="cap_owe">Enhanced Open (OWE)</string>
+    <string name="cap_dpp">Easy Connect (DPP)</string>
+    <string name="cap_aware">Wi-Fi Aware</string>
+    <string name="cap_direct">Wi-Fi Direct</string>
+    <string name="cap_passpoint">Passpoint (Hotspot 2.0)</string>
+    <string name="sheet_frequency">%1$d MHz</string>
+    <string name="sheet_span_value">%1$d – %2$d MHz</string>
+    <string name="sheet_percent">%1$d%%</string>
+    <string name="sheet_distance_value">%1$.1f m</string>
+    <string name="security_mix_count">%1$d</string>
+    <string name="capture_area_value">%1$.1f m²</string>
+    <string name="capture_speed_value">%1$.0f Mbps</string>
+</resources>
