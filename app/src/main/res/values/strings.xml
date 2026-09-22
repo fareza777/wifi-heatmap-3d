@@ -849,4 +849,69 @@ The result can be exported as an image or a written report.</string>
     <string name="billing_nothing_to_restore">No completed remove-ads purchase was found for this Google Play account.</string>
     <string name="billing_check_price">Check price and availability on Google Play</string>
     <string name="arcore_privacy_notice">AR scanning uses Google Play Services for AR (ARCore), provided by Google. Google processes service data under its Privacy Policy. Tap to read.</string>
+
+    <!-- Channels advisor -->
+    <string name="home_tile_channels">Channels</string>
+    <string name="home_tile_channels_sub">Ratings &amp; best pick</string>
+    <string name="channels_title">Channel Advisor</string>
+    <string name="channels_heading">Every channel, scored</string>
+    <string name="channels_intro">Channels are rated by how many neighbours share them and how loud those neighbours are. Wide carriers count against every channel they span — an 80 MHz hog is a problem for four channels, not one.</string>
+    <string name="channels_recommendation_title">BEST CHANNEL FOR THIS BAND</string>
+    <string name="channels_recommendation_empty">No networks heard on this band, so every channel is equally free. Any standard channel is a good pick.</string>
+    <string name="channels_best">Best channel</string>
+    <string name="channels_aps_here">APs overlapping</string>
+    <string name="channels_band_total">Networks heard</string>
+    <string name="channels_already_best">Your router is already on the best channel here.</string>
+    <string name="channels_alternates">Also good: %1$s</string>
+    <string name="channels_spectrum_title">%1$s SPECTRUM</string>
+    <string name="channels_empty_band">Nothing heard on %1$s. The radio may not scan this band, or the area is simply quiet.</string>
+    <string name="channels_rating_title">CHANNEL RATINGS</string>
+    <string name="channels_free_count">%1$d more channels sit completely empty below.</string>
+    <string name="channels_dfs">DFS</string>
+    <string name="channels_ap_count">%1$d APs</string>
+    <string name="channels_score_note">Score 0–10: empty channels earn 10, and each overlapping network or loud rival pulls it down. DFS channels are legal to use but must be vacated if radar is detected.</string>
+
+    <!-- Wi-Fi RTT -->
+    <string name="home_tile_rtt">Distance</string>
+    <string name="home_tile_rtt_sub">RTT &amp; locate</string>
+    <string name="rtt_title">Wi-Fi RTT</string>
+    <string name="rtt_heading">Measure, don\'t guess</string>
+    <string name="rtt_intro">802.11mc measures actual round-trip time to an access point — distance in metres, not a signal-strength estimate. Tap a spot on the sketch where you are standing and it triangulates where the router sits.</string>
+    <string name="rtt_no_hardware_title">No RTT hardware</string>
+    <string name="rtt_no_hardware_body">This phone does not support Wi-Fi RTT (802.11mc), so distances can only be estimated from signal strength elsewhere in the app.</string>
+    <string name="rtt_wifi_off_title">Wi-Fi is off</string>
+    <string name="rtt_wifi_off_body">Turn Wi-Fi on to range access points.</string>
+    <string name="rtt_permission_title">Location needed</string>
+    <string name="rtt_permission_body">Ranging requires the fine-location permission, same as Wi-Fi scanning. Grant it on the home screen and come back.</string>
+    <string name="rtt_unavailable_title">RTT paused</string>
+    <string name="rtt_unavailable_body">The ranging service is temporarily unavailable — often while Wi-Fi is reconnecting. Try again in a moment.</string>
+    <string name="rtt_no_peers_title">No ranging responders</string>
+    <string name="rtt_no_peers_body">No nearby access point answers 802.11mc ranging. Many routers and mesh systems do not support it; enterprise gear usually does.</string>
+    <string name="rtt_peers_title">RANGING-CAPABLE ACCESS POINTS</string>
+    <string name="rtt_peer_meta">%1$s  ·  ch %2$d  ·  %3$d dBm</string>
+    <string name="rtt_measure">Measure</string>
+    <string name="rtt_measuring">Measuring…</string>
+    <string name="rtt_distance_value">%1$.2f m  ±%2$.2f</string>
+    <string name="rtt_samples">%1$d bursts used · %2$d failed</string>
+    <string name="rtt_failed">Ranging failed — the AP stopped answering.</string>
+    <string name="rtt_locate_title">LOCATE THE ROUTER</string>
+    <string name="rtt_locate_intro">Walk to a spot, tap where you are standing on the sketch, and the app ranges the selected AP there. Three or more spots solve its position.</string>
+    <string name="rtt_scale">Map scale</string>
+    <string name="rtt_scale_value">1 cell = %1$.2g m</string>
+    <string name="rtt_anchor_point">Spot %1$d  (%2$.1f, %3$.1f) m</string>
+    <string name="rtt_anchor_distance">%1$.2f m</string>
+    <string name="rtt_anchors_empty">Tap the sketch at each spot you stand to add a measurement.</string>
+    <string name="rtt_estimate">Router ≈ (%1$.1f, %2$.1f) m · ±%3$.1f m</string>
+    <string name="rtt_estimate_note">Uncertainty is the solver\'s disagreement between spots — a wall or a bad tap widens it.</string>
+    <string name="rtt_anchor_failed">Ranging failed at that spot — the anchor was not kept.</string>
+    <string name="rtt_undo">Undo</string>
+    <string name="rtt_reset">Reset</string>
+
+    <!-- LAN discovery -->
+    <string name="devices_sweeping">Sweeping 254 addresses…</string>
+    <string name="devices_discovering">Listening for service announcements… %1$ds</string>
+    <string name="devices_fingerprint_name">Name</string>
+    <string name="devices_fingerprint_vendor">Vendor</string>
+    <string name="devices_fingerprint_model">Model</string>
+    <string name="devices_fingerprint_type">Type</string>
 </resources>

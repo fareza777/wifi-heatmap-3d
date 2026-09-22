@@ -21,6 +21,10 @@ data class LanDevice(
     val isThisPhone: Boolean,
     val isGateway: Boolean,
     val responseMs: Int,
+    /** Services it advertises over mDNS/SSDP — empty until discovery runs. */
+    val services: List<DiscoveredService> = emptyList(),
+    /** What the device calls itself in its UPnP description, when it has one. */
+    val upnp: UpnpFingerprint? = null,
 ) {
     /**
      * Best name available, falling back to the address.
@@ -31,9 +35,14 @@ data class LanDevice(
      */
     fun displayName(thisPhone: String, router: String): String = when {
         isThisPhone -> thisPhone
-        isGateway -> hostName ?: router
-        else -> hostName ?: ipAddress
+        isGateway -> upnp?.friendlyName ?: hostName ?: router
+        else -> upnp?.friendlyName ?: hostName ?: ipAddress
     }
+
+    /** mDNS service names worth one line under the address. */
+    val serviceSummary: String?
+        get() = services.map { it.name }.distinct().take(3)
+            .joinToString().takeIf { it.isNotBlank() }
 }
 
 /** Everything the platform will tell us about the current connection. */
