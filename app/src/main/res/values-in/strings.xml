@@ -1008,7 +1008,7 @@ Hasilnya bisa diekspor jadi gambar atau laporan teks.</string>
     <string name="radiolab_channel">Kanal</string>
     <string name="radiolab_stability">Stabilitas</string>
     <string name="radiolab_rssi_chart">SINYAL (dBm)</string>
-    <string name="radiolab_rate_chart">RATE TERVERIFIKASI (Mbps)</string>
+    <string name="radiolab_rate_chart">RATE LINK (Mbps)</string>
     <string name="radiolab_tx">TX — router dengar kamu</string>
     <string name="radiolab_rx">RX — kamu dengar router</string>
     <string name="radiolab_csi_note">Catatan jujur: HP tidak bisa membaca CSI mentah (data per-subcarrier yang diekspos firmware ESP32-CSI) — ini telemetri terhalus yang diberikan Android ke aplikasi.</string>

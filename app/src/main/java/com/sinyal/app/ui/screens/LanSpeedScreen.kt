@@ -185,13 +185,12 @@ class LanSpeedViewModel(app: Application) : AndroidViewModel(app) {
     override fun onCleared() {
         advertiser.stop()
         server.stop()
-        super.onCleared()
     }
 
     /** The phone's own IPv4 on this Wi-Fi, shown so pairing can be checked by eye. */
     private fun localIp(): String {
         val raw = wifiManager.connectionInfo?.ipAddress ?: 0
-        return if (raw == 0) "" else "%d.%d.%d.%d".format(
+        return if (raw == 0) "—" else "%d.%d.%d.%d".format(
             raw and 0xFF, raw shr 8 and 0xFF, raw shr 16 and 0xFF, raw shr 24 and 0xFF,
         )
     }

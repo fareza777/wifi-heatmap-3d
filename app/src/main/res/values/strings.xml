@@ -953,7 +953,7 @@ The result can be exported as an image or a written report.</string>
     <string name="lanspeed_idle_latency">Idle ping</string>
     <string name="lanspeed_loaded_latency">Ping under load</string>
     <string name="lanspeed_verdict_good">Latency stayed flat under load — the link buffers well.</string>
-    <string name="lanspeed_verdict_loaded">+%1$d ms under load — the link holds traffic hostage.</string>
+    <string name="lanspeed_verdict_loaded">+%1$d ms under load — latency climbs when the pipe is busy.</string>
     <string name="lanspeed_failed">Could not reach that peer — same Wi-Fi, Host still open?</string>
     <string name="lanspeed_peers_title">BENCH PEERS NEARBY</string>
     <string name="lanspeed_no_peers">Nothing found — open Host on the other phone, or enter its address below.</string>
