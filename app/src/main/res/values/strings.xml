@@ -183,24 +183,13 @@
     <string name="home_start_scan">Start 3D Scan</string>
     <string name="home_stat_band">Band</string>
     <string name="home_stat_channel">Channel</string>
-    <string name="home_stat_link_speed">Link speed</string>
     <string name="home_stat_standard">Standard</string>
     <string name="home_tile_networks">Networks</string>
-    <string name="home_tile_networks_sub">Every Wi-Fi nearby</string>
     <string name="home_tile_spectrum">Spectrum</string>
-    <string name="home_tile_spectrum_sub">Channels &amp; waves</string>
     <string name="home_tile_speed">Speed</string>
-    <string name="home_tile_speed_sub">Down, up, ping</string>
     <string name="home_tile_devices">Devices</string>
-    <string name="home_tile_devices_sub">Who is on this network</string>
     <string name="home_tile_security">Security</string>
-    <string name="home_tile_security_sub">Audit &amp; DNS</string>
-    <string name="home_tile_graph">Graph</string>
-    <string name="home_tile_graph_sub">Signal over time</string>
     <string name="home_tile_history">History</string>
-    <string name="home_tile_history_sub">Saved scans</string>
-    <string name="home_tile_compare">Compare</string>
-    <string name="home_tile_compare_sub">Before &amp; after</string>
 
     <!-- Spectrum / analysis screen -->
     <string name="analysis_title">Wi-Fi Analysis</string>
@@ -323,40 +312,24 @@
     <string name="narrative_title">WI-FI SCAN REPORT</string>
     <string name="narrative_unknown_network">Unknown network</string>
     <string name="narrative_summary_title">SUMMARY</string>
-    <string name="narrative_area">Measured %1$.1f m² across %2$d sample points, over %3$s.</string>
     <string name="narrative_range">Signal strength ranged from %1$d to %2$d dBm.</string>
     <string name="narrative_verdict_nodata">Not enough data to judge yet.</string>
     <string name="narrative_verdict_good">The whole measured area has usable signal.</string>
     <string name="narrative_verdict_mixed">Parts of the area are weak — video calls and streaming can stutter there.</string>
     <string name="narrative_verdict_bad">There are near-dead areas; the connection is likely to drop there.</string>
-    <string name="narrative_points_title">KEY POINTS</string>
-    <string name="narrative_strongest">• Strongest %1$d dBm%2$s</string>
-    <string name="narrative_weakest">• Weakest %1$d dBm%2$s</string>
-    <string name="narrative_place">, %1$.1f m %2$s of the starting point</string>
     <string name="narrative_photos_title">LANDMARKS</string>
-    <string name="narrative_photo">• %1$s%2$s</string>
-    <string name="narrative_router_title">ROUTER PLACEMENT</string>
-    <string name="narrative_router_nodata">Not enough data to suggest a router position.</string>
-    <string name="narrative_router_unreliable">The signal spread is too noisy to give an advice worth trusting (model error ±%1$.1f dB). Scan again, walking more slowly and through more rooms.</string>
-    <string name="narrative_router_move">Move the router about %1$.1f m. The weakest area is predicted to gain %2$d dB, from %3$d to %4$d dBm. The calculation uses a path-loss model with n=%5$.1f and error ±%6$.1f dB, and ignores where the walls are — treat it as a starting point, not a certainty.</string>
-    <string name="narrative_router_optimal">The router\'s current position is already close to optimal for the area scanned.</string>
-    <string name="narrative_room_title">THE ROOM</string>
-    <string name="narrative_room_estimated">The room shape is an estimate from the area walked — no wall was detected by the camera during the scan.</string>
-    <string name="narrative_room_measured">%1$d walls detected directly by the camera.</string>
-    <string name="narrative_location_title">LOCATION</string>
-    <string name="narrative_location_body">GPS anchor %1$.6f, %2$.6f (±%3$.0f m). Distances between points inside this report are far more precise than that figure; what is uncertain is where the whole house sits on a world map.</string>
+    <string name="narrative_photo">%1$d. %2$s</string>
     <string name="narrative_footer">Measured with WiFi Heatmap 3D.</string>
     <string name="narrative_duration_ms">%1$d min %2$d s</string>
     <string name="narrative_duration_s">%1$d s</string>
     <string name="map_default_title">Wi-Fi scan</string>
-    <string name="map_subtitle">%1$.1f m² · %2$d sample points</string>
+    <string name="map_subtitle">%1$d sample points</string>
     <string name="map_share_caption">Wi-Fi map %1$s</string>
 
     <!-- Exported map image -->
-    <string name="map_scale_bar">1 m</string>
-    <string name="map_legend">"S start   +  strongest   -  weakest   R  router suggestion   1..n  photos"</string>
+    <string name="map_legend">"S  start     1..n  landmark photos"</string>
     <string name="map_path_note">White line = the route walked</string>
-    <string name="map_stats">%1$.1f m² · %2$d sample points · %3$d to %4$d dBm</string>
+    <string name="map_stats">%1$d sample points · %2$d to %3$d dBm</string>
     <string name="map_footer">Measured with WiFi Heatmap 3D</string>
 
     <!-- Settings screen -->
@@ -373,7 +346,6 @@
     <string name="settings_about_sub">Version, privacy, and leave a rating</string>
     <string name="settings_remove_ads">Remove Ads</string>
     <string name="settings_remove_ads_priced">One payment of %1$s, forever</string>
-    <string name="settings_remove_ads_sub">One payment, forever</string>
     <string name="settings_version">%1$s %2$s</string>
 
     <!-- History screen -->
@@ -390,7 +362,6 @@
     <string name="history_day_sat">Sat</string>
     <string name="history_day_sun">Sun</string>
     <string name="history_unknown_network">Unknown network</string>
-    <string name="history_scan_detail">%1$s · %2$.1f m² · %3$d points</string>
     <string name="history_delete">Delete</string>
 
     <!-- Share sheet -->
@@ -472,11 +443,9 @@ This app measures its strength as you walk, tracks your position with ARCore, th
     <string name="capture_searching">Looking for surfaces…</string>
     <string name="capture_stat_signal">Signal</string>
     <string name="capture_stat_points">Sample points</string>
-    <string name="capture_stat_walls">Walls</string>
     <string name="capture_stat_duration">Duration</string>
     <string name="capture_hint_jumpy">Walk more slowly and point the camera at textured surfaces — a rug, a shelf, a door frame. Glossy or blank surfaces make tracking slip.</string>
     <string name="capture_hint_start">Point the camera at the floor and start walking slowly. A point appears every 20 cm you move.</string>
-    <string name="capture_hint_walls">No wall detected yet. Hold the camera on a wall for 2–3 seconds — pick one with a pattern, like a cupboard or a door frame.</string>
     <string name="capture_range">Weakest %1$d dBm · Strongest %2$d dBm</string>
     <string name="capture_finish">Finish</string>
     <string name="capture_take_photo">Take a landmark photo</string>
@@ -528,21 +497,9 @@ The result can be exported as an image or a written report.</string>
     <string name="room_recenter">Re-centre</string>
     <string name="room_building">Building the 3D model…</string>
     <string name="room_no_scan">No scan yet. Run a session first.</string>
-    <string name="room_photo_subtitle">%1$.1f m %2$s</string>
     <string name="room_unknown_network">Unknown network</string>
-    <string name="room_summary_line">%1$.1f m² · %2$d points · %3$s to %4$s</string>
-    <string name="room_dbm_suffix">%1$d dBm</string>
     <string name="room_collapse">Close</string>
     <string name="room_expand">Detail</string>
-    <string name="room_stat_area">Measured area</string>
-    <string name="room_stat_area_value">%1$.1f m²</string>
-    <string name="room_stat_points">Sample points</string>
-    <string name="room_stat_walls">Walls</string>
-    <string name="room_stat_walls_estimated">Walls (est.)</string>
-    <string name="room_place_strongest">Strongest point</string>
-    <string name="room_place_weakest">Weakest point</string>
-    <string name="room_walls_estimated_note">ARCore found no real wall — this boundary is drawn from the area you walked. Point the camera at walls while scanning to get the true shape.</string>
-    <string name="room_height_note">Tile height = signal strength. The white ribbon is the route you walked, and the purple needle points north.</string>
     <string name="room_export_image">Export image</string>
     <string name="room_export_report">Share report</string>
     <string name="room_rescan">Scan again</string>
@@ -550,49 +507,18 @@ The result can be exported as an image or a written report.</string>
     <string name="room_landmark_title">Landmark</string>
     <string name="room_landmark_name">Place name</string>
     <string name="room_landmark_hint">e.g. desk, kitchen, front bedroom</string>
-    <string name="room_bearing">%1$.1f m %2$s of the starting point</string>
     <string name="room_legend_title">WHAT THE SYMBOLS MEAN</string>
-    <string name="room_legend_green">Green pillar</string>
-    <string name="room_legend_green_meaning">the strongest signal point</string>
-    <string name="room_legend_red">Red pillar</string>
-    <string name="room_legend_red_meaning">the weakest signal point</string>
-    <string name="room_legend_lilac">Pale purple pillar</string>
-    <string name="room_legend_lilac_meaning">the router\'s estimated position now</string>
-    <string name="room_legend_violet">Tall purple pillar</string>
-    <string name="room_legend_violet_meaning">a better suggested router position</string>
     <string name="room_legend_blue">Blue pillar</string>
     <string name="room_legend_blue_meaning">a landmark photo you took</string>
-    <string name="room_legend_ribbon">White ribbon</string>
-    <string name="room_legend_ribbon_meaning">the route you walked</string>
     <string name="room_legend_pin">Short white pin</string>
     <string name="room_legend_pin_meaning">where the scan started</string>
-    <string name="room_legend_needle">Long needle</string>
-    <string name="room_legend_needle_meaning">which way is north</string>
     <string name="room_legend_slab">Grey slab</string>
     <string name="room_legend_slab_meaning">a detected wall</string>
     <string name="room_legend_colour_note">Tile colour means signal strength, and so does its height. Red is weak, green is strong.</string>
     <string name="room_legend_entry">%1$s — %2$s</string>
-    <string name="room_chip_strongest">strongest</string>
-    <string name="room_chip_weakest">weakest</string>
-    <string name="room_chip_router_now">router now</string>
-    <string name="room_chip_router_move">suggested move</string>
     <string name="room_chip_photo">photo</string>
     <string name="room_gesture_hint_photo">Drag to rotate, pinch to zoom. Tap a blue pillar for the photo.</string>
     <string name="room_gesture_hint">Drag to rotate, pinch to zoom.</string>
-    <string name="room_place_no_bearing">%1$s: direction unavailable (no compass reading)</string>
-    <string name="room_place_with_bearing">%1$s: %2$.1f m %3$s of the starting point</string>
-    <string name="room_no_gps">GPS coordinates unavailable — there was no satellite signal during the scan. The distances and directions above are still accurate.</string>
-    <string name="room_coords_title">COORDINATES</string>
-    <string name="room_coords_strongest">Strongest point: %1$s</string>
-    <string name="room_coords_router">Suggested router: %1$s</string>
-    <string name="room_gps_accuracy">The GPS anchor is off by ±%1$.0f m. Shapes and distances between points stay precise; what can shift is the position of the whole house on a map, as one piece.</string>
-    <string name="room_router_nodata">Not enough data to suggest a router position.</string>
-    <string name="room_router_unreliable">The signal spread is too noisy to suggest a router position with any confidence. Scan more rooms, walking more slowly.</string>
-    <string name="room_router_move">Move the router %1$.1f m to the purple pillar — the weakest area is predicted to gain %2$d dB.</string>
-    <string name="room_router_optimal">Your router position is already close to optimal.</string>
-    <string name="room_router_title">ROUTER PLACEMENT</string>
-    <string name="room_router_prediction">Weakest area estimate: %1$d dBm now, %2$d dBm after the move.</string>
-    <string name="room_router_model">Path-loss model n=%1$.1f, error ±%2$.1f dB. This calculation ignores where the walls are — treat it as a starting point, not a certainty.</string>
 
     <!-- Spectrum chart legend -->
     <string name="spectrum_legend_row">ch%1$d · %2$d MHz · %3$d dBm</string>
@@ -700,14 +626,6 @@ The result can be exported as an image or a written report.</string>
     <string name="cap_scan_throttle">Scan throttling on</string>
 
     <!-- Compass points -->
-    <string name="compass_n">north</string>
-    <string name="compass_ne">north-east</string>
-    <string name="compass_e">east</string>
-    <string name="compass_se">south-east</string>
-    <string name="compass_s">south</string>
-    <string name="compass_sw">south-west</string>
-    <string name="compass_w">west</string>
-    <string name="compass_nw">north-west</string>
 
     <!-- Result panel states -->
     <string name="room_minimize">Hide</string>
@@ -782,7 +700,6 @@ The result can be exported as an image or a written report.</string>
     <string name="security_graded_note">Graded on what each beacon advertises. That says nothing about how strong the password is, how old the firmware is, or who already has the key.</string>
 
     <!-- Capture wall coaching -->
-    <string name="capture_hint_walls_v2">No wall found yet. Stop about 1.5 m from one, keep the camera on it, and step slowly left and right for a few seconds — that sideways movement is what lets a wall be measured.</string>
 
     <!-- Capture coverage tile -->
     <string name="capture_stat_area">Area</string>
@@ -820,8 +737,6 @@ The result can be exported as an image or a written report.</string>
     <string name="coverage_roam_fine">Moved at a sensible point.</string>
     <string name="coverage_no_roam">Several transmitters were in range but the phone never switched between them during this walk. That is normal on a short scan.</string>
     <string name="coverage_sampling_note">Android lets an app ask for a fresh scan four times per two minutes, so each transmitter is caught at a handful of places along the walk rather than continuously.</string>
-    <string name="home_tile_coverage">Transmitters</string>
-    <string name="home_tile_coverage_sub">Mesh &amp; handover</string>
 
     <!-- Speed survey during scan -->
     <string name="scanmode_measure_speed">Also measure real speed</string>
@@ -849,4 +764,14 @@ The result can be exported as an image or a written report.</string>
     <string name="billing_nothing_to_restore">No completed remove-ads purchase was found for this Google Play account.</string>
     <string name="billing_check_price">Check price and availability on Google Play</string>
     <string name="arcore_privacy_notice">AR scanning uses Google Play Services for AR (ARCore), provided by Google. Google processes service data under its Privacy Policy. Tap to read.</string>
+
+    <!-- Relocated entry points -->
+    <string name="home_chip_channel">Ch %1$d</string>
+    <string name="analysis_open_graph">Signal over time</string>
+    <string name="history_open_compare">Compare two scans</string>
+    <string name="room_open_coverage">Transmitters &amp; handovers</string>
+
+    <!-- Export without size claims -->
+    <string name="map_north">N</string>
+    <string name="narrative_points">%1$d sample points, measured over %2$s.</string>
 </resources>

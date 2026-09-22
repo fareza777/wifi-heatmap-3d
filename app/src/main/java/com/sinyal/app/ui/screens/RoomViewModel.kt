@@ -3,18 +3,12 @@ package com.sinyal.app.ui.screens
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
-import android.hardware.GeomagneticField
-import com.sinyal.app.ar.GridCell
-import com.sinyal.app.core.Bearing
-import com.sinyal.app.core.GeoMath
 import com.sinyal.app.data.CompletedScan
 import com.sinyal.app.data.PlacePhoto
 import com.sinyal.app.data.ScanRepository
 import com.sinyal.app.data.ScanStore
 import com.sinyal.app.heat.HeatField
 import com.sinyal.app.heat.HeatTile
-import com.sinyal.app.heat.RouterAdvice
-import com.sinyal.app.heat.RouterPlanner
 import com.sinyal.app.export.MapRenderer
 import com.sinyal.app.export.NarrativeWriter
 import com.sinyal.app.export.ShareHelper
@@ -28,23 +22,18 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import com.sinyal.app.R
 
-/** Where a point of interest is, expressed the way a person can act on it. */
-data class PlaceInfo(
-    val bearing: Bearing?,
-    val latLon: String?,
-)
-
+/**
+ * What the result screen draws.
+ *
+ * Deliberately short. It used to carry the strongest and weakest points, a
+ * router suggestion and a bearing for every landmark — all derived from the
+ * same drifting coordinates, all removed from the screen because they read as
+ * precise and were not. Keeping them computed here only invited them back.
+ */
 data class RoomUiState(
     val scan: CompletedScan? = null,
     val tiles: List<HeatTile> = emptyList(),
-    val strongestCell: GridCell? = null,
-    val weakestCell: GridCell? = null,
-    val advice: RouterAdvice? = null,
-    val strongestPlace: PlaceInfo? = null,
-    val weakestPlace: PlaceInfo? = null,
-    val suggestedPlace: PlaceInfo? = null,
     val scale: SignalScale? = null,
-    val photoPlaces: Map<String, PlaceInfo> = emptyMap(),
     val building: Boolean = true,
 )
 
@@ -88,13 +77,8 @@ class RoomViewModel(app: Application) : AndroidViewModel(app) {
                 scan = scan,
                 tiles = current.tiles,
                 scale = scale,
-                advice = current.advice,
                 title = scan.ssid ?: resources.getString(R.string.map_default_title),
-                subtitle = resources.getString(
-                    R.string.map_subtitle,
-                    scan.grid.coveredAreaSqM,
-                    scan.grid.cellCount,
-                ),
+                subtitle = resources.getString(R.string.map_subtitle, scan.grid.cellCount),
             )
         }
         ShareHelper.shareImage(
@@ -110,16 +94,7 @@ class RoomViewModel(app: Application) : AndroidViewModel(app) {
         val scan = current.scan ?: return@launch
 
         val text = withContext(Dispatchers.Default) {
-            NarrativeWriter.write(
-                res = resources,
-                scan = scan,
-                advice = current.advice,
-                strongestBearing = current.strongestPlace?.bearing,
-                weakestBearing = current.weakestPlace?.bearing,
-                photoBearings = current.photoPlaces
-                    .mapNotNull { (id, place) -> place.bearing?.let { id to it } }
-                    .toMap(),
-            )
+            NarrativeWriter.write(res = resources, scan = scan)
         }
         ShareHelper.shareText(getApplication(), text)
     }
@@ -153,29 +128,9 @@ class RoomViewModel(app: Application) : AndroidViewModel(app) {
         val cells = scan.grid.occupiedCells
         val scale = SignalScale.forCells(cells)
         val tiles = withContext(Dispatchers.Default) { bake(scan, scale) }
-        val advice = withContext(Dispatchers.Default) { RouterPlanner.analyse(cells) }
-        val strongest = cells.maxByOrNull { cell -> cell.rssiDbm }
-        val weakest = cells.minByOrNull { cell -> cell.rssiDbm }
-        val azimuth = trueNorthAzimuth(scan)
 
         _state.update {
-            it.copy(
-                scan = scan,
-                tiles = tiles,
-                strongestCell = strongest,
-                weakestCell = weakest,
-                advice = advice,
-                scale = scale,
-                photoPlaces = scan.photos.associate { photo ->
-                    photo.id to placeOf(scan, azimuth, photo.x, photo.z)
-                },
-                strongestPlace = strongest?.let { c -> placeOf(scan, azimuth, c.x, c.z) },
-                weakestPlace = weakest?.let { c -> placeOf(scan, azimuth, c.x, c.z) },
-                suggestedPlace = advice
-                    ?.takeIf { plan -> plan.isWorthMoving }
-                    ?.let { plan -> placeOf(scan, azimuth, plan.suggestedX, plan.suggestedZ) },
-                building = false,
-            )
+            it.copy(scan = scan, tiles = tiles, scale = scale, building = false)
         }
     }
 
@@ -226,41 +181,6 @@ class RoomViewModel(app: Application) : AndroidViewModel(app) {
             z += step
         }
         return tiles
-    }
-
-    /**
-     * Corrects the recorded compass reading to true north.
-     *
-     * The magnetometer reports magnetic north, which in Indonesia sits about a
-     * degree off true north — small, but free to fix once a rough position is
-     * known, and it is what makes a stated bearing agree with a map.
-     */
-    private fun trueNorthAzimuth(scan: CompletedScan): Float? {
-        val magnetic = scan.startAzimuthDegrees ?: return null
-        val anchor = scan.geoAnchor ?: return magnetic
-        val declination = GeomagneticField(
-            anchor.latitude.toFloat(),
-            anchor.longitude.toFloat(),
-            0f,
-            scan.savedAtMs,
-        ).declination
-        return GeoMath.applyDeclination(magnetic, declination)
-    }
-
-    private fun placeOf(
-        scan: CompletedScan,
-        azimuthDegrees: Float?,
-        x: Float,
-        z: Float,
-    ): PlaceInfo {
-        if (azimuthDegrees == null) return PlaceInfo(bearing = null, latLon = null)
-        val bearing = GeoMath.bearingOf(x, z, azimuthDegrees)
-        val anchor = scan.geoAnchor
-        val latLon = anchor?.let {
-            val (lat, lon) = GeoMath.offsetLatLon(it.latitude, it.longitude, bearing)
-            GeoMath.formatLatLon(lat, lon)
-        }
-        return PlaceInfo(bearing = bearing, latLon = latLon)
     }
 
     /** Maps signal onto tile thickness; the floor stays a solid slab at the low end. */

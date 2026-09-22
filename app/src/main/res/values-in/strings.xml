@@ -161,23 +161,13 @@
     <string name="home_start_scan">Mulai Pemindaian 3D</string>
     <string name="home_stat_band">Pita</string>
     <string name="home_stat_channel">Kanal</string>
-    <string name="home_stat_link_speed">Kecepatan tautan</string>
     <string name="home_stat_standard">Standar</string>
     <string name="home_tile_networks">Jaringan</string>
-    <string name="home_tile_networks_sub">Semua Wi-Fi sekitar</string>
     <string name="home_tile_spectrum">Spektrum</string>
-    <string name="home_tile_spectrum_sub">Kanal &amp; gelombang</string>
     <string name="home_tile_speed">Kecepatan</string>
-    <string name="home_tile_speed_sub">Unduh, unggah, ping</string>
     <string name="home_tile_devices">Perangkat</string>
-    <string name="home_tile_devices_sub">Siapa di jaringan ini</string>
     <string name="home_tile_security">Keamanan</string>
-    <string name="home_tile_graph">Grafik</string>
-    <string name="home_tile_graph_sub">Sinyal per waktu</string>
     <string name="home_tile_history">Riwayat</string>
-    <string name="home_tile_history_sub">Scan tersimpan</string>
-    <string name="home_tile_compare">Bandingkan</string>
-    <string name="home_tile_compare_sub">Sebelum &amp; sesudah</string>
 
     <!-- Spectrum / analysis screen -->
     <string name="analysis_title">Analisa Wi-Fi</string>
@@ -288,38 +278,23 @@
     <string name="narrative_title">LAPORAN PEMINDAIAN WI-FI</string>
     <string name="narrative_unknown_network">Jaringan tidak diketahui</string>
     <string name="narrative_summary_title">RINGKASAN</string>
-    <string name="narrative_area">Area terukur %1$.1f m² dari %2$d titik pengukuran, selama %3$s.</string>
     <string name="narrative_range">Kekuatan sinyal berkisar %1$d sampai %2$d dBm.</string>
     <string name="narrative_verdict_nodata">Belum cukup data untuk menilai.</string>
     <string name="narrative_verdict_good">Seluruh area terukur punya sinyal yang layak pakai.</string>
     <string name="narrative_verdict_mixed">Sebagian area lemah — video call dan streaming bisa tersendat di sana.</string>
     <string name="narrative_verdict_bad">Ada area yang nyaris mati; koneksi kemungkinan besar putus-putus di sana.</string>
-    <string name="narrative_points_title">TITIK PENTING</string>
-    <string name="narrative_strongest">• Terkuat %1$d dBm%2$s</string>
-    <string name="narrative_weakest">• Terlemah %1$d dBm%2$s</string>
-    <string name="narrative_place">, %1$.1f m ke arah %2$s dari titik mulai</string>
     <string name="narrative_photos_title">PENANDA LOKASI</string>
-    <string name="narrative_router_title">SARAN POSISI ROUTER</string>
-    <string name="narrative_router_nodata">Data belum cukup untuk menyarankan posisi router.</string>
-    <string name="narrative_router_unreliable">Sebaran sinyal terlalu berisik untuk memberi saran yang bisa dipertanggungjawabkan (galat model ±%1$.1f dB). Pindai ulang dengan berjalan lebih pelan dan melewati lebih banyak ruangan.</string>
-    <string name="narrative_router_move">Pindahkan router sekitar %1$.1f m. Area terlemah diperkirakan menguat %2$d dB, dari %3$d ke %4$d dBm. Perhitungan memakai model peluruhan n=%5$.1f dengan galat ±%6$.1f dB, dan mengabaikan posisi dinding — anggap sebagai titik awal, bukan angka pasti.</string>
-    <string name="narrative_router_optimal">Posisi router saat ini sudah mendekati optimal untuk area yang dipindai.</string>
-    <string name="narrative_room_title">RUANGAN</string>
-    <string name="narrative_room_estimated">Bentuk ruangan adalah perkiraan dari area yang dilewati — tidak ada dinding yang terdeteksi kamera selama pemindaian.</string>
-    <string name="narrative_room_measured">%1$d dinding terdeteksi langsung oleh kamera.</string>
-    <string name="narrative_location_title">LOKASI</string>
-    <string name="narrative_location_body">Jangkar GPS %1$.6f, %2$.6f (meleset ±%3$.0f m). Jarak antar titik di dalam laporan ini jauh lebih presisi daripada angka itu; yang tidak pasti adalah posisi seluruh rumah di peta dunia.</string>
     <string name="narrative_footer">Diukur dengan WiFi Heatmap 3D.</string>
     <string name="narrative_duration_ms">%1$d menit %2$d detik</string>
     <string name="narrative_duration_s">%1$d detik</string>
     <string name="map_default_title">Pemindaian Wi-Fi</string>
-    <string name="map_subtitle">%1$.1f m² · %2$d titik ukur</string>
+    <string name="map_subtitle">%1$d titik ukur</string>
     <string name="map_share_caption">Peta Wi-Fi %1$s</string>
 
     <!-- Exported map image -->
-    <string name="map_legend">"S titik mulai   +  terkuat   -  terlemah   R  saran router   1..n  foto"</string>
+    <string name="map_legend">"S  titik mulai     1..n  foto patokan"</string>
     <string name="map_path_note">Garis putih = rute yang dijalani</string>
-    <string name="map_stats">%1$.1f m² · %2$d titik ukur · %3$d s/d %4$d dBm</string>
+    <string name="map_stats">%1$d titik ukur · %2$d s/d %3$d dBm</string>
     <string name="map_footer">Diukur dengan WiFi Heatmap 3D</string>
 
     <!-- Settings screen -->
@@ -335,7 +310,6 @@
     <string name="settings_about_sub">Versi, privasi, dan beri rating</string>
     <string name="settings_remove_ads">Hapus Iklan</string>
     <string name="settings_remove_ads_priced">Sekali bayar %1$s, selamanya</string>
-    <string name="settings_remove_ads_sub">Sekali bayar, selamanya</string>
 
     <!-- History screen -->
     <string name="history_title">Riwayat</string>
@@ -351,7 +325,6 @@
     <string name="history_day_sat">Sab</string>
     <string name="history_day_sun">Min</string>
     <string name="history_unknown_network">Jaringan tidak diketahui</string>
-    <string name="history_scan_detail">%1$s · %2$.1f m² · %3$d titik</string>
     <string name="history_delete">Hapus</string>
 
     <!-- Share sheet -->
@@ -430,11 +403,9 @@ Aplikasi ini mengukur kekuatannya sambil Anda berjalan, melacak posisi dengan AR
     <string name="capture_searching">Mencari permukaan…</string>
     <string name="capture_stat_signal">Sinyal</string>
     <string name="capture_stat_points">Titik ukur</string>
-    <string name="capture_stat_walls">Dinding</string>
     <string name="capture_stat_duration">Durasi</string>
     <string name="capture_hint_jumpy">Jalan lebih pelan dan arahkan kamera ke permukaan bertekstur — karpet, rak, kusen pintu. Permukaan mengkilap atau polos membuat pelacakan meleset.</string>
     <string name="capture_hint_start">Arahkan kamera ke lantai lalu berjalan pelan. Titik akan muncul setiap Anda bergerak 20 cm.</string>
-    <string name="capture_hint_walls">Belum ada dinding terdeteksi. Arahkan kamera ke dinding 2–3 detik — pilih yang ada polanya seperti lemari atau kusen pintu.</string>
     <string name="capture_range">Terlemah %1$d dBm · Terkuat %2$d dBm</string>
     <string name="capture_finish">Selesai</string>
     <string name="capture_take_photo">Ambil foto penanda</string>
@@ -487,16 +458,7 @@ Hasilnya bisa diekspor jadi gambar atau laporan teks.</string>
     <string name="room_building">Menyusun model 3D…</string>
     <string name="room_no_scan">Belum ada hasil pemindaian. Jalankan sesi terlebih dulu.</string>
     <string name="room_unknown_network">Jaringan tidak diketahui</string>
-    <string name="room_summary_line">%1$.1f m² · %2$d titik · %3$s s/d %4$s</string>
     <string name="room_collapse">Tutup</string>
-    <string name="room_stat_area">Luas terukur</string>
-    <string name="room_stat_points">Titik ukur</string>
-    <string name="room_stat_walls">Dinding</string>
-    <string name="room_stat_walls_estimated">Dinding (kira)</string>
-    <string name="room_place_strongest">Titik terkuat</string>
-    <string name="room_place_weakest">Titik terlemah</string>
-    <string name="room_walls_estimated_note">ARCore tidak menemukan dinding sungguhan — batas ini ditarik dari area yang Anda lewati. Arahkan kamera ke dinding saat memindai untuk mendapatkan bentuk asli.</string>
-    <string name="room_height_note">Tinggi petak = kekuatan sinyal. Pita putih adalah rute yang Anda jalani, jarum ungu menunjuk utara.</string>
     <string name="room_export_image">Ekspor gambar</string>
     <string name="room_export_report">Bagikan laporan</string>
     <string name="room_rescan">Pindai ulang</string>
@@ -504,48 +466,17 @@ Hasilnya bisa diekspor jadi gambar atau laporan teks.</string>
     <string name="room_landmark_title">Penanda lokasi</string>
     <string name="room_landmark_name">Nama tempat</string>
     <string name="room_landmark_hint">mis. meja PC, dapur, kamar depan</string>
-    <string name="room_bearing">%1$.1f m ke arah %2$s dari titik mulai</string>
     <string name="room_legend_title">ARTI SIMBOL</string>
-    <string name="room_legend_green">Tiang hijau</string>
-    <string name="room_legend_green_meaning">titik sinyal terkuat</string>
-    <string name="room_legend_red">Tiang merah</string>
-    <string name="room_legend_red_meaning">titik sinyal terlemah</string>
-    <string name="room_legend_lilac">Tiang ungu muda</string>
-    <string name="room_legend_lilac_meaning">perkiraan posisi router saat ini</string>
-    <string name="room_legend_violet">Tiang ungu tinggi</string>
-    <string name="room_legend_violet_meaning">saran posisi router yang lebih baik</string>
     <string name="room_legend_blue">Tiang biru</string>
     <string name="room_legend_blue_meaning">foto penanda yang Anda ambil</string>
-    <string name="room_legend_ribbon">Pita putih</string>
-    <string name="room_legend_ribbon_meaning">rute yang Anda jalani</string>
     <string name="room_legend_pin">Pin putih pendek</string>
     <string name="room_legend_pin_meaning">titik mulai pemindaian</string>
-    <string name="room_legend_needle">Jarum panjang</string>
-    <string name="room_legend_needle_meaning">arah utara</string>
     <string name="room_legend_slab">Balok abu-abu</string>
     <string name="room_legend_slab_meaning">dinding terdeteksi</string>
     <string name="room_legend_colour_note">Warna petak = kekuatan sinyal, tingginya juga. Merah lemah, hijau kuat.</string>
-    <string name="room_chip_strongest">terkuat</string>
-    <string name="room_chip_weakest">terlemah</string>
-    <string name="room_chip_router_now">router kini</string>
-    <string name="room_chip_router_move">saran pindah</string>
     <string name="room_chip_photo">foto</string>
     <string name="room_gesture_hint_photo">Seret memutar, cubit memperbesar. Ketuk tiang biru untuk foto.</string>
     <string name="room_gesture_hint">Seret untuk memutar, cubit untuk memperbesar.</string>
-    <string name="room_place_no_bearing">%1$s: arah tidak tersedia (kompas tidak terbaca)</string>
-    <string name="room_place_with_bearing">%1$s: %2$.1f m ke arah %3$s dari titik mulai</string>
-    <string name="room_no_gps">Koordinat GPS tidak tersedia — tidak ada sinyal satelit saat memindai. Jarak dan arah di atas tetap akurat.</string>
-    <string name="room_coords_title">KOORDINAT</string>
-    <string name="room_coords_strongest">Titik terkuat: %1$s</string>
-    <string name="room_coords_router">Saran router: %1$s</string>
-    <string name="room_gps_accuracy">Jangkar GPS meleset ±%1$.0f m. Bentuk dan jarak antar titik tetap presisi; yang bisa bergeser adalah posisi seluruh rumah di peta, sebagai satu kesatuan.</string>
-    <string name="room_router_nodata">Data belum cukup untuk menyarankan posisi router.</string>
-    <string name="room_router_unreliable">Sebaran sinyal terlalu berisik untuk menyarankan posisi router dengan yakin. Pindai lebih banyak ruangan, berjalan lebih pelan.</string>
-    <string name="room_router_move">Pindahkan router %1$.1f m ke tiang ungu — area terlemah diperkirakan menguat %2$d dB.</string>
-    <string name="room_router_optimal">Posisi router Anda sudah mendekati optimal.</string>
-    <string name="room_router_title">SARAN POSISI ROUTER</string>
-    <string name="room_router_prediction">Perkiraan area terlemah: %1$d dBm sekarang, %2$d dBm setelah dipindahkan.</string>
-    <string name="room_router_model">Model peluruhan n=%1$.1f, galat ±%2$.1f dB. Perhitungan ini mengabaikan posisi dinding — anggap sebagai titik awal, bukan angka pasti.</string>
 
     <!-- Spectrum chart legend -->
     <string name="spectrum_legend_row">k%1$d · %2$d MHz · %3$d dBm</string>
@@ -622,14 +553,6 @@ Hasilnya bisa diekspor jadi gambar atau laporan teks.</string>
     <string name="cap_scan_throttle">Pembatasan pemindaian aktif</string>
 
     <!-- Compass points -->
-    <string name="compass_n">utara</string>
-    <string name="compass_ne">timur laut</string>
-    <string name="compass_e">timur</string>
-    <string name="compass_se">tenggara</string>
-    <string name="compass_s">selatan</string>
-    <string name="compass_sw">barat daya</string>
-    <string name="compass_w">barat</string>
-    <string name="compass_nw">barat laut</string>
 
     <!-- Result panel states -->
     <string name="room_minimize">Sembunyikan</string>
@@ -699,7 +622,6 @@ Hasilnya bisa diekspor jadi gambar atau laporan teks.</string>
     <string name="security_graded_note">Dinilai dari yang disiarkan tiap beacon. Itu tidak mengatakan apa pun tentang sekuat apa passwordnya, seberapa lama firmware-nya, atau siapa saja yang sudah punya kuncinya.</string>
 
     <!-- Capture wall coaching -->
-    <string name="capture_hint_walls_v2">Belum ada dinding terdeteksi. Berhentilah sekitar 1,5 m dari sebuah dinding, arahkan kamera ke sana, lalu geser badan pelan ke kiri dan kanan beberapa detik — gerakan menyamping itu yang membuat dinding bisa diukur.</string>
 
     <!-- Capture coverage tile -->
     <string name="capture_stat_area">Luas</string>
@@ -736,8 +658,6 @@ Hasilnya bisa diekspor jadi gambar atau laporan teks.</string>
     <string name="coverage_roam_fine">Berpindah pada titik yang wajar.</string>
     <string name="coverage_no_roam">Beberapa pemancar terjangkau tapi ponsel tidak pernah berpindah di antara mereka selama berjalan ini. Itu wajar pada pemindaian singkat.</string>
     <string name="coverage_sampling_note">Android hanya mengizinkan aplikasi meminta pemindaian baru empat kali per dua menit, jadi tiap pemancar tertangkap di beberapa titik sepanjang perjalanan, bukan terus-menerus.</string>
-    <string name="home_tile_coverage">Pemancar</string>
-    <string name="home_tile_coverage_sub">Mesh &amp; perpindahan</string>
 
     <!-- Speed survey during scan -->
     <string name="scanmode_measure_speed">Ukur kecepatan sungguhan juga</string>
@@ -782,7 +702,6 @@ Hasilnya bisa diekspor jadi gambar atau laporan teks.</string>
     <string name="networks_vendor_line">%1$s · %2$s</string>
     <string name="networks_width">%1$d MHz</string>
     <string name="networks_report_filename">laporan-jaringan-wifi.txt</string>
-    <string name="home_tile_security_sub">Audit &amp; DNS</string>
     <string name="diag_model">Model</string>
     <string name="diag_android">Android</string>
     <string name="diag_android_value">%1$s (API %2$d)</string>
@@ -795,17 +714,13 @@ Hasilnya bisa diekspor jadi gambar atau laporan teks.</string>
     <string name="report_finding_detail">"      %1$s"</string>
     <string name="report_ap_name">"  %1$d. %2$s"</string>
     <string name="report_flags">" (%1$s)"</string>
-    <string name="narrative_photo">• %1$s%2$s</string>
-    <string name="map_scale_bar">1 m</string>
+    <string name="narrative_photo">%1$d. %2$s</string>
     <string name="settings_mode">Mode</string>
     <string name="settings_version">%1$s %2$s</string>
     <string name="share_map_filename">peta-wifi.png</string>
     <string name="compare_row_label">%1$s · %2$s</string>
     <string name="compare_delta_pair">%1$d → %2$d dBm</string>
-    <string name="room_photo_subtitle">%1$.1f m %2$s</string>
-    <string name="room_dbm_suffix">%1$d dBm</string>
     <string name="room_expand">Detail</string>
-    <string name="room_stat_area_value">%1$.1f m²</string>
     <string name="room_legend_entry">%1$s — %2$s</string>
     <string name="language_english">English</string>
     <string name="details_bssid">BSSID</string>
@@ -845,4 +760,14 @@ Hasilnya bisa diekspor jadi gambar atau laporan teks.</string>
     <string name="security_mix_count">%1$d</string>
     <string name="capture_area_value">%1$.1f m²</string>
     <string name="capture_speed_value">%1$.0f Mbps</string>
+
+    <!-- Relocated entry points -->
+    <string name="home_chip_channel">K %1$d</string>
+    <string name="analysis_open_graph">Sinyal per waktu</string>
+    <string name="history_open_compare">Bandingkan dua pemindaian</string>
+    <string name="room_open_coverage">Pemancar &amp; perpindahan</string>
+
+    <!-- Export without size claims -->
+    <string name="map_north">U</string>
+    <string name="narrative_points">%1$d titik ukur, diukur selama %2$s.</string>
 </resources>

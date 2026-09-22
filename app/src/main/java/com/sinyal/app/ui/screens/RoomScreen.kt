@@ -50,10 +50,8 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.google.android.filament.MaterialInstance
-import com.sinyal.app.ar.GridCell
 import com.sinyal.app.ar.RoomModel
 import com.sinyal.app.ar.WalkPath
-import com.sinyal.app.heat.RouterAdvice
 import com.sinyal.app.data.PlacePhoto
 import com.sinyal.app.heat.SignalScale
 import com.sinyal.app.ui.components.BackBar
@@ -79,8 +77,8 @@ import io.github.sceneview.rememberEngine
 import io.github.sceneview.rememberMaterialLoader
 import androidx.compose.ui.res.stringResource
 import com.sinyal.app.R
-import androidx.compose.ui.platform.LocalResources
 import com.sinyal.app.ar.SpeedSurvey
+import com.sinyal.app.ui.components.LinkRow
 
 /**
  * Discrete tints the ramp is quantised into.
@@ -90,7 +88,6 @@ import com.sinyal.app.ar.SpeedSurvey
  * a continuous field while still costing a fixed, small number of materials.
  */
 private const val RAMP_STEPS = 26
-private const val TILE_THICKNESS = 0.02f
 private const val WALL_THICKNESS = 0.09f
 
 /** Walls are rendered at this fraction of their real height, dollhouse-style. */
@@ -99,26 +96,17 @@ private const val SLAB_THICKNESS = 0.06f
 private const val MARKER_HEIGHT = 1.15f
 private const val MARKER_MAST_THICKNESS = 0.035f
 private const val MARKER_BEAD_RADIUS = 0.1f
-private const val ROUTER_PIN_HEIGHT = 1.8f
-private const val PATH_THICKNESS = 0.03f
-private const val PATH_WIDTH = 0.12f
-private const val PATH_LIFT = 0.9f
-private const val NORTH_WIDTH = 0.05f
-private const val PATH_DECIMATION = 2
 private const val PHOTO_PIN_HEIGHT = 1.7f
 private const val PHOTO_MAST_THICKNESS = 0.075f
 private const val PHOTO_DISC_SIZE = 0.42f
-private const val PHOTO_TAP_RADIUS = 0.6f
 private const val GRID_LINE_WIDTH = 0.015f
 private const val GRID_LINE_HEIGHT = 0.005f
-private const val ORBIT_SENSITIVITY = 0.35f
-private const val MIN_PITCH = 12f
-private const val MAX_PITCH = 88f
 
 @Composable
 fun RoomScreen(
     onBack: () -> Unit,
     onRescan: () -> Unit,
+    onOpenCoverage: () -> Unit,
     adsRemoved: Boolean,
     modifier: Modifier = Modifier,
     viewModel: RoomViewModel = viewModel(),
@@ -128,7 +116,6 @@ fun RoomScreen(
     // The photo subtitle is built inside a lambda the compiler does not treat as
     // composable, so the strings are read through the context rather than
     // stringResource.
-    val resources = LocalResources.current
     var panel by remember { mutableStateOf(RoomPanel.COMPACT) }
     var selectedPhoto by remember { mutableStateOf<PlacePhoto?>(null) }
 
@@ -151,9 +138,6 @@ fun RoomScreen(
             Dollhouse(
                 room = scan.room,
                 tiles = state.tiles,
-                strongest = state.strongestCell,
-                weakest = state.weakestCell,
-                advice = state.advice,
                 path = scan.path,
                 scale = state.scale,
                 photos = scan.photos,
@@ -237,30 +221,17 @@ fun RoomScreen(
                     weakest = scan.grid.weakestRssi,
                     strongest = scan.grid.strongestRssi,
                     ssid = scan.ssid,
-                    advice = state.advice,
-                    strongestPlace = state.strongestPlace,
-                    weakestPlace = state.weakestPlace,
-                    suggestedPlace = state.suggestedPlace,
-                    geoAccuracyMeters = scan.geoAnchor?.accuracyMeters,
                     scale = state.scale,
                     panel = panel,
                     onPanelChange = { panel = it },
                     photos = scan.photos,
                     photoPathFor = viewModel::photoPath,
-                    photoSubtitleFor = { photo ->
-                        state.photoPlaces[photo.id]?.bearing?.let { bearing ->
-                            resources.getString(
-                                R.string.room_photo_subtitle,
-                                bearing.distanceMeters,
-                                resources.getString(bearing.compassLabel),
-                            )
-                        }
-                    },
                     speedSurvey = scan.speedSurvey,
                     onSelectPhoto = { selectedPhoto = it },
                     onExportImage = viewModel::exportImage,
                     onExportNarrative = viewModel::exportNarrative,
                     onRescan = onRescan,
+                    onOpenCoverage = onOpenCoverage.takeIf { !scan.apSurvey.isEmpty },
                 )
             }
             Spacer(Modifier.height(10.dp))
@@ -272,7 +243,6 @@ fun RoomScreen(
             PhotoDetailDialog(
                 photo = photo,
                 path = viewModel.photoPath(photo),
-                place = state.photoPlaces[photo.id],
                 onRename = { label -> viewModel.relabelPhoto(photo.id, label) },
                 onDismiss = { selectedPhoto = null },
             )
@@ -358,9 +328,6 @@ private const val TAP_FORGIVENESS_PX = 340f
 private fun Dollhouse(
     room: RoomModel,
     tiles: List<com.sinyal.app.heat.HeatTile>,
-    strongest: GridCell?,
-    weakest: GridCell?,
-    advice: RouterAdvice?,
     path: WalkPath,
     scale: SignalScale?,
     photos: List<PlacePhoto>,
@@ -404,23 +371,11 @@ private fun Dollhouse(
         val slabMaterial = remember(materialLoader, floorTint) {
             materialLoader.createColorInstance(floorTint, 0f, 0.95f, 0.02f)
         }
-        val hotMaterial = remember(materialLoader) {
-            materialLoader.createColorInstance(Color(0xFF22E0A3), 0.2f, 0.35f, 0.4f)
-        }
-        val coldMaterial = remember(materialLoader) {
-            materialLoader.createColorInstance(Color(0xFFFF4D6A), 0.2f, 0.35f, 0.4f)
-        }
-        val routerMaterial = remember(materialLoader) {
-            materialLoader.createColorInstance(Color(0xFFA78BFA), 0.35f, 0.25f, 0.6f)
-        }
         val startMaterial = remember(materialLoader) {
             materialLoader.createColorInstance(Color(0xFFE8ECF5), 0.1f, 0.6f, 0.2f)
         }
         val photoMaterial = remember(materialLoader) {
             materialLoader.createColorInstance(Color(0xFF4FC3F7), 0.3f, 0.3f, 0.5f)
-        }
-        val routerNowMaterial = remember(materialLoader) {
-            materialLoader.createColorInstance(Color(0xFFC9B8FF), 0.3f, 0.35f, 0.5f)
         }
         val highlightMaterial = remember(materialLoader) {
             materialLoader.createColorInstance(Color(0xFFFFFFFF), 0.1f, 0.2f, 0.8f)
@@ -609,20 +564,16 @@ private fun ResultPanel(
     weakest: Int?,
     strongest: Int?,
     ssid: String?,
-    advice: RouterAdvice?,
-    strongestPlace: PlaceInfo?,
-    weakestPlace: PlaceInfo?,
-    suggestedPlace: PlaceInfo?,
-    geoAccuracyMeters: Float?,
     scale: SignalScale?,
     panel: RoomPanel,
     onPanelChange: (RoomPanel) -> Unit,
     speedSurvey: SpeedSurvey,
     photos: List<PlacePhoto>,
     photoPathFor: (PlacePhoto) -> String,
-    photoSubtitleFor: (PlacePhoto) -> String?,
     onSelectPhoto: (PlacePhoto) -> Unit,
     onExportImage: () -> Unit,
+    /** Null when this scan recorded no other transmitters, so there is nothing to open. */
+    onOpenCoverage: (() -> Unit)?,
     onExportNarrative: () -> Unit,
     onRescan: () -> Unit,
 ) {
@@ -717,30 +668,23 @@ private fun ResultPanel(
                     PhotoStrip(
                         photos = photos,
                         pathFor = photoPathFor,
-                        subtitleFor = photoSubtitleFor,
                         onSelect = onSelectPhoto,
                     )
                 }
-
-                Spacer(Modifier.height(12.dp))
-                CoordinateSection(
-                    strongestPlace = strongestPlace,
-                    suggestedPlace = suggestedPlace,
-                    accuracyMeters = geoAccuracyMeters,
-                )
-
-                Spacer(Modifier.height(10.dp))
-                Text(
-                    text = stringResource(R.string.room_height_note),
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = TextTone.Tertiary,
-                )
 
                 Spacer(Modifier.height(12.dp))
                 RampLegend(scale)
 
                 Spacer(Modifier.height(14.dp))
                 SymbolLegend()
+
+                onOpenCoverage?.let { open ->
+                    Spacer(Modifier.height(14.dp))
+                    LinkRow(
+                        text = stringResource(R.string.room_open_coverage),
+                        onClick = open,
+                    )
+                }
 
                 Spacer(Modifier.height(16.dp))
                 Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
@@ -774,7 +718,6 @@ private fun ResultPanel(
 private fun PhotoDetailDialog(
     photo: PlacePhoto,
     path: String,
-    place: PlaceInfo?,
     onRename: (String) -> Unit,
     onDismiss: () -> Unit,
 ) {
@@ -827,19 +770,6 @@ private fun PhotoDetailDialog(
                     placeholder = { Text(stringResource(R.string.room_landmark_hint)) },
                     modifier = Modifier.fillMaxWidth(),
                 )
-
-                place?.bearing?.let { bearing ->
-                    Spacer(Modifier.height(10.dp))
-                    Text(
-                        text = stringResource(
-                            R.string.room_bearing,
-                            bearing.distanceMeters,
-                            stringResource(bearing.compassLabel),
-                        ),
-                        style = MaterialTheme.typography.bodyMedium,
-                        color = TextTone.Tertiary,
-                    )
-                }
             }
         },
     )
@@ -856,44 +786,14 @@ private fun SymbolLegend() {
         )
         Spacer(Modifier.height(8.dp))
         LegendRow(
-            Color(0xFF22E0A3),
-            stringResource(R.string.room_legend_green),
-            stringResource(R.string.room_legend_green_meaning),
-        )
-        LegendRow(
-            Color(0xFFFF4D6A),
-            stringResource(R.string.room_legend_red),
-            stringResource(R.string.room_legend_red_meaning),
-        )
-        LegendRow(
-            Color(0xFFC9B8FF),
-            stringResource(R.string.room_legend_lilac),
-            stringResource(R.string.room_legend_lilac_meaning),
-        )
-        LegendRow(
-            Color(0xFFA78BFA),
-            stringResource(R.string.room_legend_violet),
-            stringResource(R.string.room_legend_violet_meaning),
-        )
-        LegendRow(
             Color(0xFF4FC3F7),
             stringResource(R.string.room_legend_blue),
             stringResource(R.string.room_legend_blue_meaning),
         )
         LegendRow(
             Color(0xFFE8ECF5),
-            stringResource(R.string.room_legend_ribbon),
-            stringResource(R.string.room_legend_ribbon_meaning),
-        )
-        LegendRow(
-            Color(0xFFE8ECF5),
             stringResource(R.string.room_legend_pin),
             stringResource(R.string.room_legend_pin_meaning),
-        )
-        LegendRow(
-            Color(0xFF7C6BFF),
-            stringResource(R.string.room_legend_needle),
-            stringResource(R.string.room_legend_needle_meaning),
         )
         LegendRow(
             Color(0xFFB9C2D6),
@@ -1081,56 +981,6 @@ private fun DragHandle(onClick: (() -> Unit)? = null) {
     }
 }
 
-/**
- * GPS coordinates, published with the caveat they deserve.
- *
- * Relative geometry comes from ARCore and is good to centimetres; the absolute
- * anchor comes from a GPS fix that indoors is routinely off by more than the
- * width of the house. The shape is trustworthy, the pin on a world map is not.
- */
-@Composable
-private fun CoordinateSection(
-    strongestPlace: PlaceInfo?,
-    suggestedPlace: PlaceInfo?,
-    accuracyMeters: Float?,
-) {
-    val strongestCoords = strongestPlace?.latLon
-    if (strongestCoords == null) {
-        Text(
-            text = stringResource(R.string.room_no_gps),
-            style = MaterialTheme.typography.bodyMedium,
-            color = TextTone.Tertiary,
-        )
-        return
-    }
-
-    Column(modifier = Modifier.fillMaxWidth()) {
-        Text(
-            text = stringResource(R.string.room_coords_title),
-            style = MaterialTheme.typography.labelSmall,
-            color = TextTone.Tertiary,
-        )
-        Spacer(Modifier.height(6.dp))
-        Text(
-            text = stringResource(R.string.room_coords_strongest, strongestCoords),
-            style = MaterialTheme.typography.bodyMedium,
-            color = TextTone.Secondary,
-        )
-        suggestedPlace?.latLon?.let { coords ->
-            Text(
-                text = stringResource(R.string.room_coords_router, coords),
-                style = MaterialTheme.typography.bodyMedium,
-                color = TextTone.Secondary,
-            )
-        }
-        Spacer(Modifier.height(8.dp))
-        Text(
-            text = stringResource(R.string.room_gps_accuracy, accuracyMeters ?: 0f),
-            style = MaterialTheme.typography.bodyMedium,
-            color = TextTone.Tertiary,
-        )
-    }
-}
 /** Continuous colour bar with the two anchors that actually matter labelled. */
 @Composable
 private fun RampLegend(scale: SignalScale?) {

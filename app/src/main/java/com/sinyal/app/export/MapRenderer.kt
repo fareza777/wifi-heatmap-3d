@@ -10,7 +10,6 @@ import android.content.res.Resources
 import com.sinyal.app.R
 import com.sinyal.app.data.CompletedScan
 import com.sinyal.app.heat.HeatTile
-import com.sinyal.app.heat.RouterAdvice
 import com.sinyal.app.heat.SignalScale
 import kotlin.math.cos
 import kotlin.math.max
@@ -47,7 +46,6 @@ object MapRenderer {
         scan: CompletedScan,
         tiles: List<HeatTile>,
         scale: SignalScale,
-        advice: RouterAdvice?,
         title: String,
         subtitle: String,
     ): Bitmap {
@@ -60,9 +58,8 @@ object MapRenderer {
         val projection = Projection.of(scan, tiles)
         drawTiles(canvas, tiles, scale, projection)
         drawPath(canvas, scan, projection)
-        drawMarkers(canvas, scan, advice, projection)
-        drawNorth(canvas, scan)
-        drawScaleBar(canvas, res, projection)
+        drawMarkers(canvas, scan, projection)
+        drawNorth(canvas, res, scan)
         drawLegend(canvas, res, scale)
         drawFooter(canvas, res, scan)
 
@@ -186,25 +183,8 @@ object MapRenderer {
     private fun drawMarkers(
         canvas: Canvas,
         scan: CompletedScan,
-        advice: RouterAdvice?,
         projection: Projection,
     ) {
-        val cells = scan.grid.occupiedCells
-        cells.maxByOrNull { it.rssiDbm }?.let { cell ->
-            marker(canvas, projection.x(cell.x, cell.z), projection.y(cell.x, cell.z), 0xFF22E0A3.toInt(), "+")
-        }
-        cells.minByOrNull { it.rssiDbm }?.let { cell ->
-            marker(canvas, projection.x(cell.x, cell.z), projection.y(cell.x, cell.z), 0xFFFF4D6A.toInt(), "-")
-        }
-        advice?.takeIf { it.isWorthMoving }?.let { plan ->
-            marker(
-                canvas,
-                projection.x(plan.suggestedX, plan.suggestedZ),
-                projection.y(plan.suggestedX, plan.suggestedZ),
-                ACCENT,
-                "R",
-            )
-        }
         scan.photos.forEachIndexed { index, photo ->
             marker(
                 canvas,
@@ -241,7 +221,7 @@ object MapRenderer {
         canvas.drawText(glyph, cx, cy + 9f, label)
     }
 
-    private fun drawNorth(canvas: Canvas, scan: CompletedScan) {
+    private fun drawNorth(canvas: Canvas, res: Resources, scan: CompletedScan) {
         if (scan.startAzimuthDegrees == null) return
         val cx = WIDTH - MARGIN - 40f
         val cy = MAP_TOP + 50f
@@ -260,31 +240,10 @@ object MapRenderer {
         }
         canvas.drawPath(head, Paint(Paint.ANTI_ALIAS_FLAG).apply { color = ACCENT })
         canvas.drawText(
-            "U",
+            res.getString(R.string.map_north),
             cx - 9f,
             cy + 58f,
             textPaint(ACCENT, 28f, bold = true),
-        )
-    }
-
-    private fun drawScaleBar(canvas: Canvas, res: Resources, projection: Projection) {
-        val meters = 1f
-        val length = projection.size(meters)
-        val x = MARGIN
-        val y = MAP_BOTTOM - 18f
-
-        val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-            color = TEXT_SECONDARY
-            strokeWidth = 4f
-        }
-        canvas.drawLine(x, y, x + length, y, paint)
-        canvas.drawLine(x, y - 10f, x, y + 10f, paint)
-        canvas.drawLine(x + length, y - 10f, x + length, y + 10f, paint)
-        canvas.drawText(
-            res.getString(R.string.map_scale_bar),
-            x + length + 14f,
-            y + 10f,
-            textPaint(TEXT_SECONDARY, 26f),
         )
     }
 
@@ -339,7 +298,6 @@ object MapRenderer {
         val grid = scan.grid
         val line = res.getString(
             R.string.map_stats,
-            grid.coveredAreaSqM,
             grid.cellCount,
             grid.weakestRssi ?: 0,
             grid.strongestRssi ?: 0,

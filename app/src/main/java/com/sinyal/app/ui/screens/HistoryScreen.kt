@@ -62,6 +62,7 @@ import java.time.format.DateTimeFormatter
 import java.util.Locale
 import androidx.compose.ui.res.stringResource
 import com.sinyal.app.R
+import com.sinyal.app.ui.components.LinkRow
 
 data class HistoryUiState(
     val month: YearMonth = YearMonth.now(),
@@ -134,6 +135,7 @@ private fun Long.toLocalDate(): LocalDate =
 fun HistoryScreen(
     onBack: () -> Unit,
     onOpenScan: () -> Unit,
+    onOpenCompare: () -> Unit,
     modifier: Modifier = Modifier,
     viewModel: HistoryViewModel = viewModel(),
 ) {
@@ -159,6 +161,12 @@ fun HistoryScreen(
                 .padding(horizontal = 20.dp),
         ) {
             BackBar(title = stringResource(R.string.history_title), onBack = onBack)
+
+            Spacer(Modifier.height(12.dp))
+            LinkRow(
+                text = stringResource(R.string.history_open_compare),
+                onClick = onOpenCompare,
+            )
 
             Spacer(Modifier.height(18.dp))
             MonthHeader(

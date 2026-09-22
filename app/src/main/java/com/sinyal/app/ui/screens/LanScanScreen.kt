@@ -59,6 +59,7 @@ import androidx.compose.ui.res.stringResource
 import com.sinyal.app.R
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import com.sinyal.app.ui.components.LinkRow
 
 data class LanUiState(
     val details: ConnectionDetails = ConnectionDetails.Empty,
@@ -143,7 +144,7 @@ fun LanScanScreen(
             DetailsCard(state.details)
 
             Spacer(Modifier.height(10.dp))
-            PingRow(text = stringResource(R.string.devices_open_ping), onClick = onOpenPing)
+            LinkRow(text = stringResource(R.string.devices_open_ping), onClick = onOpenPing)
 
             Spacer(Modifier.height(14.dp))
             GradientButton(
@@ -184,34 +185,6 @@ fun LanScanScreen(
             )
             Spacer(Modifier.height(28.dp))
         }
-    }
-}
-
-/** Opens the ping tool, which is the natural next step after finding a device. */
-@Composable
-private fun PingRow(text: String, onClick: () -> Unit) {
-    val shape = RoundedCornerShape(14.dp)
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .clip(shape)
-            .background(Ink.Raised)
-            .border(1.dp, Ink.Stroke, shape)
-            .clickable(onClick = onClick)
-            .padding(horizontal = 14.dp, vertical = 12.dp),
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.SpaceBetween,
-    ) {
-        Text(
-            text = text,
-            style = MaterialTheme.typography.labelLarge,
-            color = Accent.Bright,
-        )
-        Text(
-            text = "›",
-            style = MaterialTheme.typography.titleMedium,
-            color = Accent.Bright,
-        )
     }
 }
 

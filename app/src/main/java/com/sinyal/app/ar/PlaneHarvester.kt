@@ -1,8 +1,6 @@
 package com.sinyal.app.ar
 
 import com.google.ar.core.Plane
-import com.google.ar.core.Session
-import com.google.ar.core.TrackingState
 import kotlin.math.abs
 import kotlin.math.cos
 import kotlin.math.roundToInt
@@ -68,72 +66,6 @@ object PlaneHarvester {
         return plane.toSegment()
     }
 
-    fun harvest(session: Session, grid: SampleGrid): RoomModel? {
-        // PAUSED planes are kept, not just TRACKING ones. A wall the user aimed at
-        // early in the walk is paused by the time they finish somewhere else, yet its
-        // geometry is still perfectly good — dropping it was why real walls that were
-        // clearly detected during the scan vanished from the result.
-        val planes = runCatching { session.getAllTrackables(Plane::class.java) }
-            .getOrNull()
-            ?.filter { it.trackingState != TrackingState.STOPPED && it.subsumedBy == null }
-            .orEmpty()
-
-        if (planes.isEmpty()) return RoomModel.fromSamplesOnly(grid)
-
-        val floors = planes.filter { it.type == Plane.Type.HORIZONTAL_UPWARD_FACING }
-        val verticals = planes.filter(::isUsableWall)
-
-        val floorY = floors.minOfOrNull { it.centerPose.ty() }
-            ?: (grid.occupiedCells.minOfOrNull { it.y }?.minus(1.2f) ?: 0f)
-
-        val sampled = sampledBounds(grid)
-
-        // Merged before snapping: one real wall arrives as several patches, and
-        // a 3 m wall welded back together snaps far more reliably to the room's
-        // axis than the half-metre fragments it was delivered as.
-        val merged = mergeCollinear(verticals.map { it.toSegment() })
-        val snapped = snapToDominantAxis(merged)
-            .filter { it.length >= MIN_WALL_LENGTH }
-            .sortedByDescending { it.length }
-            .take(MAX_WALLS)
-
-        // The floor has to reach every wall it holds up. Bounds taken from the
-        // samples alone left detected walls hanging past the edge of the slab,
-        // because a wall is seen from a metre or two away — never stood on.
-        val bounds = sampled.including(snapped)
-
-        return RoomModel(
-            bounds = bounds,
-            walls = snapped.ifEmpty { RoomModel.perimeterOf(bounds) },
-            floorY = floorY,
-            wallHeight = wallHeightFrom(verticals),
-            wallsAreEstimated = snapped.isEmpty(),
-        )
-    }
-
-    /**
-     * The single definition of "a wall we will keep".
-     *
-     * Shared with the live counter on the capture screen on purpose. The two
-     * used to disagree — the counter accepted every vertical patch while the
-     * harvest demanded a minimum length — so the screen happily reported walls
-     * being found and the finished scan then showed none.
-     */
-    fun isUsableWall(plane: Plane): Boolean =
-        plane.type == Plane.Type.VERTICAL &&
-            // Strictly TRACKING: a paused plane reports zero extent, so its
-            // geometry has to be taken while it is still live.
-            plane.trackingState == TrackingState.TRACKING &&
-            plane.subsumedBy == null &&
-            plane.horizontalExtent() >= MIN_PATCH_LENGTH
-
-    /** How many walls a finished scan would keep, asked mid-walk. */
-    fun countWalls(session: Session): Int = runCatching {
-        val patches = session.getAllTrackables(Plane::class.java).filter(::isUsableWall)
-        mergeCollinear(patches.map { it.toSegment() })
-            .count { it.length >= MIN_WALL_LENGTH }
-    }.getOrDefault(0)
-
     /**
      * Which of a vertical plane's two in-plane axes runs along the floor.
      *
@@ -152,13 +84,6 @@ object PlaneHarvester {
         val x = centerPose.xAxis
         val z = centerPose.zAxis
         return if (abs(x[1]) <= abs(z[1])) extentX else extentZ
-    }
-
-    /** Height of the wall patch: the extent belonging to the other axis. */
-    private fun Plane.verticalExtent(): Float {
-        val x = centerPose.xAxis
-        val z = centerPose.zAxis
-        return if (abs(x[1]) <= abs(z[1])) extentZ else extentX
     }
 
     private fun Plane.toSegment(): WallSegment {
@@ -292,12 +217,6 @@ object PlaneHarvester {
         }
     }
 
-    private fun wallHeightFrom(verticals: List<Plane>): Float {
-        val tallest = verticals.maxOfOrNull { it.verticalExtent() }
-            ?: return RoomModel.DEFAULT_WALL_HEIGHT
-        return tallest.coerceIn(MIN_WALL_HEIGHT, MAX_WALL_HEIGHT)
-    }
-
     /**
      * The footprint is taken from where readings actually exist, never from
      * ARCore's plane extents.
@@ -339,8 +258,6 @@ object PlaneHarvester {
 
     private const val MAX_WALLS = 24
     private const val SNAP_TOLERANCE_DEGREES = 12f
-    private const val MIN_WALL_HEIGHT = 1.8f
-    private const val MAX_WALL_HEIGHT = 3.2f
 
     /** Patches of one wall arrive a few degrees apart as the camera sweeps. */
     private const val MERGE_ANGLE_DEGREES = 14f

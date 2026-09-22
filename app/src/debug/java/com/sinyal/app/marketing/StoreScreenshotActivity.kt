@@ -89,7 +89,7 @@ class StoreScreenshotActivity : ComponentActivity() {
                 val state by vm.state.collectAsState()
                 val bitmap = remember(state.building) {
                     state.scale?.let { scale -> MapRenderer.render(resources, state.scan!!, state.tiles,
-                        scale, state.advice, "Sample survey", "Living space  /  42 m²  /  168 readings") }
+                        scale, "Sample survey", "168 sample points") }
                 }
                 bitmap?.let { Image(it.asImageBitmap(), "Actual app map export", Modifier.fillMaxSize().background(Color.Black), contentScale = ContentScale.Fit) }
             }
@@ -107,7 +107,7 @@ class StoreScreenshotActivity : ComponentActivity() {
             3 -> {
                 val vm = remember { AnalysisViewModel(application) }
                 Freeze(vm) { setFlow(vm, "_state", AnalysisUiState(link, networks, ChannelAnalysis.analyse(networks, link))) }
-                AnalysisScreen({}, viewModel = vm)
+                AnalysisScreen({}, {}, viewModel = vm)
             }
             4 -> {
                 val vm = remember { SecurityViewModel(application) }
@@ -133,7 +133,7 @@ class StoreScreenshotActivity : ComponentActivity() {
                     setFlow(vm, "_state", HistoryUiState(YearMonth.of(2026, 9), dates.last(),
                         dates.associateWith { day -> listOf(ScanSummary("sample-$day", day.atTime(10, 30).toInstant(ZoneOffset.UTC).toEpochMilli(), "Sample home", 42f, 168, -78)) }))
                 }
-                HistoryScreen({}, {}, viewModel = vm)
+                HistoryScreen({}, {}, {}, viewModel = vm)
             }
             7 -> SettingsScreen(ThemeMode.DARK, {}, AccentPalette.TEAL, {}, AppLanguage.ENGLISH, {},
                 false, null, {}, {}, {}, {}, {})

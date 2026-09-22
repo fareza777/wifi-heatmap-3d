@@ -75,6 +75,7 @@ import androidx.compose.ui.res.stringResource
 import com.sinyal.app.R
 import com.sinyal.app.ui.components.WifiSignalIcon
 import com.sinyal.app.wifi.NetworkJoiner
+import com.sinyal.app.ui.components.LinkRow
 
 /** Which slice of the survey to show. */
 enum class NetworkFilter(@StringRes val label: Int) {
@@ -483,34 +484,6 @@ private fun NetworkCard(ap: NearbyAp, vendor: String?, onClick: () -> Unit) {
                 color = Accent.Bright,
             )
         }
-    }
-}
-
-/** A quiet row that opens a deeper screen without competing with the survey. */
-@Composable
-private fun LinkRow(text: String, onClick: () -> Unit) {
-    val shape = RoundedCornerShape(14.dp)
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .clip(shape)
-            .background(Ink.Raised)
-            .border(1.dp, Ink.Stroke, shape)
-            .clickable(onClick = onClick)
-            .padding(horizontal = 14.dp, vertical = 12.dp),
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.SpaceBetween,
-    ) {
-        Text(
-            text = text,
-            style = MaterialTheme.typography.labelLarge,
-            color = Accent.Bright,
-        )
-        Text(
-            text = "›",
-            style = MaterialTheme.typography.titleMedium,
-            color = Accent.Bright,
-        )
     }
 }
 

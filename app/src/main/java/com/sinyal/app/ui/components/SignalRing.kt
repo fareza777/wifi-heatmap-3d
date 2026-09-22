@@ -29,6 +29,7 @@ import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.sinyal.app.ui.theme.Ink
 import com.sinyal.app.ui.theme.TextTone
@@ -53,6 +54,7 @@ fun SignalRing(
     qualityLabel: String,
     connected: Boolean,
     modifier: Modifier = Modifier,
+    diameter: Dp = 268.dp,
 ) {
     val target = if (connected) fraction.coerceIn(0f, 1f) else 0f
     val animatedFraction by animateFloatAsState(
@@ -80,8 +82,8 @@ fun SignalRing(
     // resolved here and handed down.
     val trackColor = Ink.Stroke
 
-    Box(modifier = modifier.size(268.dp), contentAlignment = Alignment.Center) {
-        Canvas(modifier = Modifier.size(268.dp)) {
+    Box(modifier = modifier.size(diameter), contentAlignment = Alignment.Center) {
+        Canvas(modifier = Modifier.size(diameter)) {
             val center = Offset(size.width / 2f, size.height / 2f)
             val stroke = 16.dp.toPx()
             val radius = (size.minDimension - stroke) / 2f - 22.dp.toPx()
@@ -101,7 +103,13 @@ fun SignalRing(
             Row(verticalAlignment = Alignment.Bottom) {
                 Text(
                     text = if (connected) "$rssiDbm" else "—",
-                    style = MaterialTheme.typography.displayLarge,
+                    // The figure scales with the ring, or a compact hero ends up
+                    // with a number that crowds its own arc.
+                    style = if (diameter >= LARGE_RING) {
+                        MaterialTheme.typography.displayLarge
+                    } else {
+                        MaterialTheme.typography.displayMedium
+                    },
                     color = TextTone.Primary,
                 )
                 if (connected) {
@@ -212,3 +220,6 @@ private fun DrawScope.drawValueArc(
     )
     drawCircle(color = Color.White, radius = stroke * 0.24f, center = endPoint)
 }
+
+/** At or above this the ring has room for the display-size figure. */
+private val LARGE_RING = 240.dp

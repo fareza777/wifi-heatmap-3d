@@ -64,6 +64,7 @@ import kotlinx.coroutines.withContext
 import androidx.compose.ui.res.stringResource
 import com.sinyal.app.R
 import com.sinyal.app.wifi.CurrentChannelVerdict
+import com.sinyal.app.ui.components.LinkRow
 
 data class AnalysisUiState(
     val link: WifiSnapshot = WifiSnapshot.Disconnected,
@@ -102,6 +103,7 @@ class AnalysisViewModel(app: Application) : AndroidViewModel(app) {
 @Composable
 fun AnalysisScreen(
     onBack: () -> Unit,
+    onOpenGraph: () -> Unit,
     modifier: Modifier = Modifier,
     viewModel: AnalysisViewModel = viewModel(),
 ) {
@@ -137,6 +139,9 @@ fun AnalysisScreen(
 
             Spacer(Modifier.height(20.dp))
             CurrentLinkCard(state.link, report)
+
+            Spacer(Modifier.height(10.dp))
+            LinkRow(text = stringResource(R.string.analysis_open_graph), onClick = onOpenGraph)
 
             if (state.networks.isNotEmpty()) {
                 Spacer(Modifier.height(14.dp))

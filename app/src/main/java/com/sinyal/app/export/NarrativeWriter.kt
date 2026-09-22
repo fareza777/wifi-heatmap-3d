@@ -2,9 +2,7 @@ package com.sinyal.app.export
 
 import android.content.res.Resources
 import com.sinyal.app.R
-import com.sinyal.app.core.Bearing
 import com.sinyal.app.data.CompletedScan
-import com.sinyal.app.heat.RouterAdvice
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -14,19 +12,13 @@ import java.util.Locale
  *
  * An image travels well in a chat but cannot be searched, quoted or pasted into
  * a message to a landlord or an ISP. The narrative states the same findings in
- * sentences, and — unlike the map — it can say plainly where the numbers stop
- * being trustworthy.
+ * sentences — and only the findings the result screen also shows. Area, walls,
+ * router advice and GPS were dropped there for being less precise than they
+ * looked; a shared report is the last place to reintroduce them.
  */
 object NarrativeWriter {
 
-    fun write(
-        res: Resources,
-        scan: CompletedScan,
-        advice: RouterAdvice?,
-        strongestBearing: Bearing?,
-        weakestBearing: Bearing?,
-        photoBearings: Map<String, Bearing>,
-    ): String = buildString {
+    fun write(res: Resources, scan: CompletedScan): String = buildString {
         val grid = scan.grid
         appendLine(res.getString(R.string.narrative_title))
         appendLine(scan.ssid ?: res.getString(R.string.narrative_unknown_network))
@@ -36,86 +28,29 @@ object NarrativeWriter {
         appendLine(res.getString(R.string.narrative_summary_title))
         appendLine(
             res.getString(
-                R.string.narrative_area,
-                grid.coveredAreaSqM,
+                R.string.narrative_points,
                 grid.cellCount,
                 duration(res, scan.durationMs),
             ),
         )
-        appendLine(
-            res.getString(R.string.narrative_range, grid.weakestRssi, grid.strongestRssi),
-        )
-        appendLine(res.getString(verdict(grid.weakestRssi)))
-        appendLine()
-
-        appendLine(res.getString(R.string.narrative_points_title))
-        appendLine(
-            res.getString(
-                R.string.narrative_strongest,
-                grid.strongestRssi,
-                place(res, strongestBearing),
-            ),
-        )
-        appendLine(
-            res.getString(
-                R.string.narrative_weakest,
-                grid.weakestRssi,
-                place(res, weakestBearing),
-            ),
-        )
-        appendLine()
+        val weakest = grid.weakestRssi
+        val strongest = grid.strongestRssi
+        if (weakest != null && strongest != null) {
+            appendLine(res.getString(R.string.narrative_range, weakest, strongest))
+        }
+        appendLine(res.getString(verdict(weakest)))
 
         if (scan.photos.isNotEmpty()) {
+            appendLine()
             appendLine(res.getString(R.string.narrative_photos_title))
-            scan.photos.forEach { photo ->
-                appendLine(
-                    res.getString(
-                        R.string.narrative_photo,
-                        photo.label,
-                        place(res, photoBearings[photo.id]),
-                    ),
-                )
+            scan.photos.forEachIndexed { index, photo ->
+                appendLine(res.getString(R.string.narrative_photo, index + 1, photo.label))
             }
-            appendLine()
-        }
-
-        appendLine(res.getString(R.string.narrative_router_title))
-        appendLine(routerAdvice(res, advice))
-        appendLine()
-
-        appendLine(res.getString(R.string.narrative_room_title))
-        appendLine(
-            if (scan.room.wallsAreEstimated) {
-                res.getString(R.string.narrative_room_estimated)
-            } else {
-                res.getString(R.string.narrative_room_measured, scan.room.walls.size)
-            },
-        )
-
-        scan.geoAnchor?.let { anchor ->
-            appendLine()
-            appendLine(res.getString(R.string.narrative_location_title))
-            appendLine(
-                res.getString(
-                    R.string.narrative_location_body,
-                    anchor.latitude,
-                    anchor.longitude,
-                    anchor.accuracyMeters,
-                ),
-            )
         }
 
         appendLine()
         appendLine(res.getString(R.string.narrative_footer))
     }
-
-    private fun place(res: Resources, bearing: Bearing?): String = bearing?.let {
-        res.getString(
-            R.string.narrative_place,
-            it.distanceMeters,
-            res.getString(it.compassLabel),
-        )
-    } ?: ""
 
     /** Translates the weakest reading into what it actually costs the user. */
     private fun verdict(weakestDbm: Int?): Int = when {
@@ -123,27 +58,6 @@ object NarrativeWriter {
         weakestDbm >= -60 -> R.string.narrative_verdict_good
         weakestDbm >= -70 -> R.string.narrative_verdict_mixed
         else -> R.string.narrative_verdict_bad
-    }
-
-    private fun routerAdvice(res: Resources, advice: RouterAdvice?): String = when {
-        advice == null -> res.getString(R.string.narrative_router_nodata)
-
-        !advice.isReliable -> res.getString(
-            R.string.narrative_router_unreliable,
-            advice.fit.rmseDb,
-        )
-
-        advice.isWorthMoving -> res.getString(
-            R.string.narrative_router_move,
-            advice.moveDistanceMeters,
-            advice.gainDb,
-            advice.currentWeakDbm,
-            advice.predictedWeakDbm,
-            advice.fit.pathLossExponent,
-            advice.fit.rmseDb,
-        )
-
-        else -> res.getString(R.string.narrative_router_optimal)
     }
 
     private fun duration(res: Resources, millis: Long): String {

@@ -49,7 +49,6 @@ private const val THUMB_TARGET_PX = 256
 fun PhotoStrip(
     photos: List<PlacePhoto>,
     pathFor: (PlacePhoto) -> String,
-    subtitleFor: (PlacePhoto) -> String?,
     onSelect: (PlacePhoto) -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -64,7 +63,6 @@ fun PhotoStrip(
             PhotoCard(
                 photo = photo,
                 path = pathFor(photo),
-                subtitle = subtitleFor(photo),
                 onClick = { onSelect(photo) },
             )
         }
@@ -75,7 +73,6 @@ fun PhotoStrip(
 private fun PhotoCard(
     photo: PlacePhoto,
     path: String,
-    subtitle: String?,
     onClick: () -> Unit,
 ) {
     val shape = RoundedCornerShape(14.dp)
@@ -116,16 +113,6 @@ private fun PhotoCard(
             overflow = TextOverflow.Ellipsis,
             modifier = Modifier.padding(top = 6.dp),
         )
-        // Without this the thumbnail says what was photographed but not where,
-        // which is the half that makes the map readable.
-        if (subtitle != null) {
-            Text(
-                text = subtitle,
-                style = MaterialTheme.typography.labelSmall,
-                color = TextTone.Tertiary,
-                maxLines = 2,
-            )
-        }
     }
 }
 

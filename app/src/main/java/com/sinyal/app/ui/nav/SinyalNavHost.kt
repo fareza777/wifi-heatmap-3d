@@ -108,12 +108,9 @@ fun SinyalNavHost(
                 onOpenNetworks = { navController.navigate(Route.NETWORKS) },
                 onOpenAnalysis = { navController.navigate(Route.ANALYSIS) },
                 onOpenHistory = { navController.navigate(Route.HISTORY) },
-                onOpenCompare = { navController.navigate(Route.COMPARE) },
                 onOpenSpeedTest = { navController.navigate(Route.SPEED) },
                 onOpenDevices = { navController.navigate(Route.DEVICES) },
                 onOpenSecurity = { navController.navigate(Route.SECURITY) },
-                onOpenGraph = { navController.navigate(Route.GRAPH) },
-                onOpenCoverage = { navController.navigate(Route.COVERAGE) },
                 onOpenSettings = { navController.navigate(Route.SETTINGS) },
                 adsRemoved = adsRemoved,
             )
@@ -191,6 +188,7 @@ fun SinyalNavHost(
             HistoryScreen(
                 onBack = { navController.popBackStack() },
                 onOpenScan = { navController.navigate(Route.ROOM) },
+                onOpenCompare = { navController.navigate(Route.COMPARE) },
             )
         }
 
@@ -210,7 +208,10 @@ fun SinyalNavHost(
         }
 
         composable(Route.ANALYSIS) {
-            AnalysisScreen(onBack = { navController.popBackStack() })
+            AnalysisScreen(
+                onBack = { navController.popBackStack() },
+                onOpenGraph = { navController.navigate(Route.GRAPH) },
+            )
         }
 
         composable(Route.DIAGNOSTICS) {
@@ -252,6 +253,7 @@ fun SinyalNavHost(
             RoomScreen(
                 adsRemoved = adsRemoved,
                 onBack = leaveResults,
+                onOpenCoverage = { navController.navigate(Route.COVERAGE) },
                 onRescan = {
                     onResultsClosed(false)
                     navController.navigate(Route.SCAN_MODE) {

@@ -124,16 +124,17 @@ fun MenuTile(
 }
 
 /**
- * Square-ish tile for a grid of destinations.
+ * One tool in the home grid: an icon and a single word.
  *
- * Two per row rather than one full-width row each: four entries then occupy the
- * height of two, which is what keeps the home screen to a single view.
+ * No subtitle. Six of these have to sit on one screen together with the live
+ * reading and the scan button, and a second line of grey text under every one
+ * of them is what turned the home screen into something to scroll through.
+ * The word has to be enough; if it is not, the tool is named wrong.
  */
 @Composable
-fun CompactTile(
+fun ToolTile(
     icon: ImageVector,
-    title: String,
-    subtitle: String,
+    label: String,
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -141,17 +142,17 @@ fun CompactTile(
     val pressed by interaction.collectIsPressedAsState()
 
     val scale by animateFloatAsState(
-        targetValue = if (pressed) 0.965f else 1f,
+        targetValue = if (pressed) 0.95f else 1f,
         animationSpec = spring(dampingRatio = 0.6f, stiffness = 800f),
-        label = "compactScale",
+        label = "toolScale",
     )
     val border by animateColorAsState(
         targetValue = if (pressed) Accent.Base else Ink.Stroke,
         animationSpec = tween(160),
-        label = "compactBorder",
+        label = "toolBorder",
     )
 
-    val shape = RoundedCornerShape(20.dp)
+    val shape = RoundedCornerShape(22.dp)
     Column(
         modifier = modifier
             .scale(scale)
@@ -163,12 +164,13 @@ fun CompactTile(
                 indication = null,
                 onClick = onClick,
             )
-            .padding(14.dp),
+            .padding(vertical = 16.dp, horizontal = 8.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Box(
             modifier = Modifier
-                .size(38.dp)
-                .clip(RoundedCornerShape(12.dp))
+                .size(44.dp)
+                .clip(RoundedCornerShape(14.dp))
                 .background(Accent.Glow),
             contentAlignment = Alignment.Center,
         ) {
@@ -176,19 +178,15 @@ fun CompactTile(
                 imageVector = icon,
                 contentDescription = null,
                 tint = Accent.Bright,
-                modifier = Modifier.size(20.dp),
+                modifier = Modifier.size(22.dp),
             )
         }
         Spacer(Modifier.height(10.dp))
         Text(
-            text = title,
-            style = MaterialTheme.typography.titleMedium,
+            text = label,
+            style = MaterialTheme.typography.labelLarge,
             color = TextTone.Primary,
-        )
-        Text(
-            text = subtitle,
-            style = MaterialTheme.typography.labelSmall,
-            color = TextTone.Tertiary,
+            maxLines = 1,
         )
     }
 }
