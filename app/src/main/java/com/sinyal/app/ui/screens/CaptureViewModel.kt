@@ -12,6 +12,7 @@ import com.google.ar.core.TrackingState
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import java.io.File
+import com.sinyal.app.ar.DepthProbe
 import com.sinyal.app.ar.PlaneHarvester
 import com.sinyal.app.ar.RoomModel
 import com.sinyal.app.ar.SampleGrid
@@ -59,6 +60,9 @@ data class CaptureUiState(
     val photoFlash: Boolean = false,
     val trackingJumps: Int = 0,
     val elapsedMs: Long = 0L,
+    /** Hardware depth sampling is live; points so far. */
+    val depthActive: Boolean = false,
+    val depthPoints: Int = 0,
     val finished: Boolean = false,
 )
 
@@ -78,6 +82,7 @@ class CaptureViewModel(app: Application) : AndroidViewModel(app) {
     private val repository = ScanRepository(app)
     private val heading = HeadingProvider(app)
     private val location = LocationProvider(app)
+    private val depthProbe = DepthProbe()
 
     private val _state = MutableStateFlow(CaptureUiState())
     val state: StateFlow<CaptureUiState> = _state.asStateFlow()
@@ -164,6 +169,7 @@ class CaptureViewModel(app: Application) : AndroidViewModel(app) {
 
     fun onArFrame(session: Session, frame: Frame) {
         ensurePlaneFinding(session)
+        depthProbe.ensureDepth(session)
 
         val camera = frame.camera
         val isTracking = camera.trackingState == TrackingState.TRACKING
@@ -191,6 +197,15 @@ class CaptureViewModel(app: Application) : AndroidViewModel(app) {
             collectPlanes(session)
             val walls = wallCount()
             _state.update { it.copy(wallPlanes = walls) }
+        }
+
+        // Depth frames cost more than a pose read; sampling on the wall cadence
+        // still lands a few hundred surface points over a normal walk.
+        if (frameCounter % DEPTH_POLL_FRAMES == 0) {
+            depthProbe.onFrame(frame, offsetX, offsetY, offsetZ)
+            _state.update {
+                it.copy(depthActive = depthProbe.active, depthPoints = depthProbe.count)
+            }
         }
 
         // A relocalisation jump is not walking. ARCore keeps reporting TRACKING
@@ -258,7 +273,6 @@ class CaptureViewModel(app: Application) : AndroidViewModel(app) {
     override fun onCleared() {
         heading.stop()
         location.stop()
-        super.onCleared()
     }
 
     /**
@@ -511,8 +525,11 @@ class CaptureViewModel(app: Application) : AndroidViewModel(app) {
         val current = _state.value
         // One last sweep so a wall still in view at the finish is not missed.
         session?.let { collectPlanes(it) }
-        val room = PlaneHarvester.build(trackedWalls.values.toList(), floorYSeen, current.grid)
-            ?: RoomModel.fromSamplesOnly(current.grid)
+        // Depth, when the hardware offered it, grows the walls the planes saw
+        // into the walls the room actually has.
+        val room = (PlaneHarvester.build(trackedWalls.values.toList(), floorYSeen, current.grid)
+            ?: RoomModel.fromSamplesOnly(current.grid))
+            ?.let(depthProbe::refine)
         if (room != null) {
 
             val scan = CompletedScan(
@@ -562,6 +579,9 @@ class CaptureViewModel(app: Application) : AndroidViewModel(app) {
 
         /** Roughly once a second at 30 fps. */
         const val WALL_POLL_FRAMES = 30
+
+        /** Same cadence as wall polling; depth images are far costlier to read. */
+        const val DEPTH_POLL_FRAMES = 30
 
         /** Twice a second is plenty; the underlying list changes far slower. */
         const val SURVEY_POLL_FRAMES = 15

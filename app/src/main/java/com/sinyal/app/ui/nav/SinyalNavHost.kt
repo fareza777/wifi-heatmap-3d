@@ -9,9 +9,15 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.sinyal.app.ui.screens.BufferbloatScreen
 import com.sinyal.app.ui.screens.CaptureScreen
 import com.sinyal.app.ui.screens.AnalysisScreen
 import com.sinyal.app.ui.screens.ChannelsScreen
+import com.sinyal.app.ui.screens.GlossaryScreen
+import com.sinyal.app.ui.screens.InterferenceScreen
+import com.sinyal.app.ui.screens.LanSpeedScreen
+import com.sinyal.app.ui.screens.PredictScreen
+import com.sinyal.app.ui.screens.RadioLabScreen
 import com.sinyal.app.ui.screens.RttScreen
 import com.sinyal.app.ui.screens.DiagnosticsScreen
 import com.sinyal.app.ui.screens.AboutScreen
@@ -54,6 +60,12 @@ private object Route {
     const val GRAPH = "graph"
     const val CHANNELS = "channels"
     const val RTT = "rtt"
+    const val LAN_SPEED = "lanSpeed"
+    const val BUFFERBLOAT = "bufferbloat"
+    const val INTERFERENCE = "interference"
+    const val RADIO_LAB = "radioLab"
+    const val PREDICT = "predict"
+    const val GLOSSARY = "glossary"
     const val HISTORY = "history"
     const val GUIDE = "guide"
     const val ROOM = "room"
@@ -120,6 +132,12 @@ fun SinyalNavHost(
                 onOpenRtt = { navController.navigate(Route.RTT) },
                 onOpenGraph = { navController.navigate(Route.GRAPH) },
                 onOpenCoverage = { navController.navigate(Route.COVERAGE) },
+                onOpenLanSpeed = { navController.navigate(Route.LAN_SPEED) },
+                onOpenBufferbloat = { navController.navigate(Route.BUFFERBLOAT) },
+                onOpenInterference = { navController.navigate(Route.INTERFERENCE) },
+                onOpenRadioLab = { navController.navigate(Route.RADIO_LAB) },
+                onOpenPredict = { navController.navigate(Route.PREDICT) },
+                onOpenGlossary = { navController.navigate(Route.GLOSSARY) },
                 onOpenSettings = { navController.navigate(Route.SETTINGS) },
                 adsRemoved = adsRemoved,
             )
@@ -146,6 +164,30 @@ fun SinyalNavHost(
 
         composable(Route.RTT) {
             RttScreen(onBack = { navController.popBackStack() })
+        }
+
+        composable(Route.LAN_SPEED) {
+            LanSpeedScreen(onBack = { navController.popBackStack() })
+        }
+
+        composable(Route.BUFFERBLOAT) {
+            BufferbloatScreen(onBack = { navController.popBackStack() })
+        }
+
+        composable(Route.INTERFERENCE) {
+            InterferenceScreen(onBack = { navController.popBackStack() })
+        }
+
+        composable(Route.RADIO_LAB) {
+            RadioLabScreen(onBack = { navController.popBackStack() })
+        }
+
+        composable(Route.PREDICT) {
+            PredictScreen(onBack = { navController.popBackStack() })
+        }
+
+        composable(Route.GLOSSARY) {
+            GlossaryScreen(onBack = { navController.popBackStack() })
         }
 
         composable(Route.DETAILS) {

@@ -188,19 +188,19 @@
     <string name="home_tile_networks">Networks</string>
     <string name="home_tile_networks_sub">Every Wi-Fi nearby</string>
     <string name="home_tile_spectrum">Spectrum</string>
-    <string name="home_tile_spectrum_sub">Channels &amp; waves</string>
+    <string name="home_tile_spectrum_sub">How busy each channel is</string>
     <string name="home_tile_speed">Speed</string>
-    <string name="home_tile_speed_sub">Down, up, ping</string>
+    <string name="home_tile_speed_sub">Internet speed here</string>
     <string name="home_tile_devices">Devices</string>
     <string name="home_tile_devices_sub">Who is on this network</string>
     <string name="home_tile_security">Security</string>
-    <string name="home_tile_security_sub">Audit &amp; DNS</string>
+    <string name="home_tile_security_sub">Locks, DNS &amp; WPS</string>
     <string name="home_tile_graph">Graph</string>
-    <string name="home_tile_graph_sub">Signal over time</string>
+    <string name="home_tile_graph_sub">Signal strength over time</string>
     <string name="home_tile_history">History</string>
     <string name="home_tile_history_sub">Saved scans</string>
     <string name="home_tile_compare">Compare</string>
-    <string name="home_tile_compare_sub">Before &amp; after</string>
+    <string name="home_tile_compare_sub">One scan vs another</string>
 
     <!-- Spectrum / analysis screen -->
     <string name="analysis_title">Wi-Fi Analysis</string>
@@ -821,7 +821,7 @@ The result can be exported as an image or a written report.</string>
     <string name="coverage_no_roam">Several transmitters were in range but the phone never switched between them during this walk. That is normal on a short scan.</string>
     <string name="coverage_sampling_note">Android lets an app ask for a fresh scan four times per two minutes, so each transmitter is caught at a handful of places along the walk rather than continuously.</string>
     <string name="home_tile_coverage">Transmitters</string>
-    <string name="home_tile_coverage_sub">Mesh &amp; handover</string>
+    <string name="home_tile_coverage_sub">Which node covers where</string>
 
     <!-- Speed survey during scan -->
     <string name="scanmode_measure_speed">Also measure real speed</string>
@@ -852,7 +852,7 @@ The result can be exported as an image or a written report.</string>
 
     <!-- Channels advisor -->
     <string name="home_tile_channels">Channels</string>
-    <string name="home_tile_channels_sub">Ratings &amp; best pick</string>
+    <string name="home_tile_channels_sub">Ratings &amp; the one to pick</string>
     <string name="channels_title">Channel Advisor</string>
     <string name="channels_heading">Every channel, scored</string>
     <string name="channels_intro">Channels are rated by how many neighbours share them and how loud those neighbours are. Wide carriers count against every channel they span — an 80 MHz hog is a problem for four channels, not one.</string>
@@ -873,7 +873,7 @@ The result can be exported as an image or a written report.</string>
 
     <!-- Wi-Fi RTT -->
     <string name="home_tile_rtt">Distance</string>
-    <string name="home_tile_rtt_sub">RTT &amp; locate</string>
+    <string name="home_tile_rtt_sub">How far the router is</string>
     <string name="rtt_title">Wi-Fi RTT</string>
     <string name="rtt_heading">Measure, don\'t guess</string>
     <string name="rtt_intro">802.11mc measures actual round-trip time to an access point — distance in metres, not a signal-strength estimate. Tap a spot on the sketch where you are standing and it triangulates where the router sits.</string>
@@ -914,4 +914,177 @@ The result can be exported as an image or a written report.</string>
     <string name="devices_fingerprint_vendor">Vendor</string>
     <string name="devices_fingerprint_model">Model</string>
     <string name="devices_fingerprint_type">Type</string>
+<!-- Home groups (redesign) -->
+    <string name="home_group_map">Your home map</string>
+    <string name="home_group_airspace">Airspace</string>
+    <string name="home_group_performance">Speed &amp; stability</string>
+    <string name="home_group_network">Local network</string>
+    <string name="home_group_learn">Learn</string>
+    <string name="home_tile_lanspeed">LAN Speed</string>
+    <string name="home_tile_lanspeed_sub">Phone-to-phone Wi-Fi</string>
+    <string name="home_tile_bloat">Bufferbloat</string>
+    <string name="home_tile_bloat_sub">Lag under load</string>
+    <string name="home_tile_interference">Interference</string>
+    <string name="home_tile_interference_sub">Did the air get busier</string>
+    <string name="home_tile_radiolab">Radio Lab</string>
+    <string name="home_tile_radiolab_sub">Live link telemetry</string>
+    <string name="home_tile_predict">Predict</string>
+    <string name="home_tile_predict_sub">Coverage if router moves</string>
+    <string name="home_tile_glossary">Glossary</string>
+    <string name="home_tile_glossary_sub">The jargon, explained</string>
+
+    <!-- Depth capture -->
+    <string name="capture_depth_on">Depth · %1$d pts</string>
+
+    <!-- LAN speed (iperf-style) -->
+    <string name="lanspeed_title">LAN Speed</string>
+    <string name="lanspeed_intro">The Wi-Fi\'s real speed, measured phone to phone — no internet in the way. Host on one phone, Measure on the other.</string>
+    <string name="lanspeed_host_mode">Host</string>
+    <string name="lanspeed_host_mode_sub">This phone serves</string>
+    <string name="lanspeed_measure_mode">Measure</string>
+    <string name="lanspeed_measure_mode_sub">Find a host &amp; test</string>
+    <string name="lanspeed_on">on</string>
+    <string name="lanspeed_hosting_title">HOSTING A BENCH PEER</string>
+    <string name="lanspeed_hosting_address">%1$s : %2$d</string>
+    <string name="lanspeed_hosting_hint">Keep this screen open. On the other phone open LAN Speed → Measure and tap “Sinyal Bench”.</string>
+    <string name="lanspeed_phase_latency">Measuring latency…</string>
+    <string name="lanspeed_phase_download">Download…</string>
+    <string name="lanspeed_phase_upload">Upload…</string>
+    <string name="lanspeed_idle_latency">Idle ping</string>
+    <string name="lanspeed_loaded_latency">Ping under load</string>
+    <string name="lanspeed_verdict_good">Latency stayed flat under load — the link buffers well.</string>
+    <string name="lanspeed_verdict_loaded">+%1$d ms under load — the link holds traffic hostage.</string>
+    <string name="lanspeed_failed">Could not reach that peer — same Wi-Fi, Host still open?</string>
+    <string name="lanspeed_peers_title">BENCH PEERS NEARBY</string>
+    <string name="lanspeed_no_peers">Nothing found — open Host on the other phone, or enter its address below.</string>
+    <string name="lanspeed_measure">Measure</string>
+    <string name="lanspeed_manual_hint">IP[:port] of a host phone</string>
+    <string name="lanspeed_connect">Test</string>
+    <string name="unit_mbps_decimal">%1$.1f Mbps</string>
+
+    <!-- Bufferbloat -->
+    <string name="bloat_title">Bufferbloat</string>
+    <string name="bloat_intro">Does latency spike when the connection is busy? This fills the pipe for a few seconds and measures what a call would feel.</string>
+    <string name="bloat_phase_idle">Quiet pipe — sampling latency…</string>
+    <string name="bloat_phase_load">Full pipe — sampling latency…</string>
+    <string name="bloat_phase_done">Done</string>
+    <string name="bloat_strip_empty">Run the test to watch idle vs loaded latency.</string>
+    <string name="bloat_increase_caption">added latency under load</string>
+    <string name="bloat_idle_median">Idle median</string>
+    <string name="bloat_loaded_median">Loaded median</string>
+    <string name="bloat_loaded_p95">Loaded p95</string>
+    <string name="bloat_loaded_max">Loaded worst</string>
+    <string name="bloat_verdict_a">Calls and games stay smooth even while the network is busy.</string>
+    <string name="bloat_verdict_b">Mostly fine — a heavy download may surface as an occasional stutter.</string>
+    <string name="bloat_verdict_c">Video calls wobble under load; games feel the lag.</string>
+    <string name="bloat_verdict_d">Any background download wrecks calls. Look for SQM / cake / fq_codel on the router.</string>
+    <string name="bloat_verdict_f">The link freezes under load. Router SQM settings are the fix.</string>
+    <string name="bloat_failed">No route to the test server — check the connection.</string>
+    <string name="bloat_start">Run bufferbloat test</string>
+    <string name="bloat_explainer">TCP connect time to Cloudflare’s edge, quiet vs saturated — the letter is how much latency a full pipe adds.</string>
+
+    <!-- Interference before/after -->
+    <string name="interference_title">Interference</string>
+    <string name="interference_intro">Snapshot the airspace now, change something — move the router, switch a channel — then scan again to see what actually changed.</string>
+    <string name="interference_take_baseline">Snapshot the air now</string>
+    <string name="interference_baseline_saved">Baseline saved · %1$d APs</string>
+    <string name="interference_baseline_when">Now change something, then rescan.</string>
+    <string name="interference_compare_now">Scan again &amp; compare</string>
+    <string name="interference_scanning">Scanning…</string>
+    <string name="interference_reset">Start over</string>
+    <string name="interference_verdict_busier">The air got busier</string>
+    <string name="interference_verdict_quieter">The air got quieter</string>
+    <string name="interference_verdict_same">About the same</string>
+    <string name="interference_power_delta">Total radio power: %1$s</string>
+    <string name="interference_channels_title">CHANNELS THAT MOVED</string>
+    <string name="interference_aps_title">NETWORKS THAT CHANGED</string>
+    <string name="interference_new_ap">new · %1$d dBm</string>
+    <string name="interference_louder_ap">%1$d → %2$d dBm</string>
+    <string name="interference_gone_ap">gone · was %1$d dBm</string>
+    <string name="interference_howto">Baseline lives only in memory — this answers “did it change since a moment ago?”, not last month.</string>
+
+    <!-- Radio lab -->
+    <string name="radiolab_title">Radio Lab</string>
+    <string name="radiolab_intro">Live link telemetry, sampled five times a second. Hold the phone still — or walk — and watch the link answer.</string>
+    <string name="radiolab_disconnected">Connect to Wi-Fi to watch the link.</string>
+    <string name="radiolab_rssi_now">Signal now</string>
+    <string name="radiolab_rate_now">Link rate</string>
+    <string name="radiolab_channel">Channel</string>
+    <string name="radiolab_stability">Stability</string>
+    <string name="radiolab_rssi_chart">SIGNAL (dBm)</string>
+    <string name="radiolab_rate_chart">NEGOTIATED RATE (Mbps)</string>
+    <string name="radiolab_tx">TX — router hears you</string>
+    <string name="radiolab_rx">RX — you hear router</string>
+    <string name="radiolab_csi_note">Honest note: phones cannot read raw CSI (the per-subcarrier data ESP32-CSI firmware exposes) — this is the finest telemetry Android gives an app.</string>
+
+    <!-- Predict coverage -->
+    <string name="predict_title">Predict coverage</string>
+    <string name="predict_intro">A simple propagation model over your scanned walls — drag the router anywhere to see where signal would reach.</string>
+    <string name="predict_empty">Run a scan first — the predictor needs your walls.</string>
+    <string name="predict_best">Best</string>
+    <string name="predict_worst">Worst</string>
+    <string name="predict_weak_area">Weak area</string>
+    <string name="predict_weak_value">%1$.1f m²</string>
+    <string name="predict_drag_hint">Drag the dot to move the router.</string>
+    <string name="predict_model_note">A model, not a measurement: direct path + a few dB per wall. Real coverage depends on wall material and furniture the scan cannot see.</string>
+
+    <!-- Glossary -->
+    <string name="glossary_title">Glossary</string>
+    <string name="glossary_intro">Every abbreviation the app uses, in one line.</string>
+    <string name="glossary_group_signal">SIGNAL</string>
+    <string name="glossary_group_airspace">AIRSPACE</string>
+    <string name="glossary_group_measurement">MEASUREMENT</string>
+    <string name="glossary_group_network">YOUR NETWORK</string>
+    <string name="gloss_dbm_t">dBm</string>
+    <string name="gloss_dbm_d">Decibel-milliwatts — how strong the signal is. −40 is excellent, −70 usable, −90 nearly dead.</string>
+    <string name="gloss_rssi_t">RSSI</string>
+    <string name="gloss_rssi_d">Received Signal Strength Indicator — the dBm reading’s technical name.</string>
+    <string name="gloss_quality_t">Signal quality</string>
+    <string name="gloss_quality_d">The app’s name for dBm ranges, from Excellent down to Dead.</string>
+    <string name="gloss_heatmap_t">Heatmap</string>
+    <string name="gloss_heatmap_d">Signal strength drawn over your floor plan after an AR walk.</string>
+    <string name="gloss_roam_t">Roaming</string>
+    <string name="gloss_roam_d">Switching between router nodes as you walk. Done late, it shows as a dip.</string>
+    <string name="gloss_ssid_t">SSID</string>
+    <string name="gloss_ssid_d">A network’s name — the thing you tap to join.</string>
+    <string name="gloss_bssid_t">BSSID</string>
+    <string name="gloss_bssid_d">A transmitter’s hardware address. One SSID can be many BSSIDs in a mesh.</string>
+    <string name="gloss_band_t">Band</string>
+    <string name="gloss_band_d">Which slice of spectrum the network uses: 2.4, 5 or 6 GHz.</string>
+    <string name="gloss_channel_t">Channel</string>
+    <string name="gloss_channel_d">A numbered lane inside a band. Sharing one is what makes Wi-Fi feel crowded.</string>
+    <string name="gloss_dfs_t">DFS</string>
+    <string name="gloss_dfs_d">Channels shared with radar — allowed to use, but the router may have to leave them suddenly.</string>
+    <string name="gloss_width_t">Channel width</string>
+    <string name="gloss_width_d">How much spectrum a carrier occupies, 20 to 160 MHz. Wider is faster, overlaps more.</string>
+    <string name="gloss_interference_t">Interference</string>
+    <string name="gloss_interference_d">Other transmitters on or near your channel, competing for airtime.</string>
+    <string name="gloss_generation_t">Wi-Fi 4 / 5 / 6 / 7</string>
+    <string name="gloss_generation_d">Generations of the 802.11 standard (n / ac / ax / be). Newer is faster.</string>
+    <string name="gloss_latency_t">Latency</string>
+    <string name="gloss_latency_d">Round-trip time in milliseconds — how long an answer takes, not how wide the pipe is.</string>
+    <string name="gloss_jitter_t">Jitter</string>
+    <string name="gloss_jitter_d">How much latency varies. Calls and games care about it more than raw speed.</string>
+    <string name="gloss_throughput_t">Throughput</string>
+    <string name="gloss_throughput_d">How much data actually moves per second, in Mbps.</string>
+    <string name="gloss_bufferbloat_t">Bufferbloat</string>
+    <string name="gloss_bufferbloat_d">Extra delay a router adds under load when its buffers are too big — the classic cause of lag while downloading.</string>
+    <string name="gloss_mbps_t">Mbps</string>
+    <string name="gloss_mbps_d">Megabits per second. Divide by 8 for megabytes.</string>
+    <string name="gloss_rtt_t">RTT · 802.11mc</string>
+    <string name="gloss_rtt_d">Round-Trip Time — the Wi-Fi ranging standard that measures metres to the router.</string>
+    <string name="gloss_ip_t">IP address</string>
+    <string name="gloss_ip_d">A device’s number on the local network, like 192.168.1.5.</string>
+    <string name="gloss_gateway_t">Gateway</string>
+    <string name="gloss_gateway_d">Your router’s own address — the door out to the internet.</string>
+    <string name="gloss_dhcp_t">DHCP</string>
+    <string name="gloss_dhcp_d">The router handing out addresses automatically when devices join.</string>
+    <string name="gloss_dns_t">DNS</string>
+    <string name="gloss_dns_d">Translates names like example.com into addresses. Changing it can speed up browsing.</string>
+    <string name="gloss_mdns_t">mDNS · Bonjour</string>
+    <string name="gloss_mdns_d">How phones, printers and TVs announce themselves on the local network.</string>
+    <string name="gloss_upnp_t">UPnP · SSDP</string>
+    <string name="gloss_upnp_d">How smart devices advertise what they are — TVs, speakers, cameras.</string>
+    <string name="gloss_mesh_t">Mesh</string>
+    <string name="gloss_mesh_d">Several router nodes covering one home under one name; the phone roams between them.</string>
 </resources>
