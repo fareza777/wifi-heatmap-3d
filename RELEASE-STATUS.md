@@ -1,4 +1,10 @@
-# Release preparation — 13 September 2026
+# Release status
+
+## Update — 22 September 2026
+
+Latest main source `c125861` built as **1.0.2 (version code 3)** because code 2 was already published on Alpha. Signed AAB accepted and submitted for 100% rollout on the existing closed Alpha track. Publishing overview confirmed **Changes in review**; preliminary checks and Google approval remain pending. Managed publishing is off. All 10 JVM tests passed, release lint vital and signing passed. See `docs/development/release-1.0.2.md` for checksum and validation evidence. Production was not changed.
+
+## Initial release preparation — 13 September 2026
 
 User target: complete preparation through closed testing; user handles production next. No production rollout is authorized or planned.
 
