@@ -27,6 +27,12 @@ import androidx.compose.material.icons.rounded.CompareArrows
 import androidx.compose.material.icons.rounded.Devices
 import androidx.compose.material.icons.rounded.Speed
 import androidx.compose.material.icons.rounded.GraphicEq
+import androidx.compose.material.icons.rounded.Insights
+import androidx.compose.material.icons.rounded.Lan
+import androidx.compose.material.icons.rounded.MenuBook
+import androidx.compose.material.icons.rounded.MultilineChart
+import androidx.compose.material.icons.rounded.Sensors
+import androidx.compose.material.icons.rounded.Waves
 import androidx.compose.material.icons.rounded.Shield
 import androidx.compose.material.icons.rounded.ShowChart
 import androidx.compose.material.icons.rounded.SocialDistance
@@ -54,6 +60,7 @@ import com.sinyal.app.ui.components.CompactTile
 import com.sinyal.app.ui.components.GradientButton
 import com.sinyal.app.ui.components.SignalRing
 import com.sinyal.app.ui.components.StatTile
+import androidx.annotation.StringRes
 import com.sinyal.app.ui.theme.Accent
 import com.sinyal.app.ui.theme.Ink
 import com.sinyal.app.ui.theme.SignalColor
@@ -64,7 +71,7 @@ import com.sinyal.app.R
 import androidx.compose.material.icons.rounded.Router
 
 /**
- * The live reading, one action, and four places to go.
+ * The live reading, one action, then the tool shelf grouped by intent.
  *
  * Everything that used to be a list here has moved to the screen that owns it:
  * nearby networks to the networks page, saved scans to history, the settings
@@ -84,6 +91,12 @@ fun HomeScreen(
     onOpenRtt: () -> Unit,
     onOpenGraph: () -> Unit,
     onOpenCoverage: () -> Unit,
+    onOpenLanSpeed: () -> Unit,
+    onOpenBufferbloat: () -> Unit,
+    onOpenInterference: () -> Unit,
+    onOpenRadioLab: () -> Unit,
+    onOpenPredict: () -> Unit,
+    onOpenGlossary: () -> Unit,
     onOpenSettings: () -> Unit,
     adsRemoved: Boolean,
     modifier: Modifier = Modifier,
@@ -192,6 +205,12 @@ fun HomeScreen(
                 onOpenCoverage = onOpenCoverage,
                 onOpenHistory = onOpenHistory,
                 onOpenCompare = onOpenCompare,
+                onOpenLanSpeed = onOpenLanSpeed,
+                onOpenBufferbloat = onOpenBufferbloat,
+                onOpenInterference = onOpenInterference,
+                onOpenRadioLab = onOpenRadioLab,
+                onOpenPredict = onOpenPredict,
+                onOpenGlossary = onOpenGlossary,
             )
 
             Spacer(Modifier.height(14.dp))
@@ -282,7 +301,11 @@ private fun LinkStats(state: HomeUiState) {
     }
 }
 
-/** Every destination in one grid, so nothing needs a second menu to reach. */
+/**
+ * Every destination, grouped so the visit order reads itself:
+ * scan the room, study the air, measure speed, check who's on it,
+ * learn the words. A flat grid of sixteen was a directory, not a flow.
+ */
 @Composable
 private fun MenuGrid(
     onOpenNetworks: () -> Unit,
@@ -296,96 +319,99 @@ private fun MenuGrid(
     onOpenCoverage: () -> Unit,
     onOpenHistory: () -> Unit,
     onOpenCompare: () -> Unit,
+    onOpenLanSpeed: () -> Unit,
+    onOpenBufferbloat: () -> Unit,
+    onOpenInterference: () -> Unit,
+    onOpenRadioLab: () -> Unit,
+    onOpenPredict: () -> Unit,
+    onOpenGlossary: () -> Unit,
 ) {
     Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
-        Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+        SectionHeader(R.string.home_group_map)
+        TileRow(
+            TileSpec(Icons.Rounded.Router, R.string.home_tile_coverage, R.string.home_tile_coverage_sub, onOpenCoverage),
+            TileSpec(Icons.Rounded.Insights, R.string.home_tile_predict, R.string.home_tile_predict_sub, onOpenPredict),
+        )
+        TileRow(
+            TileSpec(Icons.Rounded.CalendarMonth, R.string.home_tile_history, R.string.home_tile_history_sub, onOpenHistory),
+            TileSpec(Icons.Rounded.CompareArrows, R.string.home_tile_compare, R.string.home_tile_compare_sub, onOpenCompare),
+        )
+
+        SectionHeader(R.string.home_group_airspace)
+        TileRow(
+            TileSpec(Icons.Rounded.Wifi, R.string.home_tile_networks, R.string.home_tile_networks_sub, onOpenNetworks),
+            TileSpec(Icons.Rounded.GraphicEq, R.string.home_tile_spectrum, R.string.home_tile_spectrum_sub, onOpenAnalysis),
+        )
+        TileRow(
+            TileSpec(Icons.Rounded.Tune, R.string.home_tile_channels, R.string.home_tile_channels_sub, onOpenChannels),
+            TileSpec(Icons.Rounded.SocialDistance, R.string.home_tile_rtt, R.string.home_tile_rtt_sub, onOpenRtt),
+        )
+        TileRow(
+            TileSpec(Icons.Rounded.Waves, R.string.home_tile_interference, R.string.home_tile_interference_sub, onOpenInterference),
+            TileSpec(Icons.Rounded.ShowChart, R.string.home_tile_graph, R.string.home_tile_graph_sub, onOpenGraph),
+        )
+
+        SectionHeader(R.string.home_group_performance)
+        TileRow(
+            TileSpec(Icons.Rounded.Speed, R.string.home_tile_speed, R.string.home_tile_speed_sub, onOpenSpeedTest),
+            TileSpec(Icons.Rounded.Lan, R.string.home_tile_lanspeed, R.string.home_tile_lanspeed_sub, onOpenLanSpeed),
+        )
+        TileRow(
+            TileSpec(Icons.Rounded.MultilineChart, R.string.home_tile_bloat, R.string.home_tile_bloat_sub, onOpenBufferbloat),
+            TileSpec(Icons.Rounded.Sensors, R.string.home_tile_radiolab, R.string.home_tile_radiolab_sub, onOpenRadioLab),
+        )
+
+        SectionHeader(R.string.home_group_network)
+        TileRow(
+            TileSpec(Icons.Rounded.Devices, R.string.home_tile_devices, R.string.home_tile_devices_sub, onOpenDevices),
+            TileSpec(Icons.Rounded.Shield, R.string.home_tile_security, R.string.home_tile_security_sub, onOpenSecurity),
+        )
+
+        SectionHeader(R.string.home_group_learn)
+        TileRow(
+            TileSpec(Icons.Rounded.MenuBook, R.string.home_tile_glossary, R.string.home_tile_glossary_sub, onOpenGlossary),
+        )
+    }
+}
+
+@Composable
+private fun SectionHeader(@StringRes text: Int) {
+    Text(
+        text = stringResource(text),
+        style = MaterialTheme.typography.labelSmall,
+        color = TextTone.Tertiary,
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(start = 4.dp, top = 10.dp),
+    )
+}
+
+private class TileSpec(
+    val icon: androidx.compose.ui.graphics.vector.ImageVector,
+    @StringRes val title: Int,
+    @StringRes val subtitle: Int,
+    val onClick: () -> Unit,
+)
+
+@Composable
+private fun TileRow(a: TileSpec, b: TileSpec? = null) {
+    Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+        CompactTile(
+            icon = a.icon,
+            title = stringResource(a.title),
+            subtitle = stringResource(a.subtitle),
+            onClick = a.onClick,
+            modifier = Modifier.weight(1f),
+        )
+        if (b != null) {
             CompactTile(
-                icon = Icons.Rounded.Wifi,
-                title = stringResource(R.string.home_tile_networks),
-                subtitle = stringResource(R.string.home_tile_networks_sub),
-                onClick = onOpenNetworks,
+                icon = b.icon,
+                title = stringResource(b.title),
+                subtitle = stringResource(b.subtitle),
+                onClick = b.onClick,
                 modifier = Modifier.weight(1f),
             )
-            CompactTile(
-                icon = Icons.Rounded.GraphicEq,
-                title = stringResource(R.string.home_tile_spectrum),
-                subtitle = stringResource(R.string.home_tile_spectrum_sub),
-                onClick = onOpenAnalysis,
-                modifier = Modifier.weight(1f),
-            )
-        }
-        Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-            CompactTile(
-                icon = Icons.Rounded.Tune,
-                title = stringResource(R.string.home_tile_channels),
-                subtitle = stringResource(R.string.home_tile_channels_sub),
-                onClick = onOpenChannels,
-                modifier = Modifier.weight(1f),
-            )
-            CompactTile(
-                icon = Icons.Rounded.SocialDistance,
-                title = stringResource(R.string.home_tile_rtt),
-                subtitle = stringResource(R.string.home_tile_rtt_sub),
-                onClick = onOpenRtt,
-                modifier = Modifier.weight(1f),
-            )
-        }
-        Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-            CompactTile(
-                icon = Icons.Rounded.Speed,
-                title = stringResource(R.string.home_tile_speed),
-                subtitle = stringResource(R.string.home_tile_speed_sub),
-                onClick = onOpenSpeedTest,
-                modifier = Modifier.weight(1f),
-            )
-            CompactTile(
-                icon = Icons.Rounded.Devices,
-                title = stringResource(R.string.home_tile_devices),
-                subtitle = stringResource(R.string.home_tile_devices_sub),
-                onClick = onOpenDevices,
-                modifier = Modifier.weight(1f),
-            )
-        }
-        Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-            CompactTile(
-                icon = Icons.Rounded.Shield,
-                title = stringResource(R.string.home_tile_security),
-                subtitle = stringResource(R.string.home_tile_security_sub),
-                onClick = onOpenSecurity,
-                modifier = Modifier.weight(1f),
-            )
-            CompactTile(
-                icon = Icons.Rounded.ShowChart,
-                title = stringResource(R.string.home_tile_graph),
-                subtitle = stringResource(R.string.home_tile_graph_sub),
-                onClick = onOpenGraph,
-                modifier = Modifier.weight(1f),
-            )
-        }
-        Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-            CompactTile(
-                icon = Icons.Rounded.Router,
-                title = stringResource(R.string.home_tile_coverage),
-                subtitle = stringResource(R.string.home_tile_coverage_sub),
-                onClick = onOpenCoverage,
-                modifier = Modifier.weight(1f),
-            )
-            CompactTile(
-                icon = Icons.Rounded.CalendarMonth,
-                title = stringResource(R.string.home_tile_history),
-                subtitle = stringResource(R.string.home_tile_history_sub),
-                onClick = onOpenHistory,
-                modifier = Modifier.weight(1f),
-            )
-        }
-        Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-            CompactTile(
-                icon = Icons.Rounded.CompareArrows,
-                title = stringResource(R.string.home_tile_compare),
-                subtitle = stringResource(R.string.home_tile_compare_sub),
-                onClick = onOpenCompare,
-                modifier = Modifier.weight(1f),
-            )
+        } else {
             Spacer(Modifier.weight(1f))
         }
     }

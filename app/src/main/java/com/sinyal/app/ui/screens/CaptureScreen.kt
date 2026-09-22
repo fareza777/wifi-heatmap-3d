@@ -44,6 +44,7 @@ import com.sinyal.app.ui.components.GradientButton
 import com.sinyal.app.ui.components.StatTile
 import com.sinyal.app.ui.components.StatusPill
 import com.sinyal.app.ui.components.signalColorFor
+import com.sinyal.app.ui.theme.Accent
 import com.sinyal.app.ui.theme.Ink
 import com.sinyal.app.ui.theme.SignalColor
 import com.sinyal.app.ui.theme.TextTone
@@ -85,10 +86,10 @@ fun CaptureScreen(
             modifier = Modifier.fillMaxSize(),
             planeRenderer = true,
             sessionConfiguration = { session, config ->
-                // Depth stays off. Nothing in this app ever reads a depth image —
-                // it was being computed and thrown away every frame. On a phone
-                // with no depth sensor that estimate is pure CPU work, competing
-                // for exactly the feature tracking ARCore was starving for:
+                // Depth starts off; the view model upgrades it to AUTOMATIC only
+                // when the device has real depth hardware. Depth-from-motion on
+                // a phone without a depth sensor is pure CPU work, competing for
+                // exactly the feature tracking ARCore was starving for:
                 // sessions were reporting INSUFFICIENT_FEATURES and never
                 // recovering.
                 config.depthMode = Config.DepthMode.DISABLED
@@ -182,6 +183,14 @@ private fun CaptureHud(
                 else -> TextTone.Tertiary
             },
         )
+
+        if (state.depthActive) {
+            Spacer(Modifier.height(6.dp))
+            StatusPill(
+                text = stringResource(R.string.capture_depth_on, state.depthPoints),
+                tone = Accent.Bright,
+            )
+        }
 
         Spacer(Modifier.weight(1f))
 

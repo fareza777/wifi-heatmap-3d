@@ -166,18 +166,18 @@
     <string name="home_tile_networks">Jaringan</string>
     <string name="home_tile_networks_sub">Semua Wi-Fi sekitar</string>
     <string name="home_tile_spectrum">Spektrum</string>
-    <string name="home_tile_spectrum_sub">Kanal &amp; gelombang</string>
+    <string name="home_tile_spectrum_sub">Seberapa ramai tiap kanal</string>
     <string name="home_tile_speed">Kecepatan</string>
-    <string name="home_tile_speed_sub">Unduh, unggah, ping</string>
+    <string name="home_tile_speed_sub">Kecepatan internet di sini</string>
     <string name="home_tile_devices">Perangkat</string>
     <string name="home_tile_devices_sub">Siapa di jaringan ini</string>
     <string name="home_tile_security">Keamanan</string>
     <string name="home_tile_graph">Grafik</string>
-    <string name="home_tile_graph_sub">Sinyal per waktu</string>
+    <string name="home_tile_graph_sub">Kekuatan sinyal per waktu</string>
     <string name="home_tile_history">Riwayat</string>
     <string name="home_tile_history_sub">Scan tersimpan</string>
     <string name="home_tile_compare">Bandingkan</string>
-    <string name="home_tile_compare_sub">Sebelum &amp; sesudah</string>
+    <string name="home_tile_compare_sub">Satu scan vs lainnya</string>
 
     <!-- Spectrum / analysis screen -->
     <string name="analysis_title">Analisa Wi-Fi</string>
@@ -737,7 +737,7 @@ Hasilnya bisa diekspor jadi gambar atau laporan teks.</string>
     <string name="coverage_no_roam">Beberapa pemancar terjangkau tapi ponsel tidak pernah berpindah di antara mereka selama berjalan ini. Itu wajar pada pemindaian singkat.</string>
     <string name="coverage_sampling_note">Android hanya mengizinkan aplikasi meminta pemindaian baru empat kali per dua menit, jadi tiap pemancar tertangkap di beberapa titik sepanjang perjalanan, bukan terus-menerus.</string>
     <string name="home_tile_coverage">Pemancar</string>
-    <string name="home_tile_coverage_sub">Mesh &amp; perpindahan</string>
+    <string name="home_tile_coverage_sub">Titik mana menutupi mana</string>
 
     <!-- Speed survey during scan -->
     <string name="scanmode_measure_speed">Ukur kecepatan sungguhan juga</string>
@@ -782,7 +782,7 @@ Hasilnya bisa diekspor jadi gambar atau laporan teks.</string>
     <string name="networks_vendor_line">%1$s · %2$s</string>
     <string name="networks_width">%1$d MHz</string>
     <string name="networks_report_filename">laporan-jaringan-wifi.txt</string>
-    <string name="home_tile_security_sub">Audit &amp; DNS</string>
+    <string name="home_tile_security_sub">Kunci, DNS &amp; WPS</string>
     <string name="diag_model">Model</string>
     <string name="diag_android">Android</string>
     <string name="diag_android_value">%1$s (API %2$d)</string>
@@ -869,7 +869,7 @@ Hasilnya bisa diekspor jadi gambar atau laporan teks.</string>
 
     <!-- Wi-Fi RTT -->
     <string name="home_tile_rtt">Jarak</string>
-    <string name="home_tile_rtt_sub">RTT &amp; lokasi</string>
+    <string name="home_tile_rtt_sub">Seberapa jauh routernya</string>
     <string name="rtt_title">Wi-Fi RTT</string>
     <string name="rtt_heading">Ukur, bukan tebak</string>
     <string name="rtt_intro">802.11mc mengukur waktu tempuh sinyal ke access point — jarak dalam meter, bukan perkiraan dari kekuatan sinyal. Ketuk posisi kamu berdiri di sketsa dan app menriangulasi letak router.</string>
@@ -910,4 +910,177 @@ Hasilnya bisa diekspor jadi gambar atau laporan teks.</string>
     <string name="devices_fingerprint_vendor">Vendor</string>
     <string name="devices_fingerprint_model">Model</string>
     <string name="devices_fingerprint_type">Tipe</string>
+<!-- Home groups (redesign) -->
+    <string name="home_group_map">Peta rumahmu</string>
+    <string name="home_group_airspace">Udara</string>
+    <string name="home_group_performance">Kecepatan &amp; stabilitas</string>
+    <string name="home_group_network">Jaringan lokal</string>
+    <string name="home_group_learn">Belajar</string>
+    <string name="home_tile_lanspeed">LAN Speed</string>
+    <string name="home_tile_lanspeed_sub">Wi-Fi antar HP</string>
+    <string name="home_tile_bloat">Bufferbloat</string>
+    <string name="home_tile_bloat_sub">Lag saat sibuk</string>
+    <string name="home_tile_interference">Interferensi</string>
+    <string name="home_tile_interference_sub">Udara makin ramai?</string>
+    <string name="home_tile_radiolab">Radio Lab</string>
+    <string name="home_tile_radiolab_sub">Telemetri link live</string>
+    <string name="home_tile_predict">Prediksi</string>
+    <string name="home_tile_predict_sub">Jangkauan kalau router pindah</string>
+    <string name="home_tile_glossary">Istilah</string>
+    <string name="home_tile_glossary_sub">Istilah teknis, dijelaskan</string>
+
+    <!-- Depth capture -->
+    <string name="capture_depth_on">Depth · %1$d titik</string>
+
+    <!-- LAN speed (iperf-style) -->
+    <string name="lanspeed_title">LAN Speed</string>
+    <string name="lanspeed_intro">Kecepatan Wi-Fi asli, diukur antar HP — tanpa internet. Host di satu HP, Measure di HP lainnya.</string>
+    <string name="lanspeed_host_mode">Host</string>
+    <string name="lanspeed_host_mode_sub">HP ini jadi server</string>
+    <string name="lanspeed_measure_mode">Measure</string>
+    <string name="lanspeed_measure_mode_sub">Cari host &amp; uji</string>
+    <string name="lanspeed_on">aktif</string>
+    <string name="lanspeed_hosting_title">MENJADI HOST</string>
+    <string name="lanspeed_hosting_address">%1$s : %2$d</string>
+    <string name="lanspeed_hosting_hint">Biarkan layar ini terbuka. Di HP lain buka LAN Speed → Measure lalu ketuk “Sinyal Bench”.</string>
+    <string name="lanspeed_phase_latency">Mengukur latensi…</string>
+    <string name="lanspeed_phase_download">Download…</string>
+    <string name="lanspeed_phase_upload">Upload…</string>
+    <string name="lanspeed_idle_latency">Ping idle</string>
+    <string name="lanspeed_loaded_latency">Ping saat sibuk</string>
+    <string name="lanspeed_verdict_good">Latensi tetap datar saat sibuk — buffer link bagus.</string>
+    <string name="lanspeed_verdict_loaded">+%1$d ms saat sibuk — link menahan trafik terlalu lama.</string>
+    <string name="lanspeed_failed">Peer tidak bisa dihubungi — Wi-Fi sama, Host masih terbuka?</string>
+    <string name="lanspeed_peers_title">HOST DI SEKITAR</string>
+    <string name="lanspeed_no_peers">Tidak ada — buka Host di HP lain, atau isi alamatnya di bawah.</string>
+    <string name="lanspeed_measure">Ukur</string>
+    <string name="lanspeed_manual_hint">IP[:port] HP host</string>
+    <string name="lanspeed_connect">Uji</string>
+    <string name="unit_mbps_decimal">%1$.1f Mbps</string>
+
+    <!-- Bufferbloat -->
+    <string name="bloat_title">Bufferbloat</string>
+    <string name="bloat_intro">Apakah latensi melonjak saat koneksi sibuk? Ini memenuhi pipa beberapa detik dan mengukur apa yang dirasakan panggilan video.</string>
+    <string name="bloat_phase_idle">Pipa sepi — sampling latensi…</string>
+    <string name="bloat_phase_load">Pipa penuh — sampling latensi…</string>
+    <string name="bloat_phase_done">Selesai</string>
+    <string name="bloat_strip_empty">Jalankan tes untuk melihat latensi idle vs sibuk.</string>
+    <string name="bloat_increase_caption">latensi tambahan saat sibuk</string>
+    <string name="bloat_idle_median">Median idle</string>
+    <string name="bloat_loaded_median">Median sibuk</string>
+    <string name="bloat_loaded_p95">Sibuk p95</string>
+    <string name="bloat_loaded_max">Sibuk terburuk</string>
+    <string name="bloat_verdict_a">Panggilan dan game tetap mulus meski jaringan sibuk.</string>
+    <string name="bloat_verdict_b">Sebagian besar aman — download berat bisa muncul sebagai patah sesekali.</string>
+    <string name="bloat_verdict_c">Video call goyang saat sibuk; game terasa lag.</string>
+    <string name="bloat_verdict_d">Download di latar menghancurkan panggilan. Cari SQM / cake / fq_codel di router.</string>
+    <string name="bloat_verdict_f">Link membeku saat sibuk. Setting SQM di router solusinya.</string>
+    <string name="bloat_failed">Tidak ada rute ke server tes — cek koneksi.</string>
+    <string name="bloat_start">Jalankan tes bufferbloat</string>
+    <string name="bloat_explainer">Waktu koneksi TCP ke edge Cloudflare, sepi vs penuh — hurufnya seberapa besar latensi bertambah saat pipa penuh.</string>
+
+    <!-- Interference before/after -->
+    <string name="interference_title">Interferensi</string>
+    <string name="interference_intro">Foto keadaan udara sekarang, ubah sesuatu — pindahkan router, ganti kanal — lalu pindai lagi untuk lihat apa yang benar-benar berubah.</string>
+    <string name="interference_take_baseline">Foto udara sekarang</string>
+    <string name="interference_baseline_saved">Baseline tersimpan · %1$d AP</string>
+    <string name="interference_baseline_when">Sekarang ubah sesuatu, lalu pindai lagi.</string>
+    <string name="interference_compare_now">Pindai lagi &amp; bandingkan</string>
+    <string name="interference_scanning">Memindai…</string>
+    <string name="interference_reset">Mulai ulang</string>
+    <string name="interference_verdict_busier">Udara makin ramai</string>
+    <string name="interference_verdict_quieter">Udara makin sepi</string>
+    <string name="interference_verdict_same">Kurang lebih sama</string>
+    <string name="interference_power_delta">Total daya radio: %1$s</string>
+    <string name="interference_channels_title">KANAL YANG BERGERAK</string>
+    <string name="interference_aps_title">JARINGAN YANG BERUBAH</string>
+    <string name="interference_new_ap">baru · %1$d dBm</string>
+    <string name="interference_louder_ap">%1$d → %2$d dBm</string>
+    <string name="interference_gone_ap">hilang · tadinya %1$d dBm</string>
+    <string name="interference_howto">Baseline cuma di memori — ini menjawab “berubah sejak beberapa saat lalu?”, bukan bulan lalu.</string>
+
+    <!-- Radio lab -->
+    <string name="radiolab_title">Radio Lab</string>
+    <string name="radiolab_intro">Telemetri link live, disampling lima kali per detik. Diamkan — atau jalan — dan lihat respon link.</string>
+    <string name="radiolab_disconnected">Hubungkan ke Wi-Fi untuk melihat link.</string>
+    <string name="radiolab_rssi_now">Sinyal kini</string>
+    <string name="radiolab_rate_now">Rate link</string>
+    <string name="radiolab_channel">Kanal</string>
+    <string name="radiolab_stability">Stabilitas</string>
+    <string name="radiolab_rssi_chart">SINYAL (dBm)</string>
+    <string name="radiolab_rate_chart">RATE LINK (Mbps)</string>
+    <string name="radiolab_tx">TX — router dengar kamu</string>
+    <string name="radiolab_rx">RX — kamu dengar router</string>
+    <string name="radiolab_csi_note">Catatan jujur: HP tidak bisa membaca CSI mentah (data per-subcarrier yang diekspos firmware ESP32-CSI) — ini telemetri terhalus yang diberikan Android ke aplikasi.</string>
+
+    <!-- Predict coverage -->
+    <string name="predict_title">Prediksi jangkauan</string>
+    <string name="predict_intro">Model propagasi sederhana di atas tembok hasil scan — geser router ke mana saja untuk lihat sinyal sampai mana.</string>
+    <string name="predict_empty">Jalankan scan dulu — prediktor butuh tembok kamu.</string>
+    <string name="predict_best">Terbaik</string>
+    <string name="predict_worst">Terburuk</string>
+    <string name="predict_weak_area">Area lemah</string>
+    <string name="predict_weak_value">%1$.1f m²</string>
+    <string name="predict_drag_hint">Geser titik untuk memindahkan router.</string>
+    <string name="predict_model_note">Model, bukan pengukuran: jalur langsung + beberapa dB per tembok. Jangkauan nyata tergantung material tembok dan furnitur yang tidak terlihat scan.</string>
+
+    <!-- Glossary -->
+    <string name="glossary_title">Istilah</string>
+    <string name="glossary_intro">Setiap singkatan yang dipakai app, dalam satu kalimat.</string>
+    <string name="glossary_group_signal">SINYAL</string>
+    <string name="glossary_group_airspace">UDARA</string>
+    <string name="glossary_group_measurement">PENGUKURAN</string>
+    <string name="glossary_group_network">JARINGANMU</string>
+    <string name="gloss_dbm_t">dBm</string>
+    <string name="gloss_dbm_d">Decibel-milliwatt — seberapa kuat sinyal. −40 bagus sekali, −70 masih bisa, −90 hampir mati.</string>
+    <string name="gloss_rssi_t">RSSI</string>
+    <string name="gloss_rssi_d">Received Signal Strength Indicator — nama teknis dari angka dBm.</string>
+    <string name="gloss_quality_t">Kualitas sinyal</string>
+    <string name="gloss_quality_d">Nama app untuk rentang dBm, dari Bagus sampai Mati.</string>
+    <string name="gloss_heatmap_t">Heatmap</string>
+    <string name="gloss_heatmap_d">Kekuatan sinyal digambar di denah rumah setelah jalan dengan AR.</string>
+    <string name="gloss_roam_t">Roaming</string>
+    <string name="gloss_roam_d">Berpindah antar titik router (mesh) saat berjalan. Kalau telat, terlihat sebagai penurunan.</string>
+    <string name="gloss_ssid_t">SSID</string>
+    <string name="gloss_ssid_d">Nama jaringan — yang kamu ketuk untuk gabung.</string>
+    <string name="gloss_bssid_t">BSSID</string>
+    <string name="gloss_bssid_d">Alamat hardware pemancar. Satu SSID bisa punya banyak BSSID di mesh.</string>
+    <string name="gloss_band_t">Band</string>
+    <string name="gloss_band_d">Irisan spektrum yang dipakai jaringan: 2.4, 5 atau 6 GHz.</string>
+    <string name="gloss_channel_t">Kanal</string>
+    <string name="gloss_channel_d">Jalur bernomor di dalam band. Berbagi jalur yang sama yang bikin Wi-Fi terasa penuh.</string>
+    <string name="gloss_dfs_t">DFS</string>
+    <string name="gloss_dfs_d">Kanal yang berbagi dengan radar — boleh dipakai, tapi router bisa dipaksa pindah tiba-tiba.</string>
+    <string name="gloss_width_t">Lebar kanal</string>
+    <string name="gloss_width_d">Seberapa lebar spektrum yang dipakai, 20 sampai 160 MHz. Makin lebar makin cepat, tapi makin tumpang tindih.</string>
+    <string name="gloss_interference_t">Interferensi</string>
+    <string name="gloss_interference_d">Pemancar lain di kanalmu atau sekitarnya, berebut waktu udara.</string>
+    <string name="gloss_generation_t">Wi-Fi 4 / 5 / 6 / 7</string>
+    <string name="gloss_generation_d">Generasi standar 802.11 (n / ac / ax / be). Makin baru makin cepat.</string>
+    <string name="gloss_latency_t">Latensi</string>
+    <string name="gloss_latency_d">Waktu bolak-balik dalam milidetik — seberapa lama jawaban datang, bukan lebar pipanya.</string>
+    <string name="gloss_jitter_t">Jitter</string>
+    <string name="gloss_jitter_d">Seberapa bervariasi latensi. Panggilan dan game lebih peduli ini daripada kecepatan.</string>
+    <string name="gloss_throughput_t">Throughput</string>
+    <string name="gloss_throughput_d">Berapa banyak data yang benar-benar bergerak per detik, dalam Mbps.</string>
+    <string name="gloss_bufferbloat_t">Bufferbloat</string>
+    <string name="gloss_bufferbloat_d">Delay tambahan yang ditambahkan router saat sibuk karena buffer-nya kebesaran — penyebab klasik lag saat download.</string>
+    <string name="gloss_mbps_t">Mbps</string>
+    <string name="gloss_mbps_d">Megabit per detik. Bagi 8 untuk megabyte.</string>
+    <string name="gloss_rtt_t">RTT · 802.11mc</string>
+    <string name="gloss_rtt_d">Round-Trip Time — standar ranging Wi-Fi yang mengukur jarak meter ke router.</string>
+    <string name="gloss_ip_t">Alamat IP</string>
+    <string name="gloss_ip_d">Nomor perangkat di jaringan lokal, misalnya 192.168.1.5.</string>
+    <string name="gloss_gateway_t">Gateway</string>
+    <string name="gloss_gateway_d">Alamat router-mu sendiri — pintu keluar ke internet.</string>
+    <string name="gloss_dhcp_t">DHCP</string>
+    <string name="gloss_dhcp_d">Router yang membagikan alamat otomatis saat perangkat gabung.</string>
+    <string name="gloss_dns_t">DNS</string>
+    <string name="gloss_dns_d">Menerjemahkan nama seperti example.com jadi alamat. Menggantinya bisa mempercepat browsing.</string>
+    <string name="gloss_mdns_t">mDNS · Bonjour</string>
+    <string name="gloss_mdns_d">Cara HP, printer dan TV mengumumkan diri di jaringan lokal.</string>
+    <string name="gloss_upnp_t">UPnP · SSDP</string>
+    <string name="gloss_upnp_d">Cara perangkat pintar mengiklankan apa dirinya — TV, speaker, kamera.</string>
+    <string name="gloss_mesh_t">Mesh</string>
+    <string name="gloss_mesh_d">Beberapa titik router menutupi satu rumah dengan satu nama; HP berpindah-pindah di antaranya.</string>
 </resources>
