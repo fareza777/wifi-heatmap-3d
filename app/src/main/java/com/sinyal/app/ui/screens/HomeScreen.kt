@@ -29,6 +29,8 @@ import androidx.compose.material.icons.rounded.Speed
 import androidx.compose.material.icons.rounded.GraphicEq
 import androidx.compose.material.icons.rounded.Shield
 import androidx.compose.material.icons.rounded.ShowChart
+import androidx.compose.material.icons.rounded.SocialDistance
+import androidx.compose.material.icons.rounded.Tune
 import androidx.compose.material.icons.rounded.LocationOn
 import androidx.compose.material.icons.rounded.Settings
 import androidx.compose.material.icons.rounded.Wifi
@@ -78,6 +80,8 @@ fun HomeScreen(
     onOpenSpeedTest: () -> Unit,
     onOpenDevices: () -> Unit,
     onOpenSecurity: () -> Unit,
+    onOpenChannels: () -> Unit,
+    onOpenRtt: () -> Unit,
     onOpenGraph: () -> Unit,
     onOpenCoverage: () -> Unit,
     onOpenSettings: () -> Unit,
@@ -182,6 +186,8 @@ fun HomeScreen(
                 onOpenSpeedTest = onOpenSpeedTest,
                 onOpenDevices = onOpenDevices,
                 onOpenSecurity = onOpenSecurity,
+                onOpenChannels = onOpenChannels,
+                onOpenRtt = onOpenRtt,
                 onOpenGraph = onOpenGraph,
                 onOpenCoverage = onOpenCoverage,
                 onOpenHistory = onOpenHistory,
@@ -284,6 +290,8 @@ private fun MenuGrid(
     onOpenSpeedTest: () -> Unit,
     onOpenDevices: () -> Unit,
     onOpenSecurity: () -> Unit,
+    onOpenChannels: () -> Unit,
+    onOpenRtt: () -> Unit,
     onOpenGraph: () -> Unit,
     onOpenCoverage: () -> Unit,
     onOpenHistory: () -> Unit,
@@ -303,6 +311,22 @@ private fun MenuGrid(
                 title = stringResource(R.string.home_tile_spectrum),
                 subtitle = stringResource(R.string.home_tile_spectrum_sub),
                 onClick = onOpenAnalysis,
+                modifier = Modifier.weight(1f),
+            )
+        }
+        Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+            CompactTile(
+                icon = Icons.Rounded.Tune,
+                title = stringResource(R.string.home_tile_channels),
+                subtitle = stringResource(R.string.home_tile_channels_sub),
+                onClick = onOpenChannels,
+                modifier = Modifier.weight(1f),
+            )
+            CompactTile(
+                icon = Icons.Rounded.SocialDistance,
+                title = stringResource(R.string.home_tile_rtt),
+                subtitle = stringResource(R.string.home_tile_rtt_sub),
+                onClick = onOpenRtt,
                 modifier = Modifier.weight(1f),
             )
         }

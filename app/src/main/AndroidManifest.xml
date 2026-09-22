@@ -8,15 +8,22 @@
 
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- Lets the device receive multicast — required for mDNS and SSDP replies. -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- Wi-Fi RTT on Android 13+ asks for nearby-devices; neverForLocation keeps
+         the existing location permission as the only runtime prompt needed. -->
+    <uses-permission android:name="android.permission.NEARBY_WIFI_DEVICES"
+        android:usesPermissionFlags="neverForLocation" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <uses-feature android:name="android.hardware.camera" android:required="false" />
     <uses-feature android:name="android.hardware.camera.ar" android:required="false" />
     <uses-feature android:name="android.hardware.sensor.gyroscope" android:required="false" />
+    <uses-feature android:name="android.hardware.wifi.rtt" android:required="false" />
     <uses-feature android:glEsVersion="0x00030000" android:required="true" />
 
     <application

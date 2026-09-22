@@ -845,4 +845,69 @@ Hasilnya bisa diekspor jadi gambar atau laporan teks.</string>
     <string name="security_mix_count">%1$d</string>
     <string name="capture_area_value">%1$.1f m²</string>
     <string name="capture_speed_value">%1$.0f Mbps</string>
+
+    <!-- Channels advisor -->
+    <string name="home_tile_channels">Kanal</string>
+    <string name="home_tile_channels_sub">Rating &amp; pilihan terbaik</string>
+    <string name="channels_title">Penasihat Kanal</string>
+    <string name="channels_heading">Setiap kanal, dinilai</string>
+    <string name="channels_intro">Kanal dinilai dari berapa banyak tetangga yang berbagi dan seberapa keras sinyal mereka. Pembawa lebar dihitung ke setiap kanal yang dicakupnya — penghuni 80 MHz jadi masalah untuk empat kanal, bukan satu.</string>
+    <string name="channels_recommendation_title">KANAL TERBAIK UNTUK PITA INI</string>
+    <string name="channels_recommendation_empty">Tidak ada jaringan terdengar di pita ini, jadi semua kanal sama kosongnya. Kanal standar mana pun bagus.</string>
+    <string name="channels_best">Kanal terbaik</string>
+    <string name="channels_aps_here">AP bertumpuk</string>
+    <string name="channels_band_total">Jaringan terdengar</string>
+    <string name="channels_already_best">Router kamu sudah di kanal terbaik di sini.</string>
+    <string name="channels_alternates">Alternatif: %1$s</string>
+    <string name="channels_spectrum_title">SPEKTRUM %1$s</string>
+    <string name="channels_empty_band">Tidak ada yang terdengar di %1$s. Radio mungkin tidak memindai pita ini, atau area memang sepi.</string>
+    <string name="channels_rating_title">RATING KANAL</string>
+    <string name="channels_free_count">%1$d kanal lain di bawah ini benar-benar kosong.</string>
+    <string name="channels_dfs">DFS</string>
+    <string name="channels_ap_count">%1$d AP</string>
+    <string name="channels_score_note">Skor 0–10: kanal kosong mendapat 10, setiap jaringan bertumpuk atau rival kuat menurunkannya. Kanal DFS legal dipakai tapi harus dikosongkan bila radar terdeteksi.</string>
+
+    <!-- Wi-Fi RTT -->
+    <string name="home_tile_rtt">Jarak</string>
+    <string name="home_tile_rtt_sub">RTT &amp; lokasi</string>
+    <string name="rtt_title">Wi-Fi RTT</string>
+    <string name="rtt_heading">Ukur, bukan tebak</string>
+    <string name="rtt_intro">802.11mc mengukur waktu tempuh sinyal ke access point — jarak dalam meter, bukan perkiraan dari kekuatan sinyal. Ketuk posisi kamu berdiri di sketsa dan app menriangulasi letak router.</string>
+    <string name="rtt_no_hardware_title">Tanpa hardware RTT</string>
+    <string name="rtt_no_hardware_body">HP ini tidak mendukung Wi-Fi RTT (802.11mc), jadi jarak hanya bisa diperkirakan dari kekuatan sinyal di bagian lain aplikasi.</string>
+    <string name="rtt_wifi_off_title">Wi-Fi mati</string>
+    <string name="rtt_wifi_off_body">Nyalakan Wi-Fi untuk mengukur access point.</string>
+    <string name="rtt_permission_title">Perlu lokasi</string>
+    <string name="rtt_permission_body">Pengukuran jarak butuh izin lokasi presisi, sama seperti pemindaian Wi-Fi. Berikan izin di layar utama lalu kembali.</string>
+    <string name="rtt_unavailable_title">RTT jeda</string>
+    <string name="rtt_unavailable_body">Layanan ranging sementara tidak tersedia — biasanya saat Wi-Fi baru tersambung. Coba lagi sebentar.</string>
+    <string name="rtt_no_peers_title">Tidak ada responder</string>
+    <string name="rtt_no_peers_body">Tidak ada access point di sekitar yang menjawab ranging 802.11mc. Banyak router dan sistem mesh tidak mendukung; perangkat enterprise biasanya bisa.</string>
+    <string name="rtt_peers_title">ACCESS POINT PENDUKUNG RANGING</string>
+    <string name="rtt_peer_meta">%1$s  ·  kanal %2$d  ·  %3$d dBm</string>
+    <string name="rtt_measure">Ukur</string>
+    <string name="rtt_measuring">Mengukur…</string>
+    <string name="rtt_distance_value">%1$.2f m  ±%2$.2f</string>
+    <string name="rtt_samples">%1$d burst dipakai · %2$d gagal</string>
+    <string name="rtt_failed">Ranging gagal — AP berhenti menjawab.</string>
+    <string name="rtt_locate_title">LACAK POSISI ROUTER</string>
+    <string name="rtt_locate_intro">Berjalan ke suatu titik, ketuk posisi kamu berdiri di sketsa, dan app mengukur AP terpilih dari sana. Tiga titik atau lebih menyelesaikan posisinya.</string>
+    <string name="rtt_scale">Skala peta</string>
+    <string name="rtt_scale_value">1 sel = %1$.2g m</string>
+    <string name="rtt_anchor_point">Titik %1$d  (%2$.1f, %3$.1f) m</string>
+    <string name="rtt_anchor_distance">%1$.2f m</string>
+    <string name="rtt_anchors_empty">Ketuk sketsa di setiap titik kamu berdiri untuk menambah pengukuran.</string>
+    <string name="rtt_estimate">Router ≈ (%1$.1f, %2$.1f) m · ±%3$.1f m</string>
+    <string name="rtt_estimate_note">Ketidakpastian adalah selisih solver antar-titik — tembok atau ketukan keliru memperbesarnya.</string>
+    <string name="rtt_anchor_failed">Ranging gagal di titik itu — jangkar tidak disimpan.</string>
+    <string name="rtt_undo">Urungkan</string>
+    <string name="rtt_reset">Reset</string>
+
+    <!-- LAN discovery -->
+    <string name="devices_sweeping">Menyapu 254 alamat…</string>
+    <string name="devices_discovering">Mendengarkan pengumuman layanan… %1$ds</string>
+    <string name="devices_fingerprint_name">Nama</string>
+    <string name="devices_fingerprint_vendor">Vendor</string>
+    <string name="devices_fingerprint_model">Model</string>
+    <string name="devices_fingerprint_type">Tipe</string>
 </resources>

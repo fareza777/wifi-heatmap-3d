@@ -11,6 +11,8 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.sinyal.app.ui.screens.CaptureScreen
 import com.sinyal.app.ui.screens.AnalysisScreen
+import com.sinyal.app.ui.screens.ChannelsScreen
+import com.sinyal.app.ui.screens.RttScreen
 import com.sinyal.app.ui.screens.DiagnosticsScreen
 import com.sinyal.app.ui.screens.AboutScreen
 import com.sinyal.app.ui.screens.CompareScreen
@@ -50,6 +52,8 @@ private object Route {
     const val COVERAGE = "coverage"
     const val PING = "ping"
     const val GRAPH = "graph"
+    const val CHANNELS = "channels"
+    const val RTT = "rtt"
     const val HISTORY = "history"
     const val GUIDE = "guide"
     const val ROOM = "room"
@@ -112,6 +116,8 @@ fun SinyalNavHost(
                 onOpenSpeedTest = { navController.navigate(Route.SPEED) },
                 onOpenDevices = { navController.navigate(Route.DEVICES) },
                 onOpenSecurity = { navController.navigate(Route.SECURITY) },
+                onOpenChannels = { navController.navigate(Route.CHANNELS) },
+                onOpenRtt = { navController.navigate(Route.RTT) },
                 onOpenGraph = { navController.navigate(Route.GRAPH) },
                 onOpenCoverage = { navController.navigate(Route.COVERAGE) },
                 onOpenSettings = { navController.navigate(Route.SETTINGS) },
@@ -132,6 +138,14 @@ fun SinyalNavHost(
 
         composable(Route.SECURITY) {
             SecurityScreen(onBack = { navController.popBackStack() })
+        }
+
+        composable(Route.CHANNELS) {
+            ChannelsScreen(onBack = { navController.popBackStack() })
+        }
+
+        composable(Route.RTT) {
+            RttScreen(onBack = { navController.popBackStack() })
         }
 
         composable(Route.DETAILS) {

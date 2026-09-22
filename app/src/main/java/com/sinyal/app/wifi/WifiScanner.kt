@@ -85,4 +85,22 @@ class WifiScanner(private val context: Context) {
                 )
         }.sortedByDescending { it.rssiDbm }
     }
+
+    /**
+     * Raw scan entries that answer 802.11mc ranging, kept as [ScanResult]
+     * because [android.net.wifi.rtt.RangingRequest] needs the platform object,
+     * not the app's own [NearbyAp] view of it.
+     */
+    fun rangingCapableResults(): List<ScanResult> {
+        if (!hasLocationPermission) return emptyList()
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.P) return emptyList()
+        return try {
+            wifiManager.scanResults.orEmpty()
+        } catch (_: SecurityException) {
+            emptyList()
+        } catch (_: RuntimeException) {
+            emptyList()
+        }.filter { runCatching { it.is80211mcResponder }.getOrDefault(false) }
+            .sortedByDescending { it.level }
+    }
 }
