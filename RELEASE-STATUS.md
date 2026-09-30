@@ -1,5 +1,11 @@
 # Release status
 
+## Update — 30 September 2026
+
+Created and uploaded the signed **1.0.3 (version code 4)** bundle to the Production track, release `1.0.3 - Production launch`. Targeting is set to all 177 available countries/regions plus Rest of World (178 total). The release is in Play Console's automated checks/review flow; it is **not yet publicly available**. Managed publishing is off, so Google Play will publish it automatically after approval. Build and signature evidence: `docs/development/release-1.0.3.md`.
+
+AdMob account serving is approved and enabled. The WiFi Heatmap app has its production AdMob app ID, adaptive banner and interstitial units, and the interstitial is capped at 1 impression per user every 3 minutes. The app's AdMob status is still **Requires review** and its Play listing cannot yet be found for store association. Finish store association and request AdMob app review once the production listing is public. European and US state privacy messages, UMP controls, public privacy policy and app-ads.txt are already configured.
+
 ## Update — 22 September 2026
 
 Latest main source `c125861` built as **1.0.2 (version code 3)** because code 2 was already published on Alpha. Signed AAB accepted and submitted for 100% rollout on the existing closed Alpha track. Publishing overview confirmed **Changes in review**; preliminary checks and Google approval remain pending. Managed publishing is off. All 10 JVM tests passed, release lint vital and signing passed. See `docs/development/release-1.0.2.md` for checksum and validation evidence. Production was not changed.
