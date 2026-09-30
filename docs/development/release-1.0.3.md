@@ -19,7 +19,7 @@ Prepared 30 September 2026 from repository revision `20da4e5`; version advanced 
 - Country targeting: all 177 available countries/regions plus Rest of World, 178 total.
 - English and Indonesian release notes saved.
 - Play reported one non-blocking warning: the bundle contains native code without uploaded debug symbols.
-- Submitted to Play Console automated checks/review on 30 September 2026. It is not publicly available until Google approves it. Managed publishing is off, so it will publish automatically after approval.
+- Play Console automated checks completed successfully on 30 September 2026, and the submission is now **in review**. It is not publicly available until Google approves it. Managed publishing is off, so it will publish automatically after approval.
 
 ## AdMob
 
