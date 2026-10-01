@@ -1,10 +1,16 @@
 # Release status
 
+## Update — 1 October 2026
+
+The Production listing is now public: https://play.google.com/store/apps/details?id=com.f7developer.wifiheatmap3d . The signed **1.0.3 (version code 4)** release targets all 177 available countries/regions plus Rest of World (178 total).
+
+The AdMob app is now linked to its Google Play listing (`com.f7developer.wifiheatmap3d`). AdMob automatically started its app-readiness review; the app currently shows **Getting ready / Review in progress**, with limited ad serving until approval. The Play store association is verified. The account's app-ads.txt dashboard reports **100% of queries authorized** and this app's file as **Ready / found and verified**. The app-specific European GDPR consent and US state privacy messages are both published. AdMob says the app review typically takes 2–3 days but can take longer.
+
 ## Update — 30 September 2026
 
-Created and uploaded the signed **1.0.3 (version code 4)** bundle to the Production track, release `1.0.3 - Production launch`. Targeting is set to all 177 available countries/regions plus Rest of World (178 total). Play's automated checks completed successfully and the submission is now **in review**; it is **not yet publicly available**. Managed publishing is off, so Google Play will publish it automatically after approval. Build and signature evidence: `docs/development/release-1.0.3.md`.
+Created and uploaded the signed **1.0.3 (version code 4)** bundle to the Production track, release `1.0.3 - Production launch`. Targeting is set to all 177 available countries/regions plus Rest of World (178 total). Play's automated checks completed successfully and the submission entered review. The listing was not public at submission time; see the 1 October update for its current status. Build and signature evidence: `docs/development/release-1.0.3.md`.
 
-AdMob account serving is approved and enabled. The WiFi Heatmap app has its production AdMob app ID, adaptive banner and interstitial units, and the interstitial is capped at 1 impression per user every 3 minutes. The app's AdMob status is still **Requires review** and its Play listing cannot yet be found for store association. Finish store association and request AdMob app review once the production listing is public. European and US state privacy messages, UMP controls, public privacy policy and app-ads.txt are already configured.
+AdMob account serving is approved and enabled. The WiFi Heatmap app has its production AdMob app ID, adaptive banner and interstitial units, and the interstitial is capped at 1 impression per user every 3 minutes. At the time of initial submission, the AdMob store association and app-readiness review were waiting for the public listing. See the 1 October update for completion of those steps.
 
 ## Update — 22 September 2026
 
@@ -38,8 +44,7 @@ User target: complete preparation through closed testing; user handles productio
 
 ## Pending external configuration (do not infer completion)
 
-- Google preliminary checks/review and closed-track publication; actual tester participation and test duration have not been completed by this preparation.
-- AdMob store association, app readiness review and app-ads.txt verification await a discoverable Play listing. The public app-ads.txt file itself is verified.
+- AdMob app-readiness review is pending after the Play Store link was verified. AdMob reports limited ad serving until its review completes; no further setup action is currently offered.
 - Payments profile shows a request to provide Singapore tax information to determine payout withholding. Product activation succeeded, but the account owner must supply accurate tax details; no tax declaration was invented or submitted.
 - Optional Indonesian video captions remain local. English captions were uploaded. YouTube did not expose a video monetization control in the upload flow; no claim is made that an unavailable setting was changed.
 

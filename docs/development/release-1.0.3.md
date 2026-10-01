@@ -19,12 +19,12 @@ Prepared 30 September 2026 from repository revision `20da4e5`; version advanced 
 - Country targeting: all 177 available countries/regions plus Rest of World, 178 total.
 - English and Indonesian release notes saved.
 - Play reported one non-blocking warning: the bundle contains native code without uploaded debug symbols.
-- Play Console automated checks completed successfully on 30 September 2026, and the submission is now **in review**. It is not publicly available until Google approves it. Managed publishing is off, so it will publish automatically after approval.
+- Play Console automated checks completed successfully on 30 September 2026, and the submission entered review. The public listing was verified on 1 October 2026: https://play.google.com/store/apps/details?id=com.f7developer.wifiheatmap3d .
 
 ## AdMob
 
 - App ID: `ca-app-pub-6279186647593327~1942300843`
 - Adaptive banner: `ca-app-pub-6279186647593327/5053523223`
 - Interstitial: `ca-app-pub-6279186647593327/3223592929`, capped at 1 impression per user every 3 minutes.
-- App-serving account is approved and enabled. The WiFi Heatmap app itself still requires AdMob review. AdMob could not find the app in Google Play before Production went live, so store association and the app-level readiness review remain pending until the public listing is available.
-- Consent/privacy messages, public privacy URL, UMP privacy controls and publisher `app-ads.txt` were already configured and verified.
+- App-serving account is approved and enabled. The WiFi Heatmap app is linked to its public Google Play listing (`com.f7developer.wifiheatmap3d`). AdMob automatically started app-readiness review; its current state is **Getting ready / Review in progress**, with limited ad serving until approval. AdMob estimates 2–3 days in typical cases, possibly longer.
+- The app-ads.txt dashboard reports **Ready / found and verified** for this app and **100% of queries authorized**. App-specific European GDPR and US state privacy messages are published; the privacy URL and UMP privacy controls are configured.
